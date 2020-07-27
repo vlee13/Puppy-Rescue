@@ -1,4 +1,4 @@
-# IronPlate
+# Puppy Rescue
 ##### git fork and/or clone https://github.com/Tzikas/IronPlate.git
 ## Start Server
 ##### cd backend/ 
