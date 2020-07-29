@@ -1,8 +1,44 @@
 import React, { Component } from "react";
+import actions from "../services/index";
 
 class TenDogs extends Component {
+  state = {
+    dogs: [],
+  };
+
+  async componentDidMount() {
+    let res = await actions.getDogs();
+    console.log("hello", res);
+    this.setState({
+      dogs: res.data.dogs,
+    });
+  }
+
+  displayDogs = () => {
+    return this.state.dogs.map((eachDog) => {
+      return (
+        <li>
+          {/* <img src={eachDog.image} alt="dogpic" /> */}
+          {eachDog.name}
+          {`#${eachDog.shelterID}`}
+          <br />
+          {eachDog.description}
+          <br />
+          {`Age: ${eachDog.age}`}
+          <br />
+          {`Weight: ${eachDog.weight}`}
+        </li>
+      );
+    });
+  };
+
   render() {
-    return <div>List of 10 dogs selected from LA shelter</div>;
+    return (
+      <div>
+        List of 10 dogs selected from LA shelter
+        {this.displayDogs()}
+      </div>
+    );
   }
 }
 

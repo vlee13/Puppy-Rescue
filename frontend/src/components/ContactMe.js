@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 
-const ContactMe = () => {
-  return <div>Email form</div>;
-};
+class ContactMe extends Component {
+  render() {
+    return <div>Email form</div>;
+  }
+}
 
 export default ContactMe;
