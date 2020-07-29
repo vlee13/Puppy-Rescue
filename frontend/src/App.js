@@ -28,46 +28,48 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {this.state.email}
-        <nav>
-          <NavLink to="/">Home |</NavLink>
+        <div>
+          {this.state.email}
+          <nav>
+            <NavLink to="/">Home |</NavLink>
 
-          {this.state.email ? (
-            <Fragment>
-              <NavLink onClick={this.logOut} to="/">
-                Log Out |
-              </NavLink>
-              <NavLink to="/profile">Profile|</NavLink>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <NavLink to="/sign-up">Sign Up |</NavLink>
-              <NavLink to="/log-in">Log In |</NavLink>
-            </Fragment>
-          )}
-        </nav>
-        <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} />} />
-          <Route
-            exact
-            path="/sign-up"
-            render={(props) => <SignUp {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
-            path="/log-in"
-            render={(props) => <LogIn {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} user={this.state} />}
-          />
+            {this.state.email ? (
+              <Fragment>
+                <NavLink onClick={this.logOut} to="/">
+                  Log Out |
+                </NavLink>
+                <NavLink to="/profile">Profile|</NavLink>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <NavLink to="/sign-up">Sign Up |</NavLink>
+                <NavLink to="/log-in">Log In |</NavLink>
+              </Fragment>
+            )}
+          </nav>
+          <Switch>
+            <Route exact path="/" render={(props) => <Home {...props} />} />
+            <Route
+              exact
+              path="/sign-up"
+              render={(props) => <SignUp {...props} setUser={this.setUser} />}
+            />
+            <Route
+              exact
+              path="/log-in"
+              render={(props) => <LogIn {...props} setUser={this.setUser} />}
+            />
+            <Route
+              exact
+              path="/profile"
+              render={(props) => <Profile {...props} user={this.state} />}
+            />
 
-          <Route component={NotFound} />
-        </Switch>
-        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
+            <Route component={NotFound} />
+          </Switch>
+          {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+          {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
+        </div>
       </BrowserRouter>
     );
   }
