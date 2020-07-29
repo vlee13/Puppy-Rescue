@@ -6,7 +6,7 @@ import LogIn from "./components/auth/LogIn";
 import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
-import {Switch, BrowserRouter, Route, NavLink} from 'react-router-dom';
+import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
 
 class App extends Component {
   state = {};
@@ -27,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <NavLink to="/">Menu |</NavLink>
         {/* {this.state.email}
         <nav>
           <NavLink to="/">Menu |</NavLink>
