@@ -122,6 +122,18 @@ const dogs = [
     image:
       "https://petharbor.com/get_image.asp?RES=thumb&ID=A1945866&LOCATION=LACT3",
   },
+  {
+    name: "Zooey",
+    shelterID: "A0000000",
+    age: 10,
+    weight: 12,
+    location: "South Los Angeles Shelter",
+    description:
+      "My name is Zooey. I am a Havanese spayed female, and I have been at the shelter since July 25, 2020.",
+    votes: 0,
+    image:
+      "https://images.unsplash.com/photo-1586796304259-5fa44d5e3f71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+  },
 ];
 
 const MONGODB_URI =

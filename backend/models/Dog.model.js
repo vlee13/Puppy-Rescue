@@ -13,5 +13,3 @@ const dogSchema = new Schema({
 });
 
 module.exports = model("Dog", dogSchema);
-
-// cant grab url for images the site does not allow. can i grab them locally in image folder?
