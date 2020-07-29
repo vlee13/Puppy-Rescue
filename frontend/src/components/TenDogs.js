@@ -18,15 +18,18 @@ class TenDogs extends Component {
     return this.state.dogs.map((eachDog) => {
       return (
         <li>
+          <img src={eachDog.image} alt="dogpic" />
+          <br />
           {/* <img src={eachDog.image} alt="dogpic" /> */}
           {eachDog.name}
           {`#${eachDog.shelterID}`}
-          <br />
-          {eachDog.description}
+
           <br />
           {`Age: ${eachDog.age}`}
           <br />
           {`Weight: ${eachDog.weight}`}
+          <br />
+          {eachDog.description}
         </li>
       );
     });
