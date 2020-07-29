@@ -1,0 +1,40 @@
+import React, { Component } from "react";
+import actions from "../../../services/index.js";
+
+class Vote extends Component {
+  state = {
+    dogs: [],
+  };
+
+  async componentDidMount() {
+    let res = await actions.getDogs();
+    console.log("hello", res);
+    this.setState({
+      dogs: res.data.dogs,
+    });
+  }
+
+  displayDogs = () => {
+    return this.state.dogs.map((eachDog) => {
+      return (
+        <li>
+          {/* <img src={eachDog.image} alt="dogpic" /> */}
+          {eachDog.name}
+          {`#${eachDog.shelterID}`}
+          <br />
+          {eachDog.description}
+          <br />
+          {`Age: ${eachDog.age}`}
+          <br />
+          {`Weight: ${eachDog.weight}`}
+        </li>
+      );
+    });
+  };
+
+  render() {
+    return <div>{this.displayDogs()}</div>;
+  }
+}
+
+export default Vote;
