@@ -33,12 +33,7 @@ class TenDogs extends Component {
   };
 
   render() {
-    return (
-      <div>
-        List of 10 dogs selected from LA shelter
-        {this.displayDogs()}
-      </div>
-    );
+    return <div>{this.displayDogs()}</div>;
   }
 }
 
