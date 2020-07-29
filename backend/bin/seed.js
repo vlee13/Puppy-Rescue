@@ -11,7 +11,8 @@ const dogs = [
     description:
       "My name is Mattie. I am a mixed breed spayed female, and I have been at the shelter since May 26, 2019.",
     votes: 0,
-    image: "../public/images/A1018511.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1018511&LOCATION=LACT2",
   },
   {
     name: "Lady",
@@ -22,7 +23,8 @@ const dogs = [
     description:
       "My name is Lady. I am a mixed breed spayed female, and I have been at the shelter since July 2, 2020.",
     votes: 0,
-    image: "../public/images/A1048146.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1048146&LOCATION=LACT3",
   },
   {
     name: "Bodhi",
@@ -33,7 +35,8 @@ const dogs = [
     description:
       "My name is Bodhi. I am a mixed breed neutered male, and I have been at the shelter since June 3, 2019.",
     votes: 0,
-    image: "../public/images/A1802060.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1802060&LOCATION=LACT2",
   },
   {
     name: "Jackson",
@@ -44,7 +47,8 @@ const dogs = [
     description:
       "My name is Jackson. I am a mixed breed neutered male, and I have been at the shelter since January 31, 2019.",
     votes: 0,
-    image: "../public/images/A1828753.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1828753&LOCATION=LACT3",
   },
   {
     name: "Sosa",
@@ -55,7 +59,8 @@ const dogs = [
     description:
       "My name is Sosa. I am a mixed breed neutered male, and I have been at the shelter since November 6, 2019.",
     votes: 0,
-    image: "../public/images/A1830962.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1830962&LOCATION=LACT3",
   },
   {
     name: "Chica",
@@ -66,7 +71,8 @@ const dogs = [
     description:
       "My name is Chica. I am a mixed breed spayed female, and I have been at the shelter since January 13, 2019.",
     votes: 0,
-    image: "../public/images/A1834003.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1834003&LOCATION=LACT3",
   },
   {
     name: "Moe",
@@ -77,7 +83,8 @@ const dogs = [
     description:
       "My name is Moe. I am a mixed breed neutered male, and I have been at the shelter since April 23, 2019.",
     votes: 0,
-    image: "../public/images/A1852697.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1852697&LOCATION=LACT2",
   },
   {
     name: "Leeloo",
@@ -88,7 +95,8 @@ const dogs = [
     description:
       "My name is Leeloo. I am a mixed breed spayed female, and I have been at the shelter since June 6, 2019.",
     votes: 0,
-    image: "../public/images/A1865318.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1865318&LOCATION=LACT3",
   },
   {
     name: "Kongo",
@@ -99,7 +107,8 @@ const dogs = [
     description:
       "My name is Kongo. I am a mixed breed unalterd male, and I have been at the shelter since July 17, 2020.",
     votes: 0,
-    image: "../public/images/A1944927.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=Detail&ID=A1898996&LOCATION=LACT1",
   },
   {
     name: "Chispa",
@@ -110,7 +119,8 @@ const dogs = [
     description:
       "My name is Chispa. I am a mixed breed unaltered female, and I have been at the shelter since July 25, 2020.",
     votes: 0,
-    image: "../public/images/A1945866.png",
+    image:
+      "https://petharbor.com/get_image.asp?RES=thumb&ID=A1945866&LOCATION=LACT3",
   },
 ];
 
