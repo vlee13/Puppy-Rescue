@@ -12,6 +12,7 @@ const memberSchema = new Schema({
     saved: Boolean,
   },
   login: Boolean,
+  role: { type: String, enum: ["admin", "notadmin"], default: "admin" },
 });
 
 module.exports = model("Member", memberSchema);

@@ -19,6 +19,7 @@ import HelpOthers from "./components/Home/Menu/HelpOthers";
 import Game from "./components/Home/Menu/Game";
 import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
+import AddDog from "./components/AddDog/AddDog";
 
 class App extends Component {
   state = {};
@@ -71,6 +72,7 @@ class App extends Component {
           <Route exact path="/game" render={() => <Game />} />
           <Route exact path="/meetteam" render={() => <MeetTeam />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
+          <Route exact path="/addDog" render={() => <AddDog />} />
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
