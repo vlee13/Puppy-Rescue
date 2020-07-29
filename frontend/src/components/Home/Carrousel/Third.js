@@ -7,7 +7,7 @@ const Third = () => {
       <img src="" alt="" className="CarrouselImage" />
       <div>
         <div className="TopNavigation">
-          <Link to="/login">
+          <Link to="/userlogin">
             <span>Log in</span>
           </Link>
           <Link to="/menu">
@@ -18,7 +18,9 @@ const Third = () => {
         <span className="CompanyName">Valerie's Foster Dog</span>
         <h1 className="Tagline">Share your love with other organizations.</h1>
         <p className="Text">text</p>
-        <button className="button">Explore</button>
+        <Link to="/helpothers">
+          <button className="button">Explore</button>
+        </Link>
         <img src="" alt="LogoSealMark" className="LogoSealLogo" />
       </div>
     </div>

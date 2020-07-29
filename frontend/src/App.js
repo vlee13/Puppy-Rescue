@@ -15,7 +15,7 @@ import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
 import FosterDog from "./components/Home/Menu/FosterDog";
 import Vote from "./components/Home/Menu/Vote";
-import HelpOthers from "./components/Home/Menu/About";
+import HelpOthers from "./components/Home/Menu/HelpOthers";
 import Game from "./components/Home/Menu/Game";
 import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
