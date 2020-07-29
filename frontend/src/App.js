@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import Home from "./components/home/Home";
 import NotFound from "./components/404/NotFound.js";
 import SignUp from "./components/auth/SignUp";
@@ -7,6 +6,7 @@ import LogIn from "./components/auth/LogIn";
 import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
+import {Switch, BrowserRouter, Route, NavLink} from 'react-router-dom';
 
 class App extends Component {
   state = {};
@@ -29,7 +29,7 @@ class App extends Component {
       <BrowserRouter>
         {/* {this.state.email}
         <nav>
-          <NavLink to="/">Home |</NavLink>
+          <NavLink to="/">Menu |</NavLink>
 
           {this.state.email ? (
             <Fragment>

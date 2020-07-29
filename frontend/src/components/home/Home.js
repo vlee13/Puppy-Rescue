@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import actions from "../../services/index";
+import Burger from "../Burger/Burger";
 import TenDogs from "../TenDogs";
 
 class Home extends Component {
@@ -9,8 +10,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        This is the home
         <TenDogs />
+        <Burger />
       </div>
     );
   }
