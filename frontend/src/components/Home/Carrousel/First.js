@@ -7,7 +7,7 @@ const First = () => {
       <img src="" alt="" className="CarrouselImage" />
       <div>
         <div className="TopNavigation">
-          <Link to="/login">
+          <Link to="/userlogin">
             <span>Log in</span>
           </Link>
           <Link to="/menu">
@@ -18,7 +18,9 @@ const First = () => {
         <span className="CompanyName">Valerie's Foster Dog</span>
         <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
         <p className="Text">text</p>
-        <button className="button">Share your love with Fred</button>
+        <Link to="/userdonate">
+          <button className="button">Share your love with Fred</button>
+        </Link>
         <img src="" alt="SealLogo" className="SealLogo" />
       </div>
     </div>
