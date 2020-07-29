@@ -36,12 +36,7 @@ class Vote extends Component {
   };
 
   render() {
-    return (
-      <div>
-        {/* {this.displayDogs()} */}
-        Here are 10 dogs to vote for
-      </div>
-    );
+    return <div>{this.displayDogs()}</div>;
   }
 }
 
