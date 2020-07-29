@@ -4,7 +4,6 @@ import Home from "./components/home/Home";
 import NotFound from "./components/404/NotFound.js";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
-import Profile from "./components/profile/Profile";
 import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
@@ -28,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {this.state.email}
+        {/* {this.state.email}
         <nav>
           <NavLink to="/">Home |</NavLink>
 
@@ -45,7 +44,7 @@ class App extends Component {
               <NavLink to="/log-in">Log In |</NavLink>
             </Fragment>
           )}
-        </nav>
+        </nav> */}
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
@@ -58,16 +57,11 @@ class App extends Component {
             path="/log-in"
             render={(props) => <LogIn {...props} setUser={this.setUser} />}
           />
-          <Route
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} user={this.state} />}
-          />
 
           <Route component={NotFound} />
         </Switch>
-        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
+        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
       </BrowserRouter>
     );
   }

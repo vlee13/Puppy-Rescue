@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import actions from '../../services/index'
-
+import React, { Component } from "react";
+import actions from "../../services/index";
+import TenDogs from "../TenDogs";
 
 class Home extends Component {
   async componentDidMount() {
@@ -9,7 +9,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        
+        This is the home
+        <TenDogs />
       </div>
     );
   }
