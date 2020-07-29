@@ -17,4 +17,10 @@ router.post("/vote", (req, res, next) => {
   });
 });
 
+router.post("/addDogs", (req, res, next) => {
+  Dog.create(req.body).then((newdog) => {
+    res.json({ newdog });
+  });
+});
+
 module.exports = router;
