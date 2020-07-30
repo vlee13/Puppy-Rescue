@@ -10,8 +10,8 @@ const First = () => {
         <span className="CompanyName">Valerie's Foster Dog</span>
         <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
         <p className="Text">text</p>
-        <Link to="/userdonate">
-          <button className="button">Share your love with Fred</button>
+        <Link to="/fosterdog">
+          <button className="button">Meet Fred!</button>
         </Link>
         <img src="" alt="SealLogo" className="SealLogo" />
       </div>
