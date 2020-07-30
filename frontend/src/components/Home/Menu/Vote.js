@@ -12,13 +12,13 @@ class Vote extends Component {
     dogs: [],
   };
 
-  // async componentDidMount() {
-  //   let res = await actions.getDogs();
-  //   console.log("hello", res);
-  //   this.setState({
-  //     dogs: res.data.dogs,
-  //   });
-  // }
+  async componentDidMount() {
+    let res = await actions.getDogs();
+    console.log("hello", res);
+    this.setState({
+      dogs: res.data.dogs,
+    });
+  }
 
   displayDogs = () => {
     return this.state.dogs.map((eachDog, i) => {
