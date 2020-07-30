@@ -88,8 +88,8 @@ class App extends Component {
 
           <Route component={NotFound} /> */}
         </Switch>
-        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
+        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
       </BrowserRouter>
     );
   }
