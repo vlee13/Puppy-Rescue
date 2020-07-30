@@ -27,6 +27,9 @@ const actions = {
   addDog: async (dog) => {
     return await service.post("/addDogs", dog);
   },
+  vote: async (dog) => {
+    return await service.post("/vote", dog);
+  },
 };
 
 export default actions;
