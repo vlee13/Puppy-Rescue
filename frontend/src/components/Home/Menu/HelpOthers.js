@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import actions from "../../../services/index.js";
 
 class HelpOthers extends Component {
   state = {
@@ -11,13 +12,13 @@ class HelpOthers extends Component {
     organizations: [],
   };
 
-  // async componentDidMount() {
-  //   let res = await actions.getOrganizations();
-  //   console.log("hello", res);
-  //   this.setState({
-  //     oraganizations: res.data.oraganizations,
-  //   });
-  // }
+  async componentDidMount() {
+    let res = await actions.getOrganizations();
+    console.log("res", res);
+    this.setState({
+      organizations: res.data.groups,
+    });
+  }
 
   displayNavBar = () => {
     return (
@@ -211,22 +212,17 @@ class HelpOthers extends Component {
   };
 
   displayOrganizations = () => {
-    return (
-      <div>
-        <p>I'm waiting for Organizations from Database</p>
-      </div>
-    );
-    //   return this.state.organizations.map((eachOrganization) => {
-    //     return (
-    //       <div>
-    //         <img src={eachOrganization.image} alt="organizationPic" className="organizationPic" />
-    //         <br />
-    //         <h1>{eachOrganization.name}</h1>
-    //         <ul>{`Website: ${eachOrganization.website}`}</ul>
-    //         <p>{eachOrganization.description}</p>
-    //       </div>
-    //     );
-    //   });
+    return this.state.organizations.map((eachGroup) => {
+      console.log("here", eachGroup.name);
+      return (
+        <li>
+          <img src={eachGroup.image} alt="orgPic" className="organizationPic" />
+          <h1>{eachGroup.name}</h1>
+          <br />
+          <p>{eachGroup.description}</p>
+        </li>
+      );
+    });
   };
 
   render() {
