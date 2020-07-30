@@ -233,27 +233,6 @@ class Vote extends Component {
       </div>
     );
   };
-  // displayDogs = () => {
-  //   return (
-  //     <div>
-  //       <p>I'm waiting for the 10 dogs from Database</p>
-  //     </div>
-  //   );
-  //   return this.state.dogs.map((eachDog) => {
-  //     return (
-  //       <div>
-  //         <img src={eachDog.image} alt="dogpic" className="dogToFoster" />
-  //         <br />
-  //         <h1>{eachDog.name}</h1>
-  //         <div>votes</div>
-  //         <ul>{`Shelter Id: ${eachDog.shelterID}`}</ul>
-  //         <ul>{`Age: ${eachDog.age}`}</ul>
-  //         <ul>{`Weight: ${eachDog.weight}`}</ul>
-  //         <p>{eachDog.description}</p>
-  //       </div>
-  //     );
-  //   });
-  // };
 
   vote = (eachDog, i) => {
     actions
