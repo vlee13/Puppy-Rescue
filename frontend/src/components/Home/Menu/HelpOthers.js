@@ -213,7 +213,6 @@ class HelpOthers extends Component {
 
   displayOrganizations = () => {
     return this.state.organizations.map((eachGroup) => {
-      console.log("here", eachGroup.name);
       return (
         <li>
           <img src={eachGroup.image} alt="orgPic" className="organizationPic" />
