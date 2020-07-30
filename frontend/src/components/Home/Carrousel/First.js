@@ -4,16 +4,8 @@ import { Link } from "react-router-dom";
 const First = () => {
   return (
     <div>
-      <img src="" alt="" className="CarrouselImage" />
+      <img src="" alt="HeroImage" className="CarrouselImage" />
       <div>
-        <div className="TopNavigation">
-          <Link to="/userlogin">
-            <span>Log in</span>
-          </Link>
-          <Link to="/menu">
-            <span>Menu</span>
-          </Link>
-        </div>
         <img src="" alt="logoMark" className="LogoMark" />
         <span className="CompanyName">Valerie's Foster Dog</span>
         <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
