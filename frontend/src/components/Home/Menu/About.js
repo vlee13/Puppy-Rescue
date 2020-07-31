@@ -44,7 +44,7 @@ class About extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -53,11 +53,11 @@ class About extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <Link to="/">
           <div>Home</div>
         </Link>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -66,7 +66,7 @@ class About extends Component {
           }
         >
           About
-        </button>
+        </Link>
         <Link to="/fosterdog">
           <div>The dog I'm fostering now</div>
         </Link>
