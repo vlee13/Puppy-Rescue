@@ -197,13 +197,33 @@ class About extends Component {
           <img className="aboutImage1" src="" alt="aboutImage1" />
           <div className="info1">
             <h1>What we do</h1>
-            <p>text</p>
+            <p>
+              Not everyone who has the heart for animal welfare has the means to
+              foster or adopt. Our team at House of Paws has come up with a
+              creative & easy-to-use platform where you can partner with us, and
+              see that every shelter dog has a chance to find a safe & loving
+              home.
+              <p>
+                We hand pick 10 most “unwanted” shelter dogs by selecting the
+                oldest or those that have been at the shelter the longest. You
+                as a member gets up to 3 votes to choose which dog gets to be
+                rescued from the shelter! Every 1st of the month as long as a
+                foster is available, the shelter dog with the highest votes is
+                selected to go home to a foster and a warm bed.
+              </p>
+            </p>
           </div>
         </div>
         <div className="whatToExpectFromDonation">
           <div className="info2">
             <h1>What to expect from donations</h1>
-            <p>text</p>
+            <p>
+              Donations will go directly towards the care and wellbeing of the
+              foster dogs including: doctor’s bills, any medications needed, any
+              grooming needed, food, treats, toys, collar, leash, food/water
+              bowl, a bed, etc. All update details will be provided in biweekly
+              membership newsletters.{" "}
+            </p>
             <Link to="/fosterdog">
               <button>Donate</button>
             </Link>
@@ -214,7 +234,10 @@ class About extends Component {
           <img className="aboutImage3" src="" alt="aboutImage3" />
           <div className="info3">
             <h1>Help other organizations</h1>
-            <p>text</p>
+            <p>
+              If you prefer to select or donate to some of the top rescue groups
+              in the country instead, we can provide that for you.
+            </p>
             <Link to="/helpothers">
               <button>Help others</button>
             </Link>

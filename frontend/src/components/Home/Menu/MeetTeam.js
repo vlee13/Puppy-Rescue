@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import "./meettheteam.css"
+import "../../CSS/MeetTeam.css";
 
 class MeetTeam extends Component {
   state = {
@@ -194,99 +194,162 @@ class MeetTeam extends Component {
 
   displayMeetTeam = () => {
     return (
-      <div>
-        <div id="cubeContainer">
-          <div id="cubeWrapper">
-            <div class="head">
-              <h1>MEET THE TEAM</h1>
-              <h3>
-                {" "}
-                <b>
-                  We are all dog lovers and we all wanted to do something
-                  positive to the community, so as our final project in our
-                  IronHack bootcamp journey we decided to give back. House Of
-                  Paws is bigger then us, its about helping animals that are in
-                  a sense helpless, by providing a home for these adorable
-                  creatures and giving them the love they need we are saving
-                  canine lifes.{" "}
-                </b>{" "}
-              </h3>
+      <div className="meetTeam">
+        <div>
+          <h1 className="teamText">Meet the Team</h1>
+          <h3 className="description">
+            We are all animal lovers and we all wanted to do something positive
+            for the community, so as our final project in our IronHack bootcamp
+            journey we decided to give back. House of Paws is bigger than us. By
+            fostering these shelter dogs, we believe we can give them a real
+            chance to being adopted into their forever homes.
+          </h3>
+        </div>
+        <div className="usinfo">
+          <div className="carlos">
+            <h1>Carlos Cesar Valle</h1>
+            <p>Software Developer</p>
+            <p>From: Miami, FL</p>
+
+            <div className="githubLinkedIn">
+              <a href="https://github.com/carloscesarvalle" target="_blank">
+                GitHub
+              </a>
+
+              <div>|</div>
+              <a
+                href="https://www.linkedin.com/in/carloscesarvalle/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
             </div>
-            <div id="cubes">
-              <div class="cube p2">
-                <div class="name">
-                  <h2>Carlos CesarValle</h2>
-                  <h3>Software Developer</h3>
-                  <h4>
-                    <ul>
-                      <li>
-                        <a href="https://www.linkedin.com/in/carloscesarvalle/">
-                          linkedIn<span class="linkedin"></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span class="https://github.com/carloscesarvalle"></span>
-                          GitHub
-                        </a>
-                      </li>
-                    </ul>
-                  </h4>
-                </div>
-                <div class="innerBorder"></div>
-                <div class="darken"></div>
-              </div>
-              <div class="cube p1">
-                <div class="name">
-                  <h2>Dionel Panuncia</h2>
-                  <h3>Software Developer</h3>
-                  <h4>
-                    <ul>
-                      <li>
-                        <a href="https://www.linkedin.com/in/dpanuncia/">
-                          linkedIn<span class="linkedin"></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span class="https://github.com/dpanuncia">
-                            GitHub
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </h4>
-                </div>
-                <div class="innerBorder"></div>
-                <div class="darken"></div>
-              </div>
-              <div class="cube p3">
-                <div class="name">
-                  <h2>Valerie Lee</h2>
-                  <h3>Software Developer</h3>
-                  <h4>
-                    <ul>
-                      <li>
-                        <a href="https://www.linkedin.com/in/vlee13/">
-                          <b>linkedIn</b>
-                          <span class="linkedin"></span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span class="https://github.com/vlee13">GitHub</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </h4>
-                </div>
-                <div class="innerBorder"></div>
-                <div class="darken"></div>
-              </div>
+          </div>
+          <div className="valerie">
+            <h1>Valerie Lee Kang</h1>
+            <p>Software Developer</p>
+            <p>From: Los Angeles, CA</p>
+
+            <div className="githubLinkedIn">
+              <a href="https://github.com/vlee13" target="_blank">
+                GitHub
+              </a>
+              <div>|</div>
+              <a href="https://www.linkedin.com/in/vlee13/" target="_blank">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+          <div className="dp">
+            <h1>Dionel Panuncia</h1>
+            <p>Software Developer</p>
+            <p>From: Michigan</p>
+
+            <div className="githubLinkedIn">
+              <a href="https://github.com/dpanuncia" target="_blank">
+                GitHub
+              </a>
+              <div>|</div>
+              <a href="https://www.linkedin.com/in/dpanuncia/" target="_blank">
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
       </div>
+      // <div>
+      //   <div id="cubeContainer">
+      //     <div id="cubeWrapper">
+      //       <div class="head">
+      //         <h1>MEET THE TEAM</h1>
+      //         <h3>
+      //           {" "}
+      //           <b>
+      //             We are all dog lovers and we all wanted to do something
+      //             positive to the community, so as our final project in our
+      //             IronHack bootcamp journey we decided to give back. House Of
+      //             Paws is bigger then us, its about helping animals that are in
+      //             a sense helpless, by providing a home for these adorable
+      //             creatures and giving them the love they need we are saving
+      //             canine lifes.{" "}
+      //           </b>{" "}
+      //         </h3>
+      //       </div>
+      //       <div id="cubes">
+      //         <div class="cube p2">
+      //           <div class="name">
+      //             <h2>Carlos CesarValle</h2>
+      //             <h3>Software Developer</h3>
+      //             <h4>
+      //               <ul>
+      //                 <li>
+      //                   <a href="https://www.linkedin.com/in/carloscesarvalle/">
+      //                     linkedIn<span class="linkedin"></span>
+      //                   </a>
+      //                 </li>
+      //                 <li>
+      //                   <a href="">
+      //                     <span class="https://github.com/carloscesarvalle"></span>
+      //                     GitHub
+      //                   </a>
+      //                 </li>
+      //               </ul>
+      //             </h4>
+      //           </div>
+      //           <div class="innerBorder"></div>
+      //           <div class="darken"></div>
+      //         </div>
+      //         <div class="cube p1">
+      //           <div class="name">
+      //             <h2>Dionel Panuncia</h2>
+      //             <h3>Software Developer</h3>
+      //             <h4>
+      //               <ul>
+      //                 <li>
+      //                   <a href="https://www.linkedin.com/in/dpanuncia/">
+      //                     linkedIn<span class="linkedin"></span>
+      //                   </a>
+      //                 </li>
+      //                 <li>
+      //                   <a href="">
+      //                     <span class="https://github.com/dpanuncia">
+      //                       GitHub
+      //                     </span>
+      //                   </a>
+      //                 </li>
+      //               </ul>
+      //             </h4>
+      //           </div>
+      //           <div class="innerBorder"></div>
+      //           <div class="darken"></div>
+      //         </div>
+      //         <div class="cube p3">
+      //           <div class="name">
+      //             <h2>Valerie Lee</h2>
+      //             <h3>Software Developer</h3>
+      //             <h4>
+      //               <ul>
+      //                 <li>
+      //                   <a href="https://www.linkedin.com/in/vlee13/">
+      //                     <b>linkedIn</b>
+      //                     <span class="linkedin"></span>
+      //                   </a>
+      //                 </li>
+      //                 <li>
+      //                   <a href="">
+      //                     <span class="https://github.com/vlee13">GitHub</span>
+      //                   </a>
+      //                 </li>
+      //               </ul>
+      //             </h4>
+      //           </div>
+      //           <div class="innerBorder"></div>
+      //           <div class="darken"></div>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
     );
   };
 

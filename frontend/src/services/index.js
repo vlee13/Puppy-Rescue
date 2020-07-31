@@ -30,6 +30,9 @@ const actions = {
   vote: async (dog) => {
     return await service.post("/vote", dog);
   },
+  getOrganizations: async (group) => {
+    return await service.get("/helpothers");
+  },
 };
 
 export default actions;
