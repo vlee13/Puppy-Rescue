@@ -20,10 +20,6 @@
   },
   "homepage": "https://github.com/FTWD-OCT-2019/ironplate#readme",
   "dependencies": {
-<<<<<<< HEAD
     "create-react-app": "^3.4.1"
-=======
-    "react-burger-menu": "^2.7.0"
->>>>>>> d8bd2572e36e77204e61f21deab6945edc7c57d1
   }
 }
