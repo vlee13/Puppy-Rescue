@@ -1,0 +1,58 @@
+.meetTeam {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+
+}
+
+.teamText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5vh;
+    margin: auto 50vh;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 350;
+    padding: 3% 25%
+}
+
+.usinfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 15%
+}
+
+.carlos,
+.valerie,
+.dp {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #ffffff;
+    ;
+    padding: 50px 70px;
+    box-shadow: 20px 20px black;
+    margin: 10vh 7vh;
+
+
+}
+
+.githubLinkedIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    ;
+}

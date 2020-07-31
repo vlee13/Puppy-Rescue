@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./slideTransititions.scss";
-import 
+
 
 class transition extends Component {
   constructor(props) {
