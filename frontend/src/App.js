@@ -7,7 +7,7 @@ import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Contact from "./components/ContactUs/ContactUs";
-import { TransitionGroup, CSSTransition} from "react-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
 import MainCarrouselPage from "./components/Home/Carrousel/MainCarrouselPage";
 import UserLogIn from "./components/Home/LogIn/UserLogIn";
@@ -62,7 +62,7 @@ class App extends Component {
           )} 
         </nav> */}
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} setUser={this.setUser} />} />
+          {/* <Route exact path="/" render={(props) => <Home {...props} setUser={this.setUser} />} /> */}
           <Route exact path="/" render={() => <MainCarrouselPage />} />
           <Route exact path="/userlogin" render={() => <UserLogIn />} />
           <Route exact path="/usersignup" render={() => <UserSignUp />} />
