@@ -24,7 +24,6 @@ class Vote extends Component {
         <li>
           <img src={eachDog.image} alt="dogpic" />
           <br />
-          {/* <img src={eachDog.image} alt="dogpic" /> */}
           {eachDog.name}
           {` #${eachDog.shelterID}`}
           {`Location: ${eachDog.location}`}

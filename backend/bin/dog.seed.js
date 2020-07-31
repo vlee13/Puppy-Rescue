@@ -13,6 +13,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1018511&LOCATION=LACT2",
+    status: "available",
   },
   {
     name: "Lady",
@@ -25,6 +26,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1048146&LOCATION=LACT3",
+    status: "available",
   },
   {
     name: "Bodhi",
@@ -37,6 +39,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1802060&LOCATION=LACT2",
+    status: "available",
   },
   {
     name: "Jackson",
@@ -49,6 +52,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1828753&LOCATION=LACT3",
+    status: "available",
   },
   {
     name: "Sosa",
@@ -61,6 +65,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1830962&LOCATION=LACT3",
+    status: "available",
   },
   {
     name: "Chica",
@@ -73,6 +78,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1834003&LOCATION=LACT3",
+    status: "available",
   },
   {
     name: "Moe",
@@ -85,6 +91,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1852697&LOCATION=LACT2",
+    status: "available",
   },
   {
     name: "Leeloo",
@@ -97,6 +104,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1865318&LOCATION=LACT3",
+    status: "available",
   },
   {
     name: "Kongo",
@@ -109,6 +117,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=Detail&ID=A1898996&LOCATION=LACT1",
+    status: "available",
   },
   {
     name: "Chispa",
@@ -121,6 +130,7 @@ const dogs = [
 
     image:
       "https://petharbor.com/get_image.asp?RES=thumb&ID=A1945866&LOCATION=LACT3",
+    status: "available",
   },
 ];
 
