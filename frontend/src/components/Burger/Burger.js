@@ -22,7 +22,7 @@ class Burger extends Component {
             <Link className="menu-item" to="/FosterDogs">
               Foster Dogs
             </Link>
-            <Link className= "menu-item" to='/ContactUs'>
+            <Link className= "menu-item" to='/Contact'>
               Contact Us
             </Link>
             <Link className= "menu-item" to='/MeetTeam'>
