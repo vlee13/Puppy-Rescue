@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import "./slideTransititions.scss";
 
-
 class transition extends Component {
   constructor(props) {
     super(props);
@@ -42,10 +41,10 @@ class transition extends Component {
                 : "right"
             }
           >
-            <Switch location={location}>
+            {/* <Switch location={location}>
               <Route path="/" exact component={Homepage} />
               <Route path="/about" exact component={Aboutpage} />
-            </Switch>
+            </Switch> */}
           </div>
         </CSSTransition>
       </TransitionGroup>
@@ -53,4 +52,4 @@ class transition extends Component {
   }
 }
 
-export default withRouter(transition);
+export default transition;

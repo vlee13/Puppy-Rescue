@@ -10,6 +10,7 @@ class FosterDog extends Component {
     showSignUp: false,
     showMenu: false,
     showDonate: false,
+    dogs: [],
   };
 
   displayNavBar = () => {
@@ -194,35 +195,55 @@ class FosterDog extends Component {
   };
 
   displayFosterDog = () => {
-    return (
-      <div>
-        <img src="" alt="fosterDogImage" className="HeroImage" />
-        <div className="textAlignedToRight">
-          <img src="" alt="logoMark" className="LogoMark" />
-          <span className="CompanyName">Dog I'm fostering now</span>
-          <h1 className="Tagline">Fred Flinston</h1>
-          <p>Votes</p>
-          <p>Started Fostering</p>
-          <p>Breed</p>
-          <p>text</p>
-          <button
-            onClick={() => {
-              this.setState({
-                showPage: false,
-                showLogIn: false,
-                showSignUp: false,
-                showNavbar: false,
-                showDonate: true,
-              });
-              console.log("Hi");
-            }}
-            className="button"
-          >
-            Share your love with Fred
-          </button>
-        </div>
-      </div>
-    );
+    return this.state.dogs
+      .filter((eachDog) => eachDog.status === "fostered")
+      .map((eachDog) => {
+        return (
+          <li key={`dog-key-${eachDog.name}`}>
+            <img src={eachDog.image} alt="dogpic" />
+            <br />
+            {eachDog.name}
+            {` #${eachDog.shelterID}`}
+            {`Location: ${eachDog.location}`}
+            <br />
+            {eachDog.description}
+            <br />
+
+            <button onClick={() => this.vote(eachDog)}>
+              {eachDog.votes.length}
+            </button>
+          </li>
+        );
+      });
+    //   return (
+    //     <div>
+    //       <img src="" alt="fosterDogImage" className="HeroImage" />
+    //       <div className="textAlignedToRight">
+    //         <img src="" alt="logoMark" className="LogoMark" />
+    //         <span className="CompanyName">Dog I'm fostering now</span>
+    //         <h1 className="Tagline">Fred Flinston</h1>
+    //         <p>Votes</p>
+    //         <p>Started Fostering</p>
+    //         <p>Breed</p>
+    //         <p>text</p>
+    //         <button
+    //           onClick={() => {
+    //             this.setState({
+    //               showPage: false,
+    //               showLogIn: false,
+    //               showSignUp: false,
+    //               showNavbar: false,
+    //               showDonate: true,
+    //             });
+    //             console.log("Hi");
+    //           }}
+    //           className="button"
+    //         >
+    //           Share your love with Fred
+    //         </button>
+    //       </div>
+    //     </div>
+    //   );
   };
 
   handleChange = (event) => {
