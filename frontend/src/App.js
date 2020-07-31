@@ -64,7 +64,7 @@ class App extends Component {
           )} 
         </nav> */}
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} setUser={this.setUser} />} />
+          <Route exact path="/home" render={(props) => <Home {...props} setUser={this.setUser} />} />
           <Route exact path="/" render={() => <MainCarrouselPage />} />
           <Route exact path="/userlogin" render={() => <UserLogIn />} />
           <Route exact path="/usersignup" render={() => <UserSignUp />} />
