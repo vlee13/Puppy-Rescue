@@ -23,10 +23,9 @@ class Vote extends Component {
   displayDogs = () => {
     return this.state.dogs.map((eachDog, i) => {
       return (
-        <li>
+        <li key={`dog-key-${i}`}>
           <img src={eachDog.image} alt="dogpic" />
           <br />
-          {/* <img src={eachDog.image} alt="dogpic" /> */}
           {eachDog.name}
           {` #${eachDog.shelterID}`}
           {`Location: ${eachDog.location}`}
