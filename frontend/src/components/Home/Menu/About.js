@@ -202,7 +202,12 @@ class About extends Component {
               foster or adopt. Our team at House of Paws has come up with a
               creative & easy-to-use platform where you can partner with us, and
               see that every shelter dog has a chance to find a safe & loving
-              home.
+              home. We hand pick 10 most “unwanted” shelter dogs by selecting
+              the oldest or those that have been at the shelter the longest. You
+              as a member gets up to 3 votes to choose which dog gets to be
+              rescued from the shelter! Every 1st of the month as long as a
+              foster is available, the shelter dog with the highest votes is
+              selected to go home to a foster and a warm bed.
             </p>
           </div>
         </div>
