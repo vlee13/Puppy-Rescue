@@ -12,8 +12,9 @@ const First = () => {
         <p className="Text">
           Not everyone who has the heart for animal welfare has the means to
           foster or adopt. Our team at House of Paws has come up with a creative
-          & easy-to-use platform where you can partner with us, and see that
-          every shelter dog has a chance to find a safe & loving home.
+          & easy-to-use platform where you can partner with us to change canine
+          lives. You get to vote which furbaby gets to go home to a safe &
+          loving home.
         </p>
         <Link to="/fosterdog">
           <button className="button">Meet Fred!</button>
