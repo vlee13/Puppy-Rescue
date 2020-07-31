@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GoogleAuth from "../../auth/GoogleAuth";
 
 class UserSignUp extends Component {
   render() {
@@ -29,6 +30,7 @@ class UserSignUp extends Component {
         <input type="text" id="fname" name="fname" value="" />
         <br />
         <button>SIGN UP</button>
+        <GoogleAuth setUser={this.props.setUser} />
         <button
           onClick={() => {
             this.setState({

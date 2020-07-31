@@ -61,7 +61,7 @@ body {
 
 /* Styles inside text-container */
 
-.LogoMark {
+#LogoMark {
   background-image: url("");
   background-color: #cccccc;
   height: 3vh;
@@ -94,7 +94,7 @@ p {
   /* display: inline-block; */
   border: none;
   padding: 1.25rem 4.25rem;
-  margin: 10vh 0;
+  margin: 7.5vh 0;
   text-decoration: none;
   background: gray;
   color: #ffffff;
@@ -122,7 +122,7 @@ p {
   transform: scale(0.99);
 }
 
-.SealLogo {
+#SealLogo {
   background-image: url("");
   background-color: #cccccc;
   height: 20vh;

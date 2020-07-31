@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 
 class UserLogIn extends Component {
   state = {};
@@ -30,6 +31,7 @@ class UserLogIn extends Component {
           <input type="password" id="fname" name="fpassword" value="" />
           <br />
           <button>LOG IN</button>
+          <GoogleAuthLogin setUser={this.props.setUser} />
           <Link to="/signup">
             <u>Don't have an account?</u>
           </Link>
