@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
-
 class Vote extends Component {
   state = {
     showNavbar: true,
@@ -11,15 +10,33 @@ class Vote extends Component {
     showMenu: false,
     dogs: [],
   };
-
-  // async componentDidMount() {
-  //   let res = await actions.getDogs();
-  //   console.log("hello", res);
-  //   this.setState({
-  //     dogs: res.data.dogs,
-  //   });
-  // }
-
+  async componentDidMount() {
+    let res = await actions.getDogs();
+    console.log("hello", res);
+    this.setState({
+      dogs: res.data.dogs,
+    });
+  }
+  displayDogs = () => {
+    return this.state.dogs.map((eachDog, i) => {
+      return (
+        <li>
+          <img src={eachDog.image} alt="dogpic" />
+          <br />
+          {/* <img src={eachDog.image} alt="dogpic" /> */}
+          {eachDog.name}
+          {` #${eachDog.shelterID}`}
+          {`Location: ${eachDog.location}`}
+          <br />
+          {eachDog.description}
+          <br />
+          <button onClick={() => this.vote(eachDog, i)}>
+            {eachDog.votes.length}
+          </button>
+        </li>
+      );
+    });
+  };
   displayNavBar = () => {
     return (
       <div>
@@ -50,11 +67,10 @@ class Vote extends Component {
       </div>
     );
   };
-
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -63,7 +79,7 @@ class Vote extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
         <Link to="/">
           <div>Home</div>
@@ -74,7 +90,7 @@ class Vote extends Component {
         <Link to="/fosterdog">
           <div>The dog I'm fostering now</div>
         </Link>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -83,7 +99,7 @@ class Vote extends Component {
           }
         >
           Vote for the next dog I'll foster
-        </button>
+        </Link>
         <Link to="/helpothers">
           <div>Help other organizations</div>
         </Link>
@@ -101,7 +117,6 @@ class Vote extends Component {
       </div>
     );
   };
-
   displayLogIn = () => {
     return (
       <div>
@@ -138,7 +153,6 @@ class Vote extends Component {
           <Link>Forgot your password?</Link>
           <input type="password" id="fname" name="fpassword" value="" />
           <br />
-<<<<<<< HEAD
           <button>LOG IN</button>
           <button
             onClick={() => {
@@ -156,7 +170,6 @@ class Vote extends Component {
       </div>
     );
   };
-
   displaySignUp = () => {
     return (
       <div>
@@ -201,7 +214,6 @@ class Vote extends Component {
       </div>
     );
   };
-
   displayHeader = () => {
     return (
       <div>
@@ -211,28 +223,45 @@ class Vote extends Component {
       </div>
     );
   };
-  displayDogs = () => {
-    return (
-      <div>
-        <p>I'm waiting for the 10 dogs from Database</p>
-      </div>
-    );
-    //   return this.state.dogs.map((eachDog) => {
-    //     return (
-    //       <div>
-    //         <img src={eachDog.image} alt="dogpic" className="dogToFoster" />
-    //         <br />
-    //         <h1>{eachDog.name}</h1>
-    //         <div>votes</div>
-    //         <ul>{`Shelter Id: ${eachDog.shelterID}`}</ul>
-    //         <ul>{`Age: ${eachDog.age}`}</ul>
-    //         <ul>{`Weight: ${eachDog.weight}`}</ul>
-    //         <p>{eachDog.description}</p>
-    //       </div>
-    //     );
-    //   });
+  // displayDogs = () => {
+  //   return (
+  //     <div>
+  //       <p>I'm waiting for the 10 dogs from Database</p>
+  //     </div>
+  //   );
+  //   return this.state.dogs.map((eachDog) => {
+  //     return (
+  //       <div>
+  //         <img src={eachDog.image} alt="dogpic" className="dogToFoster" />
+  //         <br />
+  //         <h1>{eachDog.name}</h1>
+  //         <div>votes</div>
+  //         <ul>{`Shelter Id: ${eachDog.shelterID}`}</ul>
+  //         <ul>{`Age: ${eachDog.age}`}</ul>
+  //         <ul>{`Weight: ${eachDog.weight}`}</ul>
+  //         <p>{eachDog.description}</p>
+  //       </div>
+  //     );
+  //   });
+  // };
+  vote = (eachDog, i) => {
+    actions
+      .vote(eachDog)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.error) {
+          let newDogs = [...this.state.dogs];
+          newDogs[i].votes.push(res.data.user._id);
+          this.setState({
+            dogs: newDogs,
+          });
+        } else {
+          alert(res.data.error);
+        }
+      })
+      .catch((err) => console.error(err));
+    console.log(eachDog);
   };
-
   render() {
     return (
       <div>
@@ -248,19 +277,6 @@ class Vote extends Component {
           : ""}
       </div>
     );
-=======
-          {`Weight: ${eachDog.weight}`}
-          <br />
-          {eachDog.description}
-        </li>
-      );
-    });
-  };
-
-  render() {
-    return <div>{this.displayDogs()}</div>;
->>>>>>> 1a85638ab6f9693150b88992565f4018e92b7c6e
   }
 }
-
 export default Vote;

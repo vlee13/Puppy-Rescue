@@ -46,7 +46,7 @@ class FosterDog extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -55,7 +55,7 @@ class FosterDog extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
         <Link to="/">
           <div>Home</div>
@@ -63,7 +63,7 @@ class FosterDog extends Component {
         <Link to="/about">
           <div>About</div>
         </Link>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -72,7 +72,7 @@ class FosterDog extends Component {
           }
         >
           The dog I'm fostering now
-        </button>
+        </Link>
         <Link to="/vote">
           <div>Vote for the next dog I'll foster</div>
         </Link>

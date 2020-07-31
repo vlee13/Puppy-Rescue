@@ -45,7 +45,7 @@ class MeetTeam extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -54,7 +54,7 @@ class MeetTeam extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
         <Link to="/">
           <div>Home</div>
@@ -76,7 +76,7 @@ class MeetTeam extends Component {
             Play our 90's inspired game <i>Dog Zoey in Space</i>
           </div>
         </Link>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -85,7 +85,7 @@ class MeetTeam extends Component {
           }
         >
           Meet the team
-        </button>
+        </Link>
         <Link to="/contactus">
           <div>Contact us</div>
         </Link>
