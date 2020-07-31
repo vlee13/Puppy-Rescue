@@ -17,6 +17,7 @@ class Vote extends Component {
       dogs: res.data.dogs,
     });
   }
+
   displayDogs = () => {
     return this.state.dogs.map((eachDog, i) => {
       return (
@@ -37,6 +38,7 @@ class Vote extends Component {
       );
     });
   };
+
   displayNavBar = () => {
     return (
       <div>
@@ -67,6 +69,7 @@ class Vote extends Component {
       </div>
     );
   };
+
   displayMenu = () => {
     return (
       <div>
@@ -117,6 +120,7 @@ class Vote extends Component {
       </div>
     );
   };
+
   displayLogIn = () => {
     return (
       <div>
@@ -170,6 +174,7 @@ class Vote extends Component {
       </div>
     );
   };
+
   displaySignUp = () => {
     return (
       <div>
@@ -214,6 +219,7 @@ class Vote extends Component {
       </div>
     );
   };
+  
   displayHeader = () => {
     return (
       <div>
@@ -223,6 +229,7 @@ class Vote extends Component {
       </div>
     );
   };
+  
   // displayDogs = () => {
   //   return (
   //     <div>
@@ -244,6 +251,7 @@ class Vote extends Component {
   //     );
   //   });
   // };
+
   vote = (eachDog, i) => {
     actions
       .vote(eachDog)
