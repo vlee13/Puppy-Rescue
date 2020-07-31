@@ -6,9 +6,7 @@ import LogIn from "./components/auth/LogIn";
 import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
-
 import Contact from "./components/ContactUs/ContactUs";
-//import MeetTheTeam from "./components/meettheteam/meettheteam";
 import { TransitionGroup, CSSTransition} from "react-transition-group";
 import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
 import MainCarrouselPage from "./components/Home/Carrousel/MainCarrouselPage";
