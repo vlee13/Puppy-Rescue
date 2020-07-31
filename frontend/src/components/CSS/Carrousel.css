@@ -55,7 +55,7 @@ body {
 
 .CarrouselText {
   width: 45vw;
-  margin: 12.5vh 5vw 5vh 5vw;
+  margin: 17.5vh 5vw 5vh 5vw;
   text-align: left;
 }
 
@@ -94,7 +94,7 @@ p {
   /* display: inline-block; */
   border: none;
   padding: 1.25rem 4.25rem;
-  margin: 5vh 0;
+  margin: 10vh 0;
   text-decoration: none;
   background: gray;
   color: #ffffff;
