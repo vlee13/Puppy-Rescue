@@ -24,7 +24,7 @@ body {
 .head {
 	text-align: center;
 	h1 {
-		font-weight: 400 ;
+		font-weight: 400;
 		position: relative;
 		&:before, &:after {
 			content: "";
@@ -96,7 +96,7 @@ body {
 	}
 	
          
-	&:hover {
+	& :hover {
 		.content {
 			opacity: 1;
 			li {
