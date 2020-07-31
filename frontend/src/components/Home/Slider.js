@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import actions from "../../services/index";
-import Burger from "../Burger/Burger";
+// import Burger from "../Burger/Burger";
 import SignUp from "../auth/SignUp";
 import LogIn from "../auth/LogIn";
+import MainCarrousel from "./Carrousel/MainCarrouselPage";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -24,7 +25,7 @@ class Home extends Component {
     }
   };
   next = (dir) => {
-    console.log(dir)
+    console.log(dir);
     this.setState(
       {
         axis: dir,
@@ -33,7 +34,7 @@ class Home extends Component {
     );
   };
   prev = (dir) => {
-    console.log(dir)
+    console.log(dir);
     this.setState(
       {
         axis: dir,
@@ -43,10 +44,11 @@ class Home extends Component {
   };
 
   slide = (i) => {
-    this.forceUpdate()
-    document.querySelectorAll(".slider-wrapper")[0].style.height = window.height
+    this.forceUpdate();
+    document.querySelectorAll(".slider-wrapper")[0].style.height =
+      window.height;
 
-   console.log( document.querySelectorAll(".slider-wrapper")[0].style.height )
+    console.log(document.querySelectorAll(".slider-wrapper")[0].style.height);
     this.setState((state) => ({
       currentSlide: state.currentSlide + i,
     }));
@@ -54,48 +56,29 @@ class Home extends Component {
   render() {
     return (
       <div style={{ height: "80vh" }}>
-        <Burger />
+        {/* <Burger /> */}
 
         <Carousel
           axis={this.state.axis}
           onChange={this.updateCurrentSlide}
+          autoPlay
+          infiniteLoop
           selectedItem={this.state.currentSlide}
           {...this.props}
         >
-          <div style={{ height: "100vh", background: "green" }}>
-            <SignUp {...this.props} />
+          <div style={{ height: "100vh", background: "white" }}>
+            <MainCarrousel {...this.props} />
             <p className="signup">Legend 1</p>
-
-            <button classname="btn" onClick={() => this.next("horizontal")}>
-              Right
-            </button>
           </div>
           <div style={{ height: "100vh", background: "salmon" }}>
             <LogIn {...this.props} />
             <p className="login">Legend 2</p>
-            <button classname="btn" onClick={() => this.prev("horizontal")}>
-              Left
-            </button>
-
-            <button classname="btn" onClick={() => this.next("vertical")}>
-              Down
-            </button>
           </div>
           <div style={{ height: "100vh", background: "purple" }}>
-             <p>Legend 3 </p>
-             <button classname="btn" onClick={() => this.prev("vertical")}>
-              Up
-            </button>
-            <button classname="btn" onClick={() => this.next("horizontal")}>
-              Right
-            </button>
-          
+            <p>Legend 3 </p>
           </div>
           <div style={{ height: "100vh", background: "yellow" }}>
-          <p>Legend 4</p>
-          <button classname="btn" onClick={() => this.prev("horizontal")}>
-              Left
-            </button>
+            <p>Legend 4</p>
           </div>
           {/* <div>
                     <img src="assets/3.jpeg" />

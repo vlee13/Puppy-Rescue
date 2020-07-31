@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../CSS/Carrousel.css";
 
 const First = () => {
   return (
-    <div>
-      <img src="" alt="HeroImage" className="CarrouselImage" />
-      <div>
-        <img src="" alt="logoMark" className="LogoMark" />
-        <span className="CompanyName">Valerie's Foster Dog</span>
+    <div className="CarrouselContainer">
+      <img className="CarrouselImage" />
+      <div className="CarrouselText">
+        <img className="LogoMark" />
+        <span className="CompanyName">House of Paws</span>
         <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
         <p className="Text">
           Not everyone who has the heart for animal welfare has the means to
@@ -19,7 +20,8 @@ const First = () => {
         <Link to="/fosterdog">
           <button className="button">Meet Fred!</button>
         </Link>
-        <img src="" alt="SealLogo" className="SealLogo" />
+        <br />
+        <img className="SealLogo" />
       </div>
     </div>
   );
