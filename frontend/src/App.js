@@ -8,6 +8,9 @@ import actions from "./services/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import {Switch, BrowserRouter, Route, NavLink} from 'react-router-dom';
+import Contact from "./components/ContactUs/ContactUs";
+import MeetTheTeam from "./components/meettheteam/meettheteam";
+import { TransitionGroup, CSSTransition} from "react-transition-group";
 
 class App extends Component {
   state = {};
@@ -47,7 +50,7 @@ class App extends Component {
           )}
         </nav>
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/" render={(props) => <Home {...props} setUser={this.setUser} />} />
           <Route
             exact
             path="/sign-up"
@@ -62,6 +65,16 @@ class App extends Component {
             exact
             path="/profile"
             render={(props) => <Profile {...props} user={this.state} />}
+          />
+          <Route
+            exact
+            path="/contact"
+            render={(props) => <Contact {...props} user={this.state} />}
+          />
+          <Route
+            exact
+            path="/meetteam"
+            render={(props) => <MeetTheTeam {...props} user={this.state} />}
           />
 
           <Route component={NotFound} />
