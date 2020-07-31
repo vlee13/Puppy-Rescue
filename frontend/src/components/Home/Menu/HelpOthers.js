@@ -54,7 +54,7 @@ class HelpOthers extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -63,7 +63,7 @@ class HelpOthers extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
         <Link to="/">
           <div>Home</div>
@@ -77,7 +77,7 @@ class HelpOthers extends Component {
         <Link to="/vote">
           <div>Vote for the next dog I'll foster</div>
         </Link>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -86,7 +86,7 @@ class HelpOthers extends Component {
           }
         >
           Help other organizations
-        </button>
+        </Link>
         <Link to="/game">
           <div>
             Play our 90's inspired game <i>Dog Zoey in Space</i>

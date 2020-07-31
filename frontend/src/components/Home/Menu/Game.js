@@ -44,7 +44,7 @@ class Game extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -53,9 +53,9 @@ class Game extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -64,7 +64,7 @@ class Game extends Component {
           }
         >
           Home
-        </button>
+        </Link>
         <Link to="/about">
           <div>About</div>
         </Link>

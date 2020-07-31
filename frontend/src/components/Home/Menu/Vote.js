@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
-
 class Vote extends Component {
   state = {
     showNavbar: true,
@@ -11,7 +10,6 @@ class Vote extends Component {
     showMenu: false,
     dogs: [],
   };
-
   async componentDidMount() {
     let res = await actions.getDogs();
     console.log("hello", res);
@@ -77,7 +75,7 @@ class Vote extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -86,7 +84,7 @@ class Vote extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
         <Link to="/">
           <div>Home</div>
@@ -97,7 +95,7 @@ class Vote extends Component {
         <Link to="/fosterdog">
           <div>The dog I'm fostering now</div>
         </Link>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -106,7 +104,7 @@ class Vote extends Component {
           }
         >
           Vote for the next dog I'll foster
-        </button>
+        </Link>
         <Link to="/helpothers">
           <div>Help other organizations</div>
         </Link>
@@ -161,7 +159,6 @@ class Vote extends Component {
           <Link>Forgot your password?</Link>
           <input type="password" id="fname" name="fpassword" value="" />
           <br />
-
           <button>LOG IN</button>
           <button
             onClick={() => {
@@ -235,6 +232,28 @@ class Vote extends Component {
     );
   };
 
+  // displayDogs = () => {
+  //   return (
+  //     <div>
+  //       <p>I'm waiting for the 10 dogs from Database</p>
+  //     </div>
+  //   );
+  //   return this.state.dogs.map((eachDog) => {
+  //     return (
+  //       <div>
+  //         <img src={eachDog.image} alt="dogpic" className="dogToFoster" />
+  //         <br />
+  //         <h1>{eachDog.name}</h1>
+  //         <div>votes</div>
+  //         <ul>{`Shelter Id: ${eachDog.shelterID}`}</ul>
+  //         <ul>{`Age: ${eachDog.age}`}</ul>
+  //         <ul>{`Weight: ${eachDog.weight}`}</ul>
+  //         <p>{eachDog.description}</p>
+  //       </div>
+  //     );
+  //   });
+  // };
+
   vote = (eachDog, i) => {
     actions
       .vote(eachDog)
@@ -253,7 +272,6 @@ class Vote extends Component {
       .catch((err) => console.error(err));
     console.log(eachDog);
   };
-
   render() {
     return (
       <div>
@@ -271,5 +289,4 @@ class Vote extends Component {
     );
   }
 }
-
 export default Vote;

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import First from "./First.js";
-import Second from "./Second.js";
-import Third from "./Third.js";
+import "../../CSS/Carrousel.css";
 import Menu from "../Menu/MenuMainPage";
 import UserLogIn from "../LogIn/UserLogIn";
 
@@ -17,20 +15,22 @@ class MainCarrouselPage extends Component {
 
   displayNavBar = () => {
     return (
-      <div>
+      <div className="NavigationBar">
         <button
+          className="NavigationBarButton"
           onClick={(event) => {
             event.preventDefault();
-            this.setState({
-              showLogIn: true,
-              showPage: false,
-              showNavbar: false,
-            });
+            // this.setState({
+            //   showLogIn: true,
+            //   showPage: false,
+            //   showNavbar: false,
+            // });
           }}
         >
-          Log in
+          <Link to="/userlogin">Log in</Link>
         </button>
         <button
+          className="NavigationBarButton"
           onClick={(event) => {
             event.preventDefault();
             this.setState({
@@ -49,7 +49,7 @@ class MainCarrouselPage extends Component {
   displayMenu = () => {
     return (
       <div>
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -58,9 +58,9 @@ class MainCarrouselPage extends Component {
           }
         >
           X
-        </button>
+        </Link>
         <br />
-        <button
+        <Link
           onClick={() =>
             this.setState({
               showMenu: false,
@@ -69,7 +69,7 @@ class MainCarrouselPage extends Component {
           }
         >
           Home
-        </button>
+        </Link>
         <Link to="/about">
           <div>About</div>
         </Link>
@@ -196,6 +196,32 @@ class MainCarrouselPage extends Component {
     );
   };
 
+  displayFirst = () => {
+    return (
+      <div className="CarrouselContainer">
+        <img className="CarrouselImage" />
+        <div className="CarrouselText">
+          <img id="LogoMark" />
+          <span className="CompanyName">House of Paws</span>
+          <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
+          <p className="Text">
+            Not everyone who has the heart for animal welfare has the means to
+            foster or adopt. Our team at House of Paws has come up with a
+            creative & easy-to-use platform where you can partner with us to
+            change canine lives. You get to vote which furbaby gets to go home
+            to a safe & loving home.
+          </p>
+          <Link to="/fosterdog">
+            <button className="CarrouselButton">
+              SHARE YOUR LOVE WITH FRED
+            </button>
+          </Link>
+        </div>
+        <img id="SealLogo" />
+      </div>
+    );
+  };
+
   render() {
     return (
       <div>
@@ -203,13 +229,9 @@ class MainCarrouselPage extends Component {
         {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
         {this.state.showSignUp ? this.displaySignUp() : ""}
         {this.state.showMenu & !this.state.showLogIn ? this.displayMenu() : ""}
-        {!this.state.showLogIn &
-        !this.state.showMenu &
-        !this.state.showSignUp ? (
-          <First />
-        ) : (
-          ""
-        )}
+        {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
+          ? this.displayFirst()
+          : ""}
       </div>
     );
   }
