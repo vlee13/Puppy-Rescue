@@ -3,6 +3,7 @@ import actions from "../../services/index";
 import Burger from "../Burger/Burger";
 import SignUp from "../auth/SignUp";
 import LogIn from "../auth/LogIn";
+import MainCarrousel from "./Carrousel/MainCarrouselPage";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -59,43 +60,33 @@ class Home extends Component {
         <Carousel
           axis={this.state.axis}
           onChange={this.updateCurrentSlide}
+          autoPlay
+          infiniteLoop
           selectedItem={this.state.currentSlide}
           {...this.props}
         >
           <div style={{ height: "100vh", background: "green" }}>
-            <SignUp {...this.props} />
+            <MainCarrousel {...this.props} />
             <p className="signup">Legend 1</p>
 
-            <button classname="btn" onClick={() => this.next("horizontal")}>
-              Right
-            </button>
+            
           </div>
           <div style={{ height: "100vh", background: "salmon" }}>
             <LogIn {...this.props} />
             <p className="login">Legend 2</p>
-            <button classname="btn" onClick={() => this.prev("horizontal")}>
-              Left
-            </button>
 
-            <button classname="btn" onClick={() => this.next("vertical")}>
-              Down
-            </button>
+          
+
+      
           </div>
           <div style={{ height: "100vh", background: "purple" }}>
              <p>Legend 3 </p>
-             <button classname="btn" onClick={() => this.prev("vertical")}>
-              Up
-            </button>
-            <button classname="btn" onClick={() => this.next("horizontal")}>
-              Right
-            </button>
+            
           
           </div>
           <div style={{ height: "100vh", background: "yellow" }}>
           <p>Legend 4</p>
-          <button classname="btn" onClick={() => this.prev("horizontal")}>
-              Left
-            </button>
+          
           </div>
           {/* <div>
                     <img src="assets/3.jpeg" />
