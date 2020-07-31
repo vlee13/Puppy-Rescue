@@ -20,14 +20,14 @@ class MainCarrouselPage extends Component {
           className="NavigationBarButton"
           onClick={(event) => {
             event.preventDefault();
-            this.setState({
-              showLogIn: true,
-              showPage: false,
-              showNavbar: false,
-            });
+            // this.setState({
+            //   showLogIn: true,
+            //   showPage: false,
+            //   showNavbar: false,
+            // });
           }}
         >
-          Log in
+          <Link to="/userlogin">Log in</Link>
         </button>
         <button
           className="NavigationBarButton"
@@ -201,7 +201,7 @@ class MainCarrouselPage extends Component {
       <div className="CarrouselContainer">
         <img className="CarrouselImage" />
         <div className="CarrouselText">
-          <img className="LogoMark" />
+          <img id="LogoMark" />
           <span className="CompanyName">House of Paws</span>
           <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
           <p className="Text">
@@ -217,7 +217,7 @@ class MainCarrouselPage extends Component {
             </button>
           </Link>
         </div>
-        <img className="SealLogo" />
+        <img id="SealLogo" />
       </div>
     );
   };

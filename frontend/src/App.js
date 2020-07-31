@@ -22,6 +22,8 @@ import Game from "./components/Home/Menu/Game";
 import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AddDog from "./components/AddDog/AddDog";
+import Slider from "./components/Home/Slider";
+
 class App extends Component {
   state = {};
   async componentDidMount() {
@@ -56,14 +58,26 @@ class App extends Component {
           )} 
         </nav> */}
         <Switch>
-          {/* <Route
+          <Route
             exact
-            path="/"
+            path="/home"
             render={(props) => <Home {...props} setUser={this.setUser} />}
-          /> */}
-          <Route exact path="/" render={() => <MainCarrouselPage />} />
-          <Route exact path="/userlogin" render={() => <UserLogIn />} />
-          <Route exact path="/usersignup" render={() => <UserSignUp />} />
+          />
+          <Route exact path="/" render={() => <Slider />} />
+          <Route
+            exact
+            path="/userlogin"
+            render={() => (
+              <UserLogIn setUser={this.setUser} user={this.state} />
+            )}
+          />
+          <Route
+            exact
+            path="/usersignup"
+            render={() => (
+              <UserSignUp setUser={this.setUser} user={this.state} />
+            )}
+          />
           <Route exact path="/userdonate" render={() => <UserDonate />} />
           <Route exact path="/menu" render={() => <MenuMainPage />} />
           <Route exact path="/about" render={() => <About />} />
@@ -74,6 +88,8 @@ class App extends Component {
           <Route exact path="/meetteam" render={() => <MeetTeam />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
           <Route exact path="/addDog" render={() => <AddDog />} />
+          <Route exact path="/slider" render={() => <Slider />} />
+
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
             exact
@@ -102,8 +118,8 @@ class App extends Component {
           />
           <Route component={NotFound} /> */}
         </Switch>
-        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
+        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
       </BrowserRouter>
     );
   }
