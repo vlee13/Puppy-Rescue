@@ -8,7 +8,7 @@ const groups = [
       "They bring animals who are suffering–often from abuse, neglect, or injuries–off the streets and provide medical care. They also work to find forever homes for these animals. If you haven’t seen what they do yet, watch some of their videos and bring some tissues because you’ll probably break down in tears.",
 
     image:
-      "https://d3n8a8pro7vhmx.cloudfront.net/themes/5cd27e6645de94f7c68fde1c/attachments/original/1560403822/about_logo.jpg?1560403822",
+      "https://d3n8a8pro7vhmx.cloudfront.net/hopeforpaws/pages/2180/attachments/original/1595004314/id_3413023_1.jpg?1595004314",
   },
   {
     name: "A Purposeful Rescue",

@@ -14,6 +14,18 @@ router.get("/dogs", (req, res, next) => {
   });
 });
 
+router.get("/foster", (req, res, next) => {
+  Dog.find().then((fosterdog) => {
+    res.json({ fosterdog });
+  });
+});
+
+router.get("/adopted", (req, res, next) => {
+  Dog.find().then((adopted) => {
+    res.json({ adopted });
+  });
+});
+
 router.get("/helpothers", (req, res, next) => {
   Org.find().then((groups) => {
     console.log(groups);
