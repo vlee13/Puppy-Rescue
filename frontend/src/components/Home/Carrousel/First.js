@@ -10,13 +10,20 @@ const First = () => {
         <img className="LogoMark" />
         <span className="CompanyName">House of Paws</span>
         <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
-        <p className="Text">
-          Not everyone who has the heart for animal welfare has the means to
-          foster or adopt. Our team at House of Paws has come up with a creative
-          & easy-to-use platform where you can partner with us to change canine
-          lives. You get to vote which furbaby gets to go home to a safe &
-          loving home.
-        </p>
+        <div className="Text">
+          <p>
+            In the U.S. alone, about 3.3 milion canines enter the shelters every
+            YEAR. A lot of these shelters simply don't have the space to hold
+            all the animals and as a result, dogs live in cramped cages every
+            single day, and about 670,000 dogs are euthanized.
+          </p>
+          <p>
+            We know these facts can be daunting and it can make you question
+            where to even start. That's exactly why House of Paws was initiated
+            so EVERYONE can easily and actively participate in saving these
+            canines, one angel baby at a time.{" "}
+          </p>
+        </div>
         <Link to="/fosterdog">
           <button className="button">Meet Fred!</button>
         </Link>

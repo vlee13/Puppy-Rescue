@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import actions from "../../../services/index.js";
 
 class FosterDog extends Component {
   state = {
@@ -11,6 +12,69 @@ class FosterDog extends Component {
     showMenu: false,
     showDonate: false,
     dogs: [],
+  };
+
+  async componentDidMount() {
+    let res = await actions.fosterDog();
+    console.log("hello", res);
+    this.setState({
+      dogs: res.data.dogs,
+    });
+  }
+
+  displayFosterDog = () => {
+    console.log("display dogs", this.state.dogs);
+    return this.state.dogs
+      .filter((eachDog) => eachDog.status === "fostered")
+      .map((eachDog) => {
+        return (
+          <div>
+            <div className="CompanyName">
+              <h1>You voted, we listened!</h1>
+              <p>Text here about fostering</p>
+            </div>
+            <div key={`dog-key-${eachDog.name}`}>
+              <img src={eachDog.image} alt="fosterdogpic" />
+              <br />
+              <h1>{eachDog.name}</h1>
+              <br />
+              <p>{eachDog.votes}</p>
+
+              <br />
+              <p>About Fred Flinstone</p>
+            </div>
+          </div>
+        );
+      });
+    //   return (
+    //     <div>
+    //       <img src="" alt="fosterDogImage" className="HeroImage" />
+    //       <div className="textAlignedToRight">
+    //         <img src="" alt="logoMark" className="LogoMark" />
+    //         <h1 className="Tagline">Fred Flinston</h1>
+    //         <span className="CompanyName">Dog I'm fostering now</span>
+    //         <p>Votes</p>
+    //         <p>Started Fostering</p>
+    //         <p>Breed</p>
+    //         <p>text</p>
+    //         <button
+    //           onClick={() => {
+    //             this.setState({
+    //               showPage: false,
+    //               showLogIn: false,
+    //               showSignUp: false,
+    //               showNavbar: false,
+    //               showDonate: true,
+    //             });
+    //             console.log("Hi");
+    //           }}
+    //           className="button"
+    //         >
+    //           Share your love with Fred
+    //         </button>
+    //       </div>
+    //     </div>
+    //   );
   };
 
   displayNavBar = () => {
@@ -192,58 +256,6 @@ class FosterDog extends Component {
         </button>
       </div>
     );
-  };
-
-  displayFosterDog = () => {
-    return this.state.dogs
-      .filter((eachDog) => eachDog.status === "fostered")
-      .map((eachDog) => {
-        return (
-          <li key={`dog-key-${eachDog.name}`}>
-            <img src={eachDog.image} alt="dogpic" />
-            <br />
-            {eachDog.name}
-            {` #${eachDog.shelterID}`}
-            {`Location: ${eachDog.location}`}
-            <br />
-            {/* {eachDog.description}
-            <br /> */}
-
-            <button onClick={() => this.vote(eachDog)}>
-              {eachDog.votes.length}
-            </button>
-          </li>
-        );
-      });
-    //   return (
-    //     <div>
-    //       <img src="" alt="fosterDogImage" className="HeroImage" />
-    //       <div className="textAlignedToRight">
-    //         <img src="" alt="logoMark" className="LogoMark" />
-    //         <span className="CompanyName">Dog I'm fostering now</span>
-    //         <h1 className="Tagline">Fred Flinston</h1>
-    //         <p>Votes</p>
-    //         <p>Started Fostering</p>
-    //         <p>Breed</p>
-    //         <p>text</p>
-    //         <button
-    //           onClick={() => {
-    //             this.setState({
-    //               showPage: false,
-    //               showLogIn: false,
-    //               showSignUp: false,
-    //               showNavbar: false,
-    //               showDonate: true,
-    //             });
-    //             console.log("Hi");
-    //           }}
-    //           className="button"
-    //         >
-    //           Share your love with Fred
-    //         </button>
-    //       </div>
-    //     </div>
-    //   );
   };
 
   handleChange = (event) => {

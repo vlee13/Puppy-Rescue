@@ -24,6 +24,12 @@ const actions = {
   getDogs: async () => {
     return await service.get("/dogs");
   },
+  fosterDog: async () => {
+    return await service.get("/foster");
+  },
+  adoptedDogs: async () => {
+    return await service.get("/adopted");
+  },
   addDog: async (dog) => {
     return await service.post("/addDogs", dog);
   },

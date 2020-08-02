@@ -43,10 +43,17 @@ class AddDog extends Component {
             onChange={this.handleChange}
           />
           <input
+            name="descripton"
+            placeholder="Description"
+            type="text"
+            onChange={this.handleChange}
+          />
+          <input
             name="status"
             placeholder="Status"
             onChange={this.handleChange}
           />
+
           <input name="image" placeholder="Image" type="file" />
           <button>Save</button>
         </form>

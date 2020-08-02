@@ -203,14 +203,22 @@ class About extends Component {
               creative & easy-to-use platform where you can partner with us, and
               see that every shelter dog has a chance to find a safe & loving
               home.
-              <p>
-                We hand pick 10 most “unwanted” shelter dogs by selecting the
-                oldest or those that have been at the shelter the longest. You
-                as a member gets up to 3 votes to choose which dog gets to be
-                rescued from the shelter! Every 1st of the month as long as a
-                foster is available, the shelter dog with the highest votes is
-                selected to go home to a foster and a warm bed.
-              </p>
+            </p>
+            <br />
+            <p>
+              We hand pick 10 most “unwanted” shelter dogs by selecting the
+              oldest or those that have been at the shelter the longest. You as
+              a member gets up to 3 votes to choose which dog gets to be rescued
+              from the shelter! Every 1st of the month as long as a foster is
+              available, the shelter dog with the highest votes is selected to
+              go home to a foster and a warm bed.
+            </p>
+            <p>
+              It's about helping animals that have been neglected and abandoned,
+              particularly the ones who have been living in shelters for long
+              periods of time or simply too old to be adopted easily. ***I will
+              clean this up more later. I would actually like to keep this one
+              section***{" "}
             </p>
           </div>
         </div>
@@ -221,7 +229,7 @@ class About extends Component {
               Donations will go directly towards the care and wellbeing of the
               foster dogs including: doctor’s bills, any medications needed, any
               grooming needed, food, treats, toys, collar, leash, food/water
-              bowl, a bed, etc. All update details will be provided in biweekly
+              bowl, a bed, etc. All update details will be provided in monthly
               membership newsletters.{" "}
             </p>
             <Link to="/fosterdog">
