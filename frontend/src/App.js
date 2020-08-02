@@ -24,6 +24,7 @@ import ContactUs from "./components/Home/Menu/ContactUs";
 import AddDog from "./components/AddDog/AddDog";
 import Slider from "./components/Home/Slider";
 
+
 class App extends Component {
   state = {};
   async componentDidMount() {
@@ -89,6 +90,7 @@ class App extends Component {
           <Route exact path="/contactus" render={() => <ContactUs />} />
           <Route exact path="/addDog" render={() => <AddDog />} />
           <Route exact path="/slider" render={() => <Slider />} />
+          
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route

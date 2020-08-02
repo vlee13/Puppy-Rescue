@@ -28,6 +28,9 @@ const MenuMainPage = () => {
       <Link to="/contactus">
         <div>Contact us</div>
       </Link>
+      <Link to="/userdonate">
+        <div>Donate here</div>
+      </Link>
     </div>
   );
 };
