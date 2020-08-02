@@ -60,9 +60,68 @@ class UserDonate extends Component {
     <label>State</label>
     <input type="text" />
     </div>
+    <div class="input-group-3">
+    <label>Zip Code</label>
+    <input type="text" />
+    </div>
+    <div class="clearfix">
+    <button class="back" type="button">Back
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <button class="next" type="button">Next</button>
+  </div>
+  <div class="contact-info">
+  <h2>Payment Information</h2>
+  <div class="input-group-1">
+    <label>Card Number</label>
+    <input type="text" />
+    </div>
     
+    <div class="input-group-2">
+    <label>Expiration Date</label>
+    <input type="text" />
+    </div>
+    <div class="input-group-2">
+    <label>Security Code (CVV)</label>
+    <input type="text" />
+    </div>
+    <div class="input-group-1">
+    <label>Employer</label>
+    <input type="text" />
+    </div>
+    <div class="input-group-1">
+    <label>Occupation</label>
+    <input type="text" />
+    </div>
     
+    <button class="back" type="button">Back
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     
+    </div>
+    <button class="next" type="button">Review</button>
+    <div class="check">
+  <span></span>
+  <div class="mask">
+  </div>
+  <span></span>
+</div>
+<span class="message">Processing</span>
+
+<section id="check">
+  <h2>Confirm Payment</h2>
+  <p>Please confirm your contribution of</p>
+  <span>$8888</span>
+  <button class="next" type="button">Confirm</button>
+</section>
+<section id="confirm">
+  <h2>Thank You!</h2>
+  <p>Your <span class="amount">$25</span> donation will help us reach <strong>570</strong>!</p>
+</section>
   
 
 </div>
