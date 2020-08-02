@@ -21,8 +21,8 @@ router.get("/foster", (req, res, next) => {
 });
 
 router.get("/adopted", (req, res, next) => {
-  Dog.find().then((adopted) => {
-    res.json({ adopted });
+  Dog.find().then((adoptees) => {
+    res.json({ adoptees });
   });
 });
 
@@ -57,6 +57,7 @@ router.post("/vote", isAuth, (req, res, next) => {
 });
 
 router.post("/addDogs", (req, res, next) => {
+  console.log(req.body, "here");
   Dog.create(req.body).then((newdog) => {
     res.json({ newdog });
   });

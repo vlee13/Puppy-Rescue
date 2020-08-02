@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
+import Menu from "./Menu";
 
 class FosterDog extends Component {
   state = {
@@ -11,28 +12,27 @@ class FosterDog extends Component {
     showSignUp: false,
     showMenu: false,
     showDonate: false,
-    dogs: [],
+    fosterdog: [],
+    isAdmin: false,
   };
 
   async componentDidMount() {
     let res = await actions.fosterDog();
-    console.log("hello", res);
+    let user = await actions.isLoggedIn();
+
+    console.log("user", user);
     this.setState({
-      dogs: res.data.dogs,
+      fosterdog: res.data.fosterdog,
+      isAdmin: user.data.role === "admin",
     });
   }
 
   displayFosterDog = () => {
-    console.log("display dogs", this.state.dogs);
-    return this.state.dogs
+    return this.state.fosterdog
       .filter((eachDog) => eachDog.status === "fostered")
       .map((eachDog) => {
         return (
           <div>
-            <div className="CompanyName">
-              <h1>You voted, we listened!</h1>
-              <p>Text here about fostering</p>
-            </div>
             <div key={`dog-key-${eachDog.name}`}>
               <img src={eachDog.image} alt="fosterdogpic" />
               <br />
@@ -108,56 +108,63 @@ class FosterDog extends Component {
     );
   };
 
-  displayMenu = () => {
-    return (
-      <div>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          X
-        </Link>
-        <br />
-        <Link to="/">
-          <div>Home</div>
-        </Link>
-        <Link to="/about">
-          <div>About</div>
-        </Link>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          The dog I'm fostering now
-        </Link>
-        <Link to="/vote">
-          <div>Vote for the next dog I'll foster</div>
-        </Link>
-        <Link to="/helpothers">
-          <div>Help other organizations</div>
-        </Link>
-        <Link to="/game">
-          <div>
-            Play our 90's inspired game <i>Dog Zoey in Space</i>
-          </div>
-        </Link>
-        <Link to="/meetteam">
-          <div>Meet the team</div>
-        </Link>
-        <Link to="/contactus">
-          <div>Contact us</div>
-        </Link>
-      </div>
-    );
+  toggleMenu = () => {
+    return this.setState({
+      showMenu: false,
+      showNavbar: true,
+    });
   };
+
+  // displayMenu = () => {
+  //   return (
+  //     <div>
+  //       <Link
+  //         onClick={() =>
+  //           this.setState({
+  //             showMenu: false,
+  //             showNavbar: true,
+  //           })
+  //         }
+  //       >
+  //         X
+  //       </Link>
+  //       <br />
+  //       <Link to="/">
+  //         <div>Home</div>
+  //       </Link>
+  //       <Link to="/about">
+  //         <div>About</div>
+  //       </Link>
+  //       <Link
+  //         onClick={() =>
+  //           this.setState({
+  //             showMenu: false,
+  //             showNavbar: true,
+  //           })
+  //         }
+  //       >
+  //         The dog I'm fostering now
+  //       </Link>
+  //       <Link to="/vote">
+  //         <div>Vote for the next dog I'll foster</div>
+  //       </Link>
+  //       <Link to="/helpothers">
+  //         <div>Help other organizations</div>
+  //       </Link>
+  //       <Link to="/game">
+  //         <div>
+  //           Play our 90's inspired game <i>Dog Zoey in Space</i>
+  //         </div>
+  //       </Link>
+  //       <Link to="/meetteam">
+  //         <div>Meet the team</div>
+  //       </Link>
+  //       <Link to="/contactus">
+  //         <div>Contact us</div>
+  //       </Link>
+  //     </div>
+  //   );
+  // };
 
   displayLogIn = () => {
     return (
@@ -357,17 +364,30 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
-        {this.state.showNavbar ? this.displayNavBar() : ""}
-        {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
-        {this.state.showSignUp ? this.displaySignUp() : ""}
-        {this.state.showMenu & !this.state.showLogIn ? this.displayMenu() : ""}
-        {!this.state.showLogIn &
-        !this.state.showMenu &
-        !this.state.showSignUp &
-        !this.state.showDonate
-          ? this.displayFosterDog()
-          : ""}
-        {this.state.showDonate ? this.displayDonate() : ""}
+        <div className="CompanyName">
+          <h1>You voted, we listened!</h1>
+          <p>Text here about fostering</p>
+        </div>
+        <div>
+          {console.log(this.state.fosterdog)}
+          {this.state.showNavbar ? this.displayNavBar() : ""}
+          {this.state.showLogIn & !this.state.showMenu
+            ? this.displayLogIn()
+            : ""}
+          {this.state.showSignUp ? this.displaySignUp() : ""}
+          {this.state.showMenu & !this.state.showLogIn ? (
+            <Menu isAdmin={this.state.isAdmin} toggleMenu={this.toggleMenu} />
+          ) : (
+            ""
+          )}
+          {!this.state.showLogIn &
+          !this.state.showMenu &
+          !this.state.showSignUp &
+          !this.state.showDonate
+            ? this.displayFosterDog()
+            : ""}
+          {this.state.showDonate ? this.displayDonate() : ""}
+        </div>
       </div>
     );
   }

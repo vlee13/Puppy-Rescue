@@ -31,6 +31,7 @@ const actions = {
     return await service.get("/adopted");
   },
   addDog: async (dog) => {
+    console.log(dog);
     return await service.post("/addDogs", dog);
   },
   vote: async (dog) => {

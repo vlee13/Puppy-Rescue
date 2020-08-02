@@ -19,7 +19,7 @@ const userSchema = new Schema(
       saved: Boolean,
     },
     login: Boolean,
-    role: { type: String, enum: ["admin", "notadmin"], default: "admin" },
+    role: { type: String, enum: ["admin", "notadmin"], default: "notadmin" },
   },
   {
     timestamps: true,
