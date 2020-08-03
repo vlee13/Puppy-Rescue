@@ -31,6 +31,23 @@ class EditDog extends Component {
             type="number"
             onChange={this.handleChange}
           />
+          <input
+            name="weight"
+            placeholder="Weight"
+            type="number"
+            onChange={this.handleChange}
+          />
+          <input
+            name="descr"
+            placeholder="Description"
+            type="text"
+            onChange={this.handleChange}
+          />
+          <input
+            name="status"
+            placeholder="Status"
+            onChange={this.handleChange}
+          />
           <button>Update</button>
         </form>
       </div>

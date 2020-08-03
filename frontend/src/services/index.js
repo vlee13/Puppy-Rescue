@@ -30,11 +30,12 @@ const actions = {
   adoptedDogs: async () => {
     return await service.get("/adopted");
   },
-  addDog: async (dog) => {
-    return await service.post("/addDogs", dog);
-  },
+
   vote: async (dog) => {
     return await service.post("/vote", dog);
+  },
+  editDog: async (dog) => {
+    return await service.post("/editDog", dog);
   },
   getOrganizations: async (group) => {
     return await service.get("/helpothers");

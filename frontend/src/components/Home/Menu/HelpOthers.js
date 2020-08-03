@@ -216,7 +216,9 @@ class HelpOthers extends Component {
       return (
         <li>
           <img src={eachGroup.image} alt="orgPic" className="organizationPic" />
-          <h1>{eachGroup.name}</h1>
+          <a href={eachGroup.homepage}>
+            <h1>{eachGroup.name}</h1>
+          </a>
           <br />
           <p>{eachGroup.description}</p>
         </li>
