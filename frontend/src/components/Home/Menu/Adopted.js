@@ -352,7 +352,6 @@ class Adopted extends Component {
         <div>
           <div>
             <h1>You voted, we listened!</h1>
-            <p>Text here about fostering</p>
           </div>
           <hr></hr>
         </div>
