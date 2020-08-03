@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* body {
   overflow: hidden;
 } */
+=======
+body {
+  overflow: hidden;
+}
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 =======
 body {
   overflow: hidden;
@@ -60,6 +66,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .CarrouselImage2 {
   background-image: url("../../images/pexels-daniel-frank-343241.jpg");
   background-color: #cccccc;
@@ -90,6 +97,8 @@ body {
   width: 45vw;
 }
 
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 =======
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 .CarrouselText {

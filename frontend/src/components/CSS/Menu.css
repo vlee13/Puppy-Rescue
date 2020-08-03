@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .Background {
   background-color: gainsboro;
   width: 100vw;
@@ -77,6 +78,9 @@
 =======
 .bm-burger-button {
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+=======
+.bm-burger-button {
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
     position: fixed;
     width: 5vh;
     height: 3vh;
@@ -84,6 +88,7 @@
     top: 8vw;
   }
   /* Color/shape of burger icon bars */
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* .bm-burger-bars {
     background: #373A47;
@@ -135,6 +140,8 @@
     background: rgba(0, 0, 0, 0.3);
   } */
 =======
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
   .bm-burger-bars {
     background: #373A47;
   }
@@ -183,5 +190,9 @@
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+<<<<<<< HEAD
+  }
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+=======
   }
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8

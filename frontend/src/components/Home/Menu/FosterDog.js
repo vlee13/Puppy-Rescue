@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import "../../CSS/FosterDog.css";
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 =======
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 
@@ -20,9 +23,14 @@ class FosterDog extends Component {
   displayNavBar = () => {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="NavigationBar">
         <button
           className="NavigationBarButton"
+=======
+      <div>
+        <button
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 =======
       <div>
         <button
@@ -40,7 +48,10 @@ class FosterDog extends Component {
         </button>
         <button
 <<<<<<< HEAD
+<<<<<<< HEAD
           className="NavigationBarButton"
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 =======
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
           onClick={(event) => {
@@ -209,6 +220,7 @@ class FosterDog extends Component {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   displayPage = () => {
     return (
       <div className="CarrouselContainer">
@@ -251,6 +263,8 @@ class FosterDog extends Component {
       </div>
     );
 =======
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
   displayFosterDog = () => {
     return this.state.dogs
       .filter((eachDog) => eachDog.status === "fostered")
@@ -301,6 +315,9 @@ class FosterDog extends Component {
     //       </div>
     //     </div>
     //   );
+<<<<<<< HEAD
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+=======
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
   };
 
@@ -412,7 +429,11 @@ class FosterDog extends Component {
         !this.state.showSignUp &
         !this.state.showDonate
 <<<<<<< HEAD
+<<<<<<< HEAD
           ? this.displayPage()
+=======
+          ? this.displayFosterDog()
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 =======
           ? this.displayFosterDog()
 >>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
