@@ -63,9 +63,16 @@ router.post("/addDogs", (req, res, next) => {
 });
 
 router.post("/editDog", (req, res, next) => {
-  Dog.findByIdAndUpdate(req.body._id, req.body.status).then((edited) => {
-    res.json({ edited });
-  });
+  Dog.findOneAndUpdate(
+    { shelterID: req.body.shelterID },
+    { ...req.body },
+    { new: true }
+  )
+    .then((edited) => {
+      console.log(edited, "edited");
+      res.json({ edited });
+    })
+    .catch((err) => res.json({ err }));
 });
 
 function isAuth(req, res, next) {
