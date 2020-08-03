@@ -222,20 +222,20 @@ class About extends Component {
             </p>
           </div>
         </div>
-        <div className="whatToExpectFromDonation">
+        {/* <div className="whatToExpectFromDonation">
           <div className="info2">
-            <h1>What to expect from donations</h1>
-            <p>
-              Donations will go directly towards the care and wellbeing of the
-              foster dogs including: doctor’s bills, any medications needed, any
-              grooming needed, food, treats, toys, collar, leash, food/water
-              bowl, a bed, etc. All update details will be provided in monthly
-              membership newsletters.{" "}
-            </p>
-            <Link to="/fosterdog">
-              <button>Donate</button>
-            </Link>
-          </div>
+            <h1>What to expect from donations</h1> */}
+        <p>
+          Donations will go directly towards the care and wellbeing of the
+          foster dogs including: doctor’s bills, any medications needed, any
+          grooming needed, food, treats, toys, collar, leash, food/water bowl, a
+          bed, etc. All update details will be provided in monthly membership
+          newsletters.{" "}
+        </p>
+        <Link to="/fosterdog">
+          <button>Donate</button>
+        </Link>
+        {/* </div>
           <img className="aboutImage2" src="" alt="aboutImage2" />
         </div>
         <div className="helpOtherOrganizations">
@@ -248,9 +248,7 @@ class About extends Component {
             </p>
             <Link to="/helpothers">
               <button>Help others</button>
-            </Link>
-          </div>
-        </div>
+            </Link> */}
       </div>
     );
   };

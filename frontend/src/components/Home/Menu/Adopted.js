@@ -351,7 +351,11 @@ class Adopted extends Component {
         <img src="" alt="logoMark" className="LogoMark" />
         <div>
           <div>
-            <h1>You voted, we listened!</h1>
+            <h1>Our Adoptees!</h1>
+            <p>
+              The success stories and history of all the rescues that found
+              their fur-ever homes
+            </p>
           </div>
           <hr></hr>
         </div>

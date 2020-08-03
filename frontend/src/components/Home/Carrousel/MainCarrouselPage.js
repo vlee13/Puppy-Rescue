@@ -220,7 +220,7 @@ class MainCarrouselPage extends Component {
           </div>
           <Link to="/fosterdog">
             <button className="CarrouselButton">
-              SHARE YOUR LOVE WITH FRED
+              SHARE YOUR LOVE WITH ASTRO
             </button>
           </Link>
         </div>

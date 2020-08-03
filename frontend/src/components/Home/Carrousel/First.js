@@ -25,7 +25,7 @@ const First = () => {
           </p>
         </div>
         <Link to="/fosterdog">
-          <button className="button">Meet Fred!</button>
+          <button className="button">Meet Astro!</button>
         </Link>
         <br />
         <img className="SealLogo" />
