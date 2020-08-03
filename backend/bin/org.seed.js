@@ -9,6 +9,7 @@ const groups = [
 
     image:
       "https://d3n8a8pro7vhmx.cloudfront.net/hopeforpaws/pages/2180/attachments/original/1595004314/id_3413023_1.jpg?1595004314",
+    homepage: "https://www.hopeforpaws.org/",
   },
   {
     name: "A Purposeful Rescue",
@@ -17,6 +18,7 @@ const groups = [
 
     image:
       "https://images.squarespace-cdn.com/content/v1/52d7683be4b01d93542bf478/1436591719360-DR1VSMJOYX2OE44XMSF5/ke17ZwdGBToddI8pDm48kNBhxsR5AixTPaSt36FQjZRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIHEpb-MmdDNvFVgjmeoENIlexef176In2EgYPtI8R2-8KMshLAGzx4R3EDFOm1kBS/image-asset.jpeg?format=500w",
+    homepage: "http://www.apurposefulrescue.org/",
   },
   {
     name: "American Pit Bull Foundation",
@@ -25,6 +27,7 @@ const groups = [
 
     image:
       "https://apbf.dog/wp-content/uploads/2014/07/american-pit-bull-foundation-01.jpeg",
+    homepage: "https://apbf.dog/",
   },
   {
     name: "Animal Aid Unlimited",
@@ -33,6 +36,7 @@ const groups = [
 
     image:
       "https://www.animalaidunlimited.org/wp-content/uploads/2020/05/Hospital_02-copy-950x633.jpg",
+    homepage: "https://www.animalaidunlimited.org/?new=animalaidunlimited.org",
   },
   {
     name: "Best Friends Animal Society",
@@ -41,6 +45,7 @@ const groups = [
 
     image:
       "http://cdn.coverstand.com/12453/567365/iphonejpg/320/1847384955662842796790966244-00001.jpg",
+    homepage: "https://bestfriends.org/",
   },
   {
     name: "Jameson Humane",
@@ -49,6 +54,7 @@ const groups = [
 
     image:
       "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/115893652_2730433700511337_1441846265735219321_n.jpg?_nc_cat=111&_nc_sid=8bfeb9&_nc_ohc=z6L5CAqPKFkAX8mhPCe&_nc_ht=scontent-sjc3-1.xx&oh=92f45d43c6712beb364b737dd0300105&oe=5F4887D9",
+    homepage: "https://www.jamesonanimalrescueranch.org/",
   },
   {
     name: "Muttville",
@@ -56,6 +62,7 @@ const groups = [
       "Muttville Senior Dog Rescue is dedicated to finding homes or hospice for older dogs in need of help. They also spread information to the public about senior dogs and work to change the perception of old pups as undesirable–a perception which leads to many seniors being put down instead of being adopted. Older dogs are often the first to be euthanized in shelters to make space for more adoptable puppies and young dogs, but Muttville sees owners coming back for their second or third senior dog. Their success stories are truly heartwarming.",
 
     image: "https://muttville.org/images/s4s/margitta-and-shelly.jpg",
+    homepage: "http://muttville.org/",
   },
   {
     name: "ASPCA",
@@ -64,6 +71,7 @@ const groups = [
 
     image:
       "https://aspca.org/sites/default/files/about-us_animal-rescue_thumb_0.jpg",
+    homepage: "aspca.org",
   },
 ];
 
