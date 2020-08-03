@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../CSS/Carrousel.css";
 import Menu from "../Menu/MenuMainPage";
 import UserLogIn from "../LogIn/UserLogIn";
+import actions from "../../../services/index.js";
 
 class MainCarrouselPage extends Component {
   state = {
@@ -11,7 +12,17 @@ class MainCarrouselPage extends Component {
     showLogIn: false,
     showSignUp: false,
     showMenu: false,
+    isAdmin: false,
   };
+
+  async componentDidMount() {
+    let user = await actions.isLoggedIn();
+
+    console.log("user", user);
+    this.setState({
+      isAdmin: user.data.role === "admin",
+    });
+  }
 
   displayNavBar = () => {
     return (
@@ -93,7 +104,7 @@ class MainCarrouselPage extends Component {
         <Link to="/contactus">
           <div>Contact us</div>
         </Link>
-        {this.props.isAdmin && (
+        {this.state.isAdmin && (
           <Link to="/adminpage">
             <div>Administrator</div>
           </Link>

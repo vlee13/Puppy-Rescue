@@ -10,9 +10,13 @@ class EditDog extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    actions.editDog(this.state).then((edited) => {
-      console.log(edited);
-    });
+    console.log("clicked", this.state);
+    actions
+      .editDog(this.state)
+      .then((edited) => {
+        console.log(edited);
+      })
+      .catch((err) => console.log(err));
   };
 
   render() {

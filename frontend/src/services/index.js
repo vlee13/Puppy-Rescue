@@ -35,6 +35,7 @@ const actions = {
     return await service.post("/vote", dog);
   },
   editDog: async (dog) => {
+    console.log("hiiii");
     return await service.post("/editDog", dog);
   },
   getOrganizations: async (group) => {
