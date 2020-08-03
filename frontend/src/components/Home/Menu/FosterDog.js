@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../../CSS/FosterDog.css";
 
 class FosterDog extends Component {
   state = {
@@ -14,8 +15,9 @@ class FosterDog extends Component {
 
   displayNavBar = () => {
     return (
-      <div>
+      <div className="NavigationBar">
         <button
+          className="NavigationBarButton"
           onClick={(event) => {
             event.preventDefault();
             this.setState({
@@ -28,6 +30,7 @@ class FosterDog extends Component {
           Log in
         </button>
         <button
+          className="NavigationBarButton"
           onClick={(event) => {
             event.preventDefault();
             this.setState({
@@ -193,18 +196,29 @@ class FosterDog extends Component {
     );
   };
 
-  displayFosterDog = () => {
+  displayPage = () => {
     return (
-      <div>
-        <img src="" alt="fosterDogImage" className="HeroImage" />
-        <div className="textAlignedToRight">
-          <img src="" alt="logoMark" className="LogoMark" />
+      <div className="CarrouselContainer">
+        <img className="FosterDogImage" />
+        <div className="CarrouselText">
+          <img id="LogoMark" />
           <span className="CompanyName">Dog I'm fostering now</span>
-          <h1 className="Tagline">Fred Flinston</h1>
-          <p>Votes</p>
-          <p>Started Fostering</p>
-          <p>Breed</p>
-          <p>text</p>
+          <h1 className="Tagline">Chispa</h1>
+          <p>
+            Total votes:
+            <br /> ----animated bar------
+          </p>
+          <p>
+            Started Fostering: <br />
+            10/02/2020
+          </p>
+          <p>
+            We are all animal lovers and we all wanted to do something positive
+            for the community, so as our final project in our IronHack bootcamp
+            journey we decided to give back. House of Paws is bigger than us. By
+            fostering these shelter dogs, we believe we can give them a real
+            chance to being adopted into their forever homes.
+          </p>
           <button
             onClick={() => {
               this.setState({
@@ -216,9 +230,9 @@ class FosterDog extends Component {
               });
               console.log("Hi");
             }}
-            className="button"
+            className="CarrouselButton"
           >
-            Share your love with Fred
+            SHARE YOUR LOVE WITH CHISPA
           </button>
         </div>
       </div>
@@ -332,7 +346,7 @@ class FosterDog extends Component {
         !this.state.showMenu &
         !this.state.showSignUp &
         !this.state.showDonate
-          ? this.displayFosterDog()
+          ? this.displayPage()
           : ""}
         {this.state.showDonate ? this.displayDonate() : ""}
       </div>
