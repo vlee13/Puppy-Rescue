@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+<<<<<<< HEAD
 import "../../CSS/FosterDog.css";
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 
 class FosterDog extends Component {
   state = {
@@ -16,9 +19,14 @@ class FosterDog extends Component {
 
   displayNavBar = () => {
     return (
+<<<<<<< HEAD
       <div className="NavigationBar">
         <button
           className="NavigationBarButton"
+=======
+      <div>
+        <button
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
           onClick={(event) => {
             event.preventDefault();
             this.setState({
@@ -31,7 +39,10 @@ class FosterDog extends Component {
           Log in
         </button>
         <button
+<<<<<<< HEAD
           className="NavigationBarButton"
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
           onClick={(event) => {
             event.preventDefault();
             this.setState({
@@ -197,6 +208,7 @@ class FosterDog extends Component {
     );
   };
 
+<<<<<<< HEAD
   displayPage = () => {
     return (
       <div className="CarrouselContainer">
@@ -238,6 +250,58 @@ class FosterDog extends Component {
         </div>
       </div>
     );
+=======
+  displayFosterDog = () => {
+    return this.state.dogs
+      .filter((eachDog) => eachDog.status === "fostered")
+      .map((eachDog) => {
+        return (
+          <li key={`dog-key-${eachDog.name}`}>
+            <img src={eachDog.image} alt="dogpic" />
+            <br />
+            {eachDog.name}
+            {` #${eachDog.shelterID}`}
+            {`Location: ${eachDog.location}`}
+            <br />
+            {/* {eachDog.description}
+            <br /> */}
+
+            <button onClick={() => this.vote(eachDog)}>
+              {eachDog.votes.length}
+            </button>
+          </li>
+        );
+      });
+    //   return (
+    //     <div>
+    //       <img src="" alt="fosterDogImage" className="HeroImage" />
+    //       <div className="textAlignedToRight">
+    //         <img src="" alt="logoMark" className="LogoMark" />
+    //         <span className="CompanyName">Dog I'm fostering now</span>
+    //         <h1 className="Tagline">Fred Flinston</h1>
+    //         <p>Votes</p>
+    //         <p>Started Fostering</p>
+    //         <p>Breed</p>
+    //         <p>text</p>
+    //         <button
+    //           onClick={() => {
+    //             this.setState({
+    //               showPage: false,
+    //               showLogIn: false,
+    //               showSignUp: false,
+    //               showNavbar: false,
+    //               showDonate: true,
+    //             });
+    //             console.log("Hi");
+    //           }}
+    //           className="button"
+    //         >
+    //           Share your love with Fred
+    //         </button>
+    //       </div>
+    //     </div>
+    //   );
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
   };
 
   handleChange = (event) => {
@@ -347,7 +411,11 @@ class FosterDog extends Component {
         !this.state.showMenu &
         !this.state.showSignUp &
         !this.state.showDonate
+<<<<<<< HEAD
           ? this.displayPage()
+=======
+          ? this.displayFosterDog()
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
           : ""}
         {this.state.showDonate ? this.displayDonate() : ""}
       </div>

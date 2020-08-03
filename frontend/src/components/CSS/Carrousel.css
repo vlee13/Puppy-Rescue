@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 /* body {
   overflow: hidden;
 } */
+=======
+body {
+  overflow: hidden;
+}
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 
 /* Main container */
 
@@ -53,6 +59,7 @@
   width: 45vw;
 }
 
+<<<<<<< HEAD
 .CarrouselImage2 {
   background-image: url("../../images/pexels-daniel-frank-343241.jpg");
   background-color: #cccccc;
@@ -83,6 +90,8 @@
   width: 45vw;
 }
 
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 .CarrouselText {
   width: 45vw;
   margin: 17.5vh 5vw 5vh 5vw;

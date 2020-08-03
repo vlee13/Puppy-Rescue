@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/Carrousel.css";
+<<<<<<< HEAD
 import "../../CSS/Menu.css";
+=======
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 import Menu from "../Menu/MenuMainPage";
 import UserLogIn from "../LogIn/UserLogIn";
 
@@ -49,6 +52,7 @@ class MainCarrouselPage extends Component {
 
   displayMenu = () => {
     return (
+<<<<<<< HEAD
       <div className="Background">
         <div className="Container">
           <Link
@@ -110,6 +114,53 @@ class MainCarrouselPage extends Component {
             <button className="MenuLogInButton">LOG IN</button>
           </Link>
         </div>
+=======
+      <div>
+        <Link
+          onClick={() =>
+            this.setState({
+              showMenu: false,
+              showNavbar: true,
+            })
+          }
+        >
+          X
+        </Link>
+        <br />
+        <Link
+          onClick={() =>
+            this.setState({
+              showMenu: false,
+              showNavbar: true,
+            })
+          }
+        >
+          Home
+        </Link>
+        <Link to="/about">
+          <div>About</div>
+        </Link>
+        <Link to="/fosterdog">
+          <div>The dog I'm fostering now</div>
+        </Link>
+        <Link to="/vote">
+          <div>Vote for the next dog I'll foster</div>
+        </Link>
+        <Link to="/helpothers">
+          <div>Help other organizations</div>
+        </Link>
+        <Link to="/game">
+          <div>
+            Play our 90's inspired game <i>Dog Zoey in Space</i>
+          </div>
+        </Link>
+        <Link to="/meetteam">
+          <div>Meet the team</div>
+        </Link>
+        <Link to="/contactus">
+          <div>Contact us</div>
+        </Link>
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
       </div>
     );
   };
@@ -222,6 +273,7 @@ class MainCarrouselPage extends Component {
           <span className="CompanyName">House of Paws</span>
           <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
           <p className="Text">
+<<<<<<< HEAD
             We are all animal lovers and we all wanted to do something positive
             for the community, so as our final project in our IronHack bootcamp
             journey we decided to give back. House of Paws is bigger than us. By
@@ -230,6 +282,18 @@ class MainCarrouselPage extends Component {
           </p>
           <Link to="/about">
             <button className="CarrouselButton">GET TO KNOW US BETTER</button>
+=======
+            Not everyone who has the heart for animal welfare has the means to
+            foster or adopt. Our team at House of Paws has come up with a
+            creative & easy-to-use platform where you can partner with us to
+            change canine lives. You get to vote which furbaby gets to go home
+            to a safe & loving home.
+          </p>
+          <Link to="/fosterdog">
+            <button className="CarrouselButton">
+              SHARE YOUR LOVE WITH FRED
+            </button>
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
           </Link>
         </div>
         <img id="SealLogo" />
