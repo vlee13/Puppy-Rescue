@@ -29,7 +29,12 @@ class Vote extends Component {
               <br />
               {eachDog.name}
               {` #${eachDog.shelterID}`}
+              <br />
               {`Location: ${eachDog.location}`}
+              <br />
+              {`Age: ${eachDog.age}`}
+              <br />
+              {`Weight: ${eachDog.weight}`}
               <br />
               {eachDog.description}
               <br />
