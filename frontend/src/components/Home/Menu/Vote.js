@@ -229,7 +229,11 @@ class Vote extends Component {
       <div>
         <img src="" alt="logoMark" className="LogoMark" />
         <div>
-          <h2>Vote for the</h2>
+          <h2>
+            Welcome to the voting stage! You have up to three votes to choose
+            three different puppies. The one with the most votes gets to go home
+            with us! Thank you for participating and making a difference.
+          </h2>
         </div>
         <hr></hr>
       </div>
