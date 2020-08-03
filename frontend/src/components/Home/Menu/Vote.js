@@ -229,10 +229,7 @@ class Vote extends Component {
       <div>
         <img src="" alt="logoMark" className="LogoMark" />
         <div>
-          <h2>
-            Some text here about the voting, where these dogs are from, how user
-            is helping them
-          </h2>
+          <h2>Vote for the</h2>
         </div>
         <hr></hr>
       </div>

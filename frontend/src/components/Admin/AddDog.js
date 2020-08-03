@@ -43,7 +43,7 @@ class AddDog extends Component {
             onChange={this.handleChange}
           />
           <input
-            name="descripton"
+            name="descr"
             placeholder="Description"
             type="text"
             onChange={this.handleChange}

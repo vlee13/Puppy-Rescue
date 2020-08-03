@@ -21,7 +21,7 @@ import HelpOthers from "./components/Home/Menu/HelpOthers";
 import Game from "./components/Home/Menu/Game";
 import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
-import AddDog from "./components/AddDog/AddDog";
+import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
 
 class App extends Component {
@@ -87,8 +87,9 @@ class App extends Component {
           <Route exact path="/game" render={() => <Game />} />
           <Route exact path="/meetteam" render={() => <MeetTeam />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
-          <Route exact path="/addDog" render={() => <AddDog />} />
+
           <Route exact path="/slider" render={() => <Slider />} />
+          <Route exact path="/adminpage" render={() => <AdminPage />} />
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
@@ -118,8 +119,8 @@ class App extends Component {
           />
           <Route component={NotFound} /> */}
         </Switch>
-        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
+        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
       </BrowserRouter>
     );
   }

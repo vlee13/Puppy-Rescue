@@ -11,20 +11,20 @@ class FosterDog extends Component {
     showSignUp: false,
     showMenu: false,
     showDonate: false,
-    dogs: [],
+    fosterdog: [],
   };
 
   async componentDidMount() {
     let res = await actions.fosterDog();
     console.log("hello", res);
     this.setState({
-      dogs: res.data.dogs,
+      fosterdog: res.data.fosterdog,
     });
   }
 
   displayFosterDog = () => {
-    console.log("display dogs", this.state.dogs);
-    return this.state.dogs
+    console.log("display dogs", this.state.fosterdog);
+    return this.state.fosterdog
       .filter((eachDog) => eachDog.status === "fostered")
       .map((eachDog) => {
         return (
@@ -38,10 +38,7 @@ class FosterDog extends Component {
               <br />
               <h1>{eachDog.name}</h1>
               <br />
-              <p>{eachDog.votes}</p>
-
-              <br />
-              <p>About Fred Flinstone</p>
+              <p>{eachDog.descr}</p>
             </div>
           </div>
         );
