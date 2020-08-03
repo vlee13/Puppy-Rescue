@@ -19,23 +19,26 @@ class Vote extends Component {
   }
 
   displayDogs = () => {
-    return this.state.dogs.map((eachDog, i) => {
-      return (
-        <li key={`dog-key-${i}`}>
-          <img src={eachDog.image} alt="dogpic" />
-          <br />
-          {eachDog.name}
-          {` #${eachDog.shelterID}`}
-          {`Location: ${eachDog.location}`}
-          <br />
-          {eachDog.description}
-          <br />
-          <button onClick={() => this.vote(eachDog, i)}>
-            {eachDog.votes.length}
-          </button>
-        </li>
-      );
-    });
+    return this.state.dogs
+      .filter((eachDog) => eachDog.status === "available")
+      .map((eachDog, i) => {
+        return (
+          <li key={`dog-key-${i}`}>
+            <img src={eachDog.image} alt="dogpic" />
+            <br />
+            {eachDog.name}
+            {` #${eachDog.shelterID}`}
+            {`Location: ${eachDog.location}`}
+            <br />
+            {eachDog.description}
+            <br />
+
+            <button onClick={() => this.vote(eachDog, i)}>
+              {eachDog.votes.length}
+            </button>
+          </li>
+        );
+      });
   };
 
   displayNavBar = () => {
@@ -218,7 +221,7 @@ class Vote extends Component {
       </div>
     );
   };
-  
+
   displayHeader = () => {
     return (
       <div>
@@ -228,7 +231,7 @@ class Vote extends Component {
       </div>
     );
   };
-  
+
   // displayDogs = () => {
   //   return (
   //     <div>

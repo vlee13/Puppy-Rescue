@@ -12,7 +12,7 @@ import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
 import MainCarrouselPage from "./components/Home/Carrousel/MainCarrouselPage";
 import UserLogIn from "./components/Home/LogIn/UserLogIn";
 import UserSignUp from "./components/Home/LogIn/UserSignUp";
-import UserDonate from "./components/Home/LogIn/UserDonate";
+import UserDonate from "./components/userdonate/UserDonate";
 import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
 import FosterDog from "./components/Home/Menu/FosterDog";
@@ -23,6 +23,7 @@ import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AddDog from "./components/AddDog/AddDog";
 import Slider from "./components/Home/Slider";
+
 
 class App extends Component {
   state = {};
@@ -89,6 +90,7 @@ class App extends Component {
           <Route exact path="/contactus" render={() => <ContactUs />} />
           <Route exact path="/addDog" render={() => <AddDog />} />
           <Route exact path="/slider" render={() => <Slider />} />
+          
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route

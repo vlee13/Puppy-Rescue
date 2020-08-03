@@ -222,7 +222,7 @@ class About extends Component {
 
   displayAbout = () => {
     return (
-      <div className="About">
+      <div>
         <div className="container">
           <img className="background1" />
           <div className="textForHeroImage">
@@ -297,8 +297,8 @@ class About extends Component {
 
         <div className="containerGray">
           <img className="background6" />
-          <div className="containerForFloat">
-            <div className="forText">
+          <div className="textForBG2">
+            <div className="background">
               <h1 className="header">Help other organizations</h1>
               <p className="text">
                 We believe in giving back to our community. Here you can find a
@@ -394,8 +394,8 @@ class About extends Component {
               We are dev! One of our first projects at Ironhack was a game
               developed in Canvas. TAKE ZOOEY THROUGH SPACE, KILL ALIENS, AND
               COLLECT COINS. AS THE GAME PROGRESSES, IT WILL GET HARDER TO
-              SURVIVE. KEEP ZOOEY ALIVE FOR AS LONG AS POSSIBLE => GET THE
-              HIGHEST SCORE TO WIN, & GAME OVER WHEN ALIENS REACH YOU.
+              SURVIVE. KEEP ZOOEY ALIVE FOR AS LONG AS POSSIBLE GET THE HIGHEST
+              SCORE TO WIN, and GAME OVER WHEN ALIENS REACH YOU.
             </p>
             <Link to="/game">
               <button>Play!</button>

@@ -11,6 +11,7 @@ class FosterDog extends Component {
     showSignUp: false,
     showMenu: false,
     showDonate: false,
+    dogs: [],
   };
 
   displayNavBar = () => {

@@ -1,4 +1,4 @@
-# Puppy Rescue
+# House of Paws
 
 ## About Us
 ##### What We Do
