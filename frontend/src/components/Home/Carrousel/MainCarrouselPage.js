@@ -93,6 +93,11 @@ class MainCarrouselPage extends Component {
         <Link to="/contactus">
           <div>Contact us</div>
         </Link>
+        {this.props.isAdmin && (
+          <Link to="/adminpage">
+            <div>Administrator</div>
+          </Link>
+        )}
       </div>
     );
   };
