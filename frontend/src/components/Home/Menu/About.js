@@ -53,7 +53,7 @@ class About extends Component {
     );
   };
 
-  displayAbout = () => {
+  displayPage = () => {
     return (
       <div>
         {/* Header */}
@@ -168,111 +168,156 @@ class About extends Component {
             </Link>
           </div>
         </div>
+      </div>
+    );
+  };
 
-        {/* Footer Section */}
+  displayFooter = () => {
+    return (
+      <div className="footer">
+        {/* Main Container for 3 floats: Dev Team, Navigation and Other links */}
+        <img class="footerLogoMark" />
+        <div className="footerContainer">
+          {/* Development Team */}
 
-        <div className="footer">
-          <div className="footerTitle">
-            <img id="LogoMark" />
-            {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-            <span>House of Paws</span>
-            {/* Remove till here */}
-          </div>
-          <div className="footerContainer">
-            <div className="floatLeft">
-              <p>Development Team</p>
-              <div className="usinfo">
-                <div className="carlos">
-                  <h4 className="personName">Carlos Cesar Valle</h4>
-                  <p className="meetTeamText">
-                    Frontend Web Developer | UX & Branding Designer
-                  </p>
-                  <p className="meetTeamText">From: Miami, FL</p>
-                  <div className="githubLinkedIn">
-                    <a
-                      href="https://github.com/carloscesarvalle"
-                      target="_blank"
-                    >
-                      GitHub
-                    </a>
-                    <div>|</div>
-                    <a
-                      href="https://www.linkedin.com/in/carloscesarvalle/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
-                <div className="valerie">
-                  <h4>Valerie Lee Kang</h4>
-                  <p className="meetTeamText">
-                    Backend Web Developer | Canvas Developer
-                  </p>
-                  <p className="meetTeamText">From: Los Angeles, CA</p>
-                  <div className="githubLinkedIn">
-                    <a href="https://github.com/vlee13" target="_blank">
-                      GitHub
-                    </a>
-                    <div>|</div>
-                    <a
-                      href="https://www.linkedin.com/in/vlee13/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
-                <div className="dp">
-                  <h4>Dionel Panuncia</h4>
-                  <p className="meetTeamText">Software Developer</p>
-                  <p className="meetTeamText">From: Michigan</p>
-                  <div className="githubLinkedIn">
-                    <a href="https://github.com/dpanuncia" target="_blank">
-                      GitHub
-                    </a>
-                    <div>|</div>
-                    <a
-                      href="https://www.linkedin.com/in/dpanuncia/"
-                      target="_blank"
-                    >
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Address / Phone / Social Media */}
+          <div className="floatElement">
+            <p className="address">
+              House of Valerie Apt. 911, <br />
+              Kimchi 00911 USA
+            </p>
+            <div classNAme="phoneNumber"> 0-800-WeLoveDogs</div>
+
+            <span>
+              <img id="socialMediaIcon" />
+            </span>
+            <span>
+              <img id="socialMediaIcon" />
+            </span>
+            <span>
+              <img id="socialMediaIcon" />
+            </span>
+            <span>
+              <img id="socialMediaIcon" />
+            </span>
           </div>
 
-          <div className="floatRight">
+          <div className="floatElement">
+            <h4>Development Team</h4>
+            {/* Carlos */}
+            <h4>Carlos Cesar Valle</h4>
+            <p>Software Developer | UX & Branding Designer</p>
+            {/* <p className="meetTeamText">From: Miami, FL</p> */}
+            <span>
+              <a href="https://github.com/carloscesarvalle" target="_blank">
+                GitHub
+              </a>
+            </span>
+            <span>|</span>
+            <span>
+              <a
+                href="https://www.linkedin.com/in/carloscesarvalle/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+            </span>
+            <span>|</span>
+            <span>
+              <a
+                href="https://www.behance.net/carloscesarvalle"
+                target="_blank"
+              >
+                Behance
+              </a>
+            </span>
+            {/* Valerie */}
+            <h4>Valerie Lee Kang</h4>
+            <p>Software Developer | Canvas Developer</p>
+            <span>
+              <a href="https://github.com/vlee13" target="_blank">
+                GitHub
+              </a>
+            </span>
+            <span>|</span>
+            <span>
+              <a href="https://www.linkedin.com/in/vlee13/" target="_blank">
+                LinkedIn
+              </a>
+            </span>
+            {/* DP */}
+            <h4>Dionel Panuncia</h4>
+            <p>Software Developer</p>
+            <span>
+              <a href="https://github.com/dpanuncia/" target="_blank">
+                GitHub
+              </a>
+            </span>
+            <span>|</span>
+            <span>
+              <a href="https://www.linkedin.com/in/dpanuncia/" target="_blank">
+                LinkedIn
+              </a>
+            </span>
+          </div>
+
+          {/* Navigation Bar */}
+
+          <div className="floatElement">
             <h4>Navigation</h4>
-            <div className="footerElement">
-              <Link to="/fosterdog" className="link">
-                <div className="footerElementText">Foster dogs</div>
-              </Link>
 
-              <Link to="/vote" className="link">
-                <div className="footerElementText">Vote!</div>
-              </Link>
+            <Link to="/fosterdog" className="footerLink">
+              Foster dogs
+            </Link>
 
-              <Link to="/helpothers" className="link">
-                <div className="footerElementText">Help others</div>
-              </Link>
+            <Link to="/vote" className="footerLink">
+              Vote!
+            </Link>
 
-              <Link to="/contactus" className="link">
-                <div className="footerElementText">Contact us</div>
-              </Link>
-            </div>
+            <Link to="/helpothers" className="footerLink">
+              Help others
+            </Link>
+
+            <Link to="/contactus" className="footerLink">
+              Contact us
+            </Link>
+
+            <h4>Other links</h4>
+            <Link to="/game" className="footerLink">
+              Zoey 90's Game
+            </Link>
+          </div>
+
+          {/* Newsletter and Copyright */}
+          <div className="floatElement">
+            <p>Do you want to receive our monthly newsletter?</p>
+            <button
+              className="footerButton"
+              onClick={(event) => {
+                event.preventDefault();
+                console.log("clicking");
+              }}
+            >
+              Sign Up
+            </button>
+            <p className="footerText">
+              House of Paws was created with a lot of love during Ironhack
+              fulltime web development bootcamp. <br /> All rights reserved.{" "}
+              <br /> We also want to show our appreciation to the photograpers.
+              Most of their work can be found on pexels.com and unsplash.com.
+            </p>
           </div>
         </div>
       </div>
     );
   };
+
   render() {
     return (
       <div>
         {this.displayNavBar()}
-        {this.displayAbout()}
+        {this.displayPage()}
+        {this.displayFooter()}
       </div>
     );
   }
