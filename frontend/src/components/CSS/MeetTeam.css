@@ -1,4 +1,11 @@
+/* .meetTeam {
+=======
 .meetTeam {
+=======
+.meetTeam {
+>>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+>>>>>>> f6936bb4e169056797f712355e996adb2b3b5118
+>>>>>>> 6baece73e5972f6ad5a40d14a122a669ef3d7cba
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,17 +39,19 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    margin-bottom: 15%
-}
+    /* margin-bottom: 15%; */
+/* margin: auto 30% 15%;
+padding: auto 100%
+} */
 
-.carlos,
+/* .carlos,
 .valerie,
 .dp {
     border: 1px solid black;
     border-radius: 20px;
     background-color: #ffffff;
     ;
-    padding: 50px 70px;
+    padding: 50px 0px;
     box-shadow: 20px 20px black;
     margin: 10vh 7vh;
 
@@ -54,5 +63,4 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    ;
-}
+} */

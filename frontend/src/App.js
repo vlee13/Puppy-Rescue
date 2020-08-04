@@ -15,14 +15,17 @@ import UserSignUp from "./components/Home/LogIn/UserSignUp";
 import UserDonate from "./components/userdonate/UserDonate";
 import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
-import FosterDog from "./components/Home/Menu/FosterDog";
+
 import Vote from "./components/Home/Menu/Vote";
+import FosterDog from "./components/Home/Menu/FosterDog";
+import Adopted from "./components/Home/Menu/Adopted";
 import HelpOthers from "./components/Home/Menu/HelpOthers";
 import Game from "./components/Home/Menu/Game";
 import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
-import AddDog from "./components/AddDog/AddDog";
+import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
+import AddDog from "./components/AddDog/AddDog";
 
 
 class App extends Component {
@@ -82,15 +85,22 @@ class App extends Component {
           <Route exact path="/userdonate" render={() => <UserDonate/>} />
           <Route exact path="/menu" render={() => <MenuMainPage />} />
           <Route exact path="/about" render={() => <About />} />
-          <Route exact path="/fosterdog" render={() => <FosterDog />} />
+
           <Route exact path="/vote" render={() => <Vote />} />
+          <Route exact path="/fosterdog" render={() => <FosterDog />} />
+          <Route exact path="/adopted" render={() => <Adopted />} />
           <Route exact path="/helpothers" render={() => <HelpOthers />} />
           <Route exact path="/game" render={() => <Game />} />
           <Route exact path="/meetteam" render={() => <MeetTeam />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
-          <Route exact path="/addDog" render={() => <AddDog />} />
+
           <Route exact path="/slider" render={() => <Slider />} />
+<<<<<<< HEAD
           
+=======
+          <Route exact path="/adminpage" render={() => <AdminPage />} />
+          <Route exact path="/addDog" render={() => <AddDog />} />
+>>>>>>> 7efc4a1152d6c6348e8560aa8b3cfb49d1393396
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
@@ -120,8 +130,8 @@ class App extends Component {
           />
           <Route component={NotFound} /> */}
         </Switch>
-        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
+        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
       </BrowserRouter>
     );
   }

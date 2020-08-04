@@ -23,20 +23,27 @@ class Vote extends Component {
       .filter((eachDog) => eachDog.status === "available")
       .map((eachDog, i) => {
         return (
-          <li key={`dog-key-${i}`}>
-            <img src={eachDog.image} alt="dogpic" />
-            <br />
-            {eachDog.name}
-            {` #${eachDog.shelterID}`}
-            {`Location: ${eachDog.location}`}
-            <br />
-            {eachDog.description}
-            <br />
+          <div>
+            <li key={`dog-key-${i}`}>
+              <img src={eachDog.image} alt="dogpic" />
+              <br />
+              {eachDog.name}
+              {` #${eachDog.shelterID}`}
+              <br />
+              {`Location: ${eachDog.location}`}
+              <br />
+              {`Age: ${eachDog.age}`}
+              <br />
+              {`Weight: ${eachDog.weight}`}
+              <br />
+              {eachDog.description}
+              <br />
 
-            <button onClick={() => this.vote(eachDog, i)}>
-              {eachDog.votes.length}
-            </button>
-          </li>
+              <button onClick={() => this.vote(eachDog, i)}>
+                {eachDog.votes.length}
+              </button>
+            </li>
+          </div>
         );
       });
   };
@@ -229,33 +236,17 @@ class Vote extends Component {
     return (
       <div>
         <img src="" alt="logoMark" className="LogoMark" />
-        <span className="header">Vote for the next dog I'll foster</span>
+        <div>
+          <h2>
+            Welcome to the voting stage! You have up to three votes to choose
+            three different puppies. The one with the most votes gets to go home
+            with us! Thank you for participating and making a difference.
+          </h2>
+        </div>
         <hr></hr>
       </div>
     );
   };
-
-  // displayDogs = () => {
-  //   return (
-  //     <div>
-  //       <p>I'm waiting for the 10 dogs from Database</p>
-  //     </div>
-  //   );
-  //   return this.state.dogs.map((eachDog) => {
-  //     return (
-  //       <div>
-  //         <img src={eachDog.image} alt="dogpic" className="dogToFoster" />
-  //         <br />
-  //         <h1>{eachDog.name}</h1>
-  //         <div>votes</div>
-  //         <ul>{`Shelter Id: ${eachDog.shelterID}`}</ul>
-  //         <ul>{`Age: ${eachDog.age}`}</ul>
-  //         <ul>{`Weight: ${eachDog.weight}`}</ul>
-  //         <p>{eachDog.description}</p>
-  //       </div>
-  //     );
-  //   });
-  // };
 
   vote = (eachDog, i) => {
     actions

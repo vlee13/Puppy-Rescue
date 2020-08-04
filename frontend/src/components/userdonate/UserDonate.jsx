@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
 class UserDonate extends Component {
-  
-  render()  
-  {
-    return ( 
-     
-            
-       <div>
+  render() {
+    return ( <div>
  <div class="donate">
 <button>Donate</button>
 <form name="donAmount" id="donAmount">

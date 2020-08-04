@@ -24,12 +24,24 @@ const actions = {
   getDogs: async () => {
     return await service.get("/dogs");
   },
-  addDog: async (dog) => {
-    return await service.post("/addDogs", dog);
+  fosterDog: async () => {
+    return await service.get("/foster");
   },
+  adoptedDogs: async () => {
+    return await service.get("/adopted");
+  },
+
   vote: async (dog) => {
     return await service.post("/vote", dog);
   },
+  editDog: async (dog) => {
+    console.log("hiiii");
+    return await service.post("/editDog", dog);
+  },
+  addDog: async (dog) => {
+    return await service.post("/addDogs", dog);
+  },
+
   getOrganizations: async (group) => {
     return await service.get("/helpothers");
   },
