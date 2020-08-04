@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/Carrousel.css";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import "../../CSS/Menu.css";
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 import Menu from "../Menu/MenuMainPage";
 import UserLogIn from "../LogIn/UserLogIn";
 
@@ -55,9 +49,8 @@ class MainCarrouselPage extends Component {
 
   displayMenu = () => {
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
       <div className="Background">
+
         <div className="Container">
           <Link
             className="link"
@@ -118,9 +111,8 @@ class MainCarrouselPage extends Component {
             <button className="MenuLogInButton">LOG IN</button>
           </Link>
         </div>
-=======
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+        </div>
+
       <div>
         <Link
           onClick={() =>
@@ -166,10 +158,7 @@ class MainCarrouselPage extends Component {
         <Link to="/contactus">
           <div>Contact us</div>
         </Link>
-<<<<<<< HEAD
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+
       </div>
     );
   };
@@ -282,8 +271,8 @@ class MainCarrouselPage extends Component {
           <span className="CompanyName">House of Paws</span>
           <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
           <p className="Text">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
             We are all animal lovers and we all wanted to do something positive
             for the community, so as our final project in our IronHack bootcamp
             journey we decided to give back. House of Paws is bigger than us. By
@@ -292,9 +281,8 @@ class MainCarrouselPage extends Component {
           </p>
           <Link to="/about">
             <button className="CarrouselButton">GET TO KNOW US BETTER</button>
-=======
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+            </Link>
+<p>
             Not everyone who has the heart for animal welfare has the means to
             foster or adopt. Our team at House of Paws has come up with a
             creative & easy-to-use platform where you can partner with us to
@@ -305,10 +293,7 @@ class MainCarrouselPage extends Component {
             <button className="CarrouselButton">
               SHARE YOUR LOVE WITH FRED
             </button>
-<<<<<<< HEAD
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
+
           </Link>
         </div>
         <img id="SealLogo" />

@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import "../../CSS/About.css";
-=======
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
 
 class About extends Component {
   state = {
@@ -16,7 +13,6 @@ class About extends Component {
 
   displayNavBar = () => {
     return (
-<<<<<<< HEAD
       <div className="Navbar">
         <div className="NavbarContainer">
           <Link to="/" className="link">
@@ -71,33 +67,6 @@ class About extends Component {
             </button> */}
           </div>
         </div>
-=======
-      <div>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            this.setState({
-              showLogIn: true,
-              showPage: false,
-              showNavbar: false,
-            });
-          }}
-        >
-          Log in
-        </button>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            this.setState({
-              showMenu: true,
-              showPage: false,
-              showNavbar: false,
-            });
-          }}
-        >
-          Menu
-        </button>
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
       </div>
     );
   };
@@ -254,7 +223,6 @@ class About extends Component {
   displayAbout = () => {
     return (
       <div>
-<<<<<<< HEAD
         <div className="container">
           <img className="background1" />
           <div className="textForHeroImage">
@@ -315,38 +283,10 @@ class About extends Component {
           <div className="textForBG">
             <h1 className="header">What to expect from donations</h1>
             <p className="text">
-=======
-        <div className="whatWeDoSection">
-          <img className="aboutImage1" src="" alt="aboutImage1" />
-          <div className="info1">
-            <h1>What we do</h1>
-            <p>
-              Not everyone who has the heart for animal welfare has the means to
-              foster or adopt. Our team at House of Paws has come up with a
-              creative & easy-to-use platform where you can partner with us, and
-              see that every shelter dog has a chance to find a safe & loving
-              home.
-              <p>
-                We hand pick 10 most “unwanted” shelter dogs by selecting the
-                oldest or those that have been at the shelter the longest. You
-                as a member gets up to 3 votes to choose which dog gets to be
-                rescued from the shelter! Every 1st of the month as long as a
-                foster is available, the shelter dog with the highest votes is
-                selected to go home to a foster and a warm bed.
-              </p>
-            </p>
-          </div>
-        </div>
-        <div className="whatToExpectFromDonation">
-          <div className="info2">
-            <h1>What to expect from donations</h1>
-            <p>
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
               Donations will go directly towards the care and wellbeing of the
               foster dogs including: doctor’s bills, any medications needed, any
               grooming needed, food, treats, toys, collar, leash, food/water
               bowl, a bed, etc. All update details will be provided in biweekly
-<<<<<<< HEAD
               membership newsletters. Any more questions?{" "}
               <Link to="/fosterdog">
                 <button>Contact us.</button>
@@ -459,26 +399,6 @@ class About extends Component {
             </p>
             <Link to="/game">
               <button>Play!</button>
-=======
-              membership newsletters.{" "}
-            </p>
-            <Link to="/fosterdog">
-              <button>Donate</button>
-            </Link>
-          </div>
-          <img className="aboutImage2" src="" alt="aboutImage2" />
-        </div>
-        <div className="helpOtherOrganizations">
-          <img className="aboutImage3" src="" alt="aboutImage3" />
-          <div className="info3">
-            <h1>Help other organizations</h1>
-            <p>
-              If you prefer to select or donate to some of the top rescue groups
-              in the country instead, we can provide that for you.
-            </p>
-            <Link to="/helpothers">
-              <button>Help others</button>
->>>>>>> 10868c9e686d1fe1341bcd75bea0bcd1d85095d8
             </Link>
           </div>
         </div>
