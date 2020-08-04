@@ -9,13 +9,11 @@ import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import Contact from "./components/ContactUs/ContactUs";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
-
 import UserLogIn from "./components/Home/LogIn/UserLogIn";
 import UserSignUp from "./components/Home/LogIn/UserSignUp";
 import UserDonate from "./components/userdonate/UserDonate";
 import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
-
 import Vote from "./components/Home/Menu/Vote";
 import FosterDog from "./components/Home/Menu/FosterDog";
 import Adopted from "./components/Home/Menu/Adopted";
