@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
-// import { Client } from "@petfinder/petfinder-js";
-
-// const client = new Client({
-//   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
-//   secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
-// });
+import "../../CSS/Vote.css";
 
 class Vote extends Component {
   state = {
@@ -30,38 +25,34 @@ class Vote extends Component {
       .filter((eachDog) => eachDog.status === "available")
       .map((eachDog, i) => {
         return (
-          <div>
-            <li key={`dog-key-${i}`}>
+          <div className="eachDog">
+            <div className="voteImg">
               <img src={eachDog.image} alt="dogpic" />
               <br />
-              {eachDog.name}
-              {` #${eachDog.shelterID}`}
+            </div>
+
+            <div className="voteInfo">
+              <h1>{eachDog.name}</h1>
+              <button onClick={() => this.vote(eachDog, i)}>
+                {eachDog.votes.length}
+              </button>
               <br />
+              {`ShelterID: #${eachDog.shelterID}`}
+              <br />
+
               {`Location: ${eachDog.location}`}
               <br />
               {`Age: ${eachDog.age}`}
               <br />
               {`Weight: ${eachDog.weight}`}
               <br />
-              {eachDog.description}
+              {`"${eachDog.descr}"`}
               <br />
-
-              <button onClick={() => this.vote(eachDog, i)}>
-                {eachDog.votes.length}
-              </button>
-            </li>
+            </div>
           </div>
         );
       });
   };
-
-  // client.animal.search()
-  //   .then(function (response) {
-  //       // Do something with `response.data.animals`
-  //   })
-  //   .catch(function (error) {
-  //       console.log("Error")
-  //   });
 
   displayNavBar = () => {
     return (
