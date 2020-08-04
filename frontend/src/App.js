@@ -79,7 +79,7 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-          <Route exact path="/userdonate" render={() => <UserDonate />} />
+          <Route exact path="/userdonate" render={() => <UserDonate/>} />
           <Route exact path="/menu" render={() => <MenuMainPage />} />
           <Route exact path="/about" render={() => <About />} />
           <Route exact path="/fosterdog" render={() => <FosterDog />} />

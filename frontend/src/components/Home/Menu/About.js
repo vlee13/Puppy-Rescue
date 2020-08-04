@@ -87,6 +87,9 @@ class About extends Component {
         <Link to="/contactus">
           <div>Contact us</div>
         </Link>
+        <Link to="/userdonate">
+        <div>Donate </div>
+        </Link>
       </div>
     );
   };

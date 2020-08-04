@@ -79,6 +79,9 @@ class ContactUs extends Component {
         <Link to="/meetteam">
           <div>Meet the team</div>
         </Link>
+        <Link to="/userdonate">
+        <div>Donate </div>
+        </Link>
         <Link
           onClick={() =>
             this.setState({

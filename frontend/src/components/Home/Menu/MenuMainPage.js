@@ -29,7 +29,7 @@ const MenuMainPage = () => {
         <div>Contact us</div>
       </Link>
       <Link to="/userdonate">
-        <div>Donate here</div>
+        <div>Donate </div>
       </Link>
     </div>
   );
