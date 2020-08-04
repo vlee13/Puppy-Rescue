@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './donate.css';
 
 class UserDonate extends Component {
   render() {
@@ -36,11 +37,11 @@ class UserDonate extends Component {
 </div>
 
   <h2>Basic Information</h2>
-   <div class="input-group-2">
+   <div class="input-group-1">
     <label>First Name</label>
     <input type="text" />
     </div>
-    <div class="input-group-2">
+    <div class="input-group-1">
     <label>Last Name</label>
     <input type="text" />
     </div>
@@ -52,15 +53,15 @@ class UserDonate extends Component {
     <label>Street Address</label>
     <input type="text" />
     </div>
-    <div class="input-group-3">
+    <div class="input-group-1">
     <label>City</label>
     <input type="text" />
     </div>
-    <div class="input-group-3">
+    <div class="input-group-1">
     <label>State</label>
     <input type="text" />
     </div>
-    <div class="input-group-3">
+    <div class="input-group-1">
     <label>Zip Code</label>
     <input type="text" />
     </div>
@@ -79,11 +80,11 @@ class UserDonate extends Component {
     <input type="text" />
     </div>
     
-    <div class="input-group-2">
+    <div class="input-group-1">
     <label>Expiration Date</label>
     <input type="text" />
     </div>
-    <div class="input-group-2">
+    <div class="input-group-1">
     <label>Security Code (CVV)</label>
     <input type="text" />
     </div>
