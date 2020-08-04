@@ -1,6 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
+import { Client } from "@petfinder/petfinder-js";
+
+const client = new Client({
+  apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
+  secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
+});
+
+client.animal
+  .search()
+  .then(function (response) {
+    console.log(response); // Do something with `response.data.animals`
+  })
+  .catch(function (error) {
+    console.log(error); // Handle the error
+  });
+
+// const CLIENT_ID = "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA";
+// const CLIENT_SECRET = "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH";
 
 class HelpOthers extends Component {
   state = {
@@ -216,7 +234,9 @@ class HelpOthers extends Component {
       return (
         <li>
           <img src={eachGroup.image} alt="orgPic" className="organizationPic" />
-          <h1>{eachGroup.name}</h1>
+          <a href={eachGroup.homepage}>
+            <h1>{eachGroup.name}</h1>
+          </a>
           <br />
           <p>{eachGroup.description}</p>
         </li>

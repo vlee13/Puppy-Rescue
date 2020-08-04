@@ -8,7 +8,7 @@ const dogs = [
     age: 12,
     weight: 68,
     location: "West Los Angeles Shelter",
-    description:
+    descr:
       "My name is Mattie. I am a mixed breed spayed female, and I have been at the shelter since May 26, 2019.",
 
     image:
@@ -21,7 +21,7 @@ const dogs = [
     age: 12,
     weight: 89,
     location: "South Los Angeles Shelter",
-    description:
+    descr:
       "My name is Lady. I am a mixed breed spayed female, and I have been at the shelter since July 2, 2020.",
 
     image:
@@ -34,7 +34,7 @@ const dogs = [
     age: 7,
     weight: 78,
     location: "West Los Angeles Shelter",
-    description:
+    descr:
       "My name is Bodhi. I am a mixed breed neutered male, and I have been at the shelter since June 3, 2019.",
 
     image:
@@ -47,7 +47,7 @@ const dogs = [
     age: 7,
     weight: 78,
     location: "South Los Angeles Shelter",
-    description:
+    descr:
       "My name is Jackson. I am a mixed breed neutered male, and I have been at the shelter since January 31, 2019.",
 
     image:
@@ -60,7 +60,7 @@ const dogs = [
     age: 6,
     weight: 60,
     location: "South Los Angeles Shelter",
-    description:
+    descr:
       "My name is Sosa. I am a mixed breed neutered male, and I have been at the shelter since November 6, 2019.",
 
     image:
@@ -73,7 +73,7 @@ const dogs = [
     age: 5,
     weight: 65,
     location: "West Los Angeles Shelter",
-    description:
+    descr:
       "My name is Chica. I am a mixed breed spayed female, and I have been at the shelter since January 13, 2019.",
 
     image:
@@ -86,7 +86,7 @@ const dogs = [
     age: 5,
     weight: 87,
     location: "West Los Angeles Shelter",
-    description:
+    descr:
       "My name is Moe. I am a mixed breed neutered male, and I have been at the shelter since April 23, 2019.",
 
     image:
@@ -99,7 +99,7 @@ const dogs = [
     age: 8,
     weight: 60,
     location: "South Los Angeles Shelter",
-    description:
+    descr:
       "My name is Leeloo. I am a mixed breed spayed female, and I have been at the shelter since June 6, 2019.",
 
     image:
@@ -112,7 +112,7 @@ const dogs = [
     age: 10,
     weight: 12,
     location: "East Valley Shelter",
-    description:
+    descr:
       "My name is Kongo. I am a mixed breed unalterd male, and I have been at the shelter since July 17, 2020.",
 
     image:
@@ -125,7 +125,7 @@ const dogs = [
     age: 13,
     weight: 54,
     location: "South Los Angeles Shelter",
-    description:
+    descr:
       "My name is Chispa. I am a mixed breed unaltered female, and I have been at the shelter since July 25, 2020.",
 
     image:

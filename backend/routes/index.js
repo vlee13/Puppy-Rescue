@@ -14,6 +14,18 @@ router.get("/dogs", (req, res, next) => {
   });
 });
 
+router.get("/foster", (req, res, next) => {
+  Dog.find().then((fosterdog) => {
+    res.json({ fosterdog });
+  });
+});
+
+router.get("/adopted", (req, res, next) => {
+  Dog.find().then((adopted) => {
+    res.json({ adopted });
+  });
+});
+
 router.get("/helpothers", (req, res, next) => {
   Org.find().then((groups) => {
     console.log(groups);
@@ -48,6 +60,19 @@ router.post("/addDogs", (req, res, next) => {
   Dog.create(req.body).then((newdog) => {
     res.json({ newdog });
   });
+});
+
+router.post("/editDog", (req, res, next) => {
+  Dog.findOneAndUpdate(
+    { shelterID: req.body.shelterID },
+    { ...req.body },
+    { new: true }
+  )
+    .then((edited) => {
+      console.log(edited, "edited");
+      res.json({ edited });
+    })
+    .catch((err) => res.json({ err }));
 });
 
 function isAuth(req, res, next) {

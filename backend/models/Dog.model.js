@@ -5,7 +5,7 @@ const dogSchema = new Schema({
   shelterID: String,
   age: Number,
   weight: Number,
-  description: String,
+  descr: String,
   location: String,
   votes: [{ type: Schema.Types.ObjectId, ref: "Member" }],
   image: {

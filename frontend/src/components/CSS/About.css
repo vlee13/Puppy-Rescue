@@ -119,7 +119,7 @@ body {
 .background6 {
   margin-top: 0vh;
   width: 100vw;
-  background-image: url("../../images/karl-anderson-jKDFcXwk5Cw-unsplash.jpg");
+  background-image: url("../../images/Helpothers.png");
   background-color: #cccccc;
   height: 100vh;
   background-position: left;
@@ -130,10 +130,10 @@ body {
 
 .backgroundForGame {
   width: 100vw;
-  background-image: url("../../images/PlaceholderForZoeyGame.png");
+  background-image: url("../../images/Game2.png");
   background-color: #cccccc;
   height: 90vh;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -184,13 +184,19 @@ body {
   background-color: white;
 }
 
-.textForGame {
+.whiteBGright {
+  right: 5vw;
   background-color: white;
   position: absolute;
-  /* width: 30vw;
-  height: 50vh; */
+  top: 5vh;
+  text-align: left;
+}
+
+.whiteBGleft {
   left: 5vw;
-  top: 10vh;
+  background-color: white;
+  position: absolute;
+  top: 5vh;
   text-align: left;
 }
 
@@ -257,15 +263,32 @@ body {
 
 /* Meet the team CSS */
 
-.meetTeam {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
+.footer {
+  background-color: rgb(90, 90, 90);
 }
 
-.personName {
+.footerContainer {
+  display: flex;
+}
+
+.floatLeft,
+.floatRight {
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+}
+.footerTitle {
+  width: 80vw;
+  text-align: left;
+}
+
+.footerElementText {
+  display: block;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* .personName {
   width: 20vw;
   font-size: 2vw;
 }
@@ -275,15 +298,16 @@ body {
   justify-content: center;
   align-items: center;
   /* font-size: 30px; */
-  /* border-bottom: 1px solid black; */
-  padding-bottom: 5vh;
+/* border-bottom: 1px solid black; */
+/* padding-bottom: 5vh;
   margin: auto 5vh;
-}
+} */
 
-.meetTeamText {
+/* .meetTeamText {
   width: 20vw;
-  font-size: 1vw;
-}
+  font-size: 1vw; */
+/* } */
+
 /* .description {
   display: flex;
   justify-content: center;
@@ -293,7 +317,7 @@ body {
   padding: 3% 25%;
 } */
 
-.usinfo {
+/* .usinfo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,15 +330,15 @@ body {
 .dp {
   border: 1px solid black;
   /* border-radius: 20px; */
-  background-color: #ffffff;
+/* background-color: #ffffff;
   padding: 2rem 2rem;
   /* box-shadow: 20px 20px black; */
-  margin: 2vh 2vh;
-}
+/* margin: 2vh 2vh;
+} */
 
-.githubLinkedIn {
+/* .githubLinkedIn {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-}
+} */
