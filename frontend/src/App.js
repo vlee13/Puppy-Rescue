@@ -14,7 +14,6 @@ import UserSignUp from "./components/Home/LogIn/UserSignUp";
 import UserDonate from "./components/Home/LogIn/UserDonate";
 import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
-
 import Vote from "./components/Home/Menu/Vote";
 import FosterDog from "./components/Home/Menu/FosterDog";
 import Adopted from "./components/Home/Menu/Adopted";
