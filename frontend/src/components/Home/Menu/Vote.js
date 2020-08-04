@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
+// import { Client } from "@petfinder/petfinder-js";
+
+// const client = new Client({
+//   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
+//   secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
+// });
+
 class Vote extends Component {
   state = {
     showNavbar: true,
@@ -47,6 +54,14 @@ class Vote extends Component {
         );
       });
   };
+
+  // client.animal.search()
+  //   .then(function (response) {
+  //       // Do something with `response.data.animals`
+  //   })
+  //   .catch(function (error) {
+  //       console.log("Error")
+  //   });
 
   displayNavBar = () => {
     return (
