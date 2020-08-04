@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
+import { Client } from "@petfinder/petfinder-js";
+
+const client = new Client({
+  apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
+  secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
+});
 
 class Adopted extends Component {
   state = {
@@ -12,13 +18,17 @@ class Adopted extends Component {
     showMenu: false,
     showDonate: false,
     adopted: [],
+    petfinder: [],
   };
 
   async componentDidMount() {
     let res = await actions.adoptedDogs();
-    console.log("hello", res);
+    let res2 = await axios.get(`https://api.petfinder.com/v2/types/dog`);
+    let res3 = await client.animal.search();
+    console.log("hello", res2);
     this.setState({
       adopted: res.data.adopted,
+      petfinder: res2.data,
     });
   }
 
@@ -37,35 +47,6 @@ class Adopted extends Component {
           </div>
         );
       });
-    //   return (
-    //     <div>
-    //       <img src="" alt="fosterDogImage" className="HeroImage" />
-    //       <div className="textAlignedToRight">
-    //         <img src="" alt="logoMark" className="LogoMark" />
-    //         <h1 className="Tagline">Fred Flinston</h1>
-    //         <span className="CompanyName">Dog I'm fostering now</span>
-    //         <p>Votes</p>
-    //         <p>Started Fostering</p>
-    //         <p>Breed</p>
-    //         <p>text</p>
-    //         <button
-    //           onClick={() => {
-    //             this.setState({
-    //               showPage: false,
-    //               showLogIn: false,
-    //               showSignUp: false,
-    //               showNavbar: false,
-    //               showDonate: true,
-    //             });
-    //             console.log("Hi");
-    //           }}
-    //           className="button"
-    //         >
-    //           Share your love with Fred
-    //         </button>
-    //       </div>
-    //     </div>
-    //   );
   };
 
   displayNavBar = () => {
@@ -380,6 +361,18 @@ class Adopted extends Component {
           ? this.displayAdopted()
           : ""}
         {this.state.showDonate ? this.displayDonate() : ""}
+
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="cardNumber">Card Number</label>
+          <input
+            onChange={this.handleChange}
+            name="cardNumber"
+            type="number"
+            value={this.state.value}
+            className="formBar"
+          />
+          <br />
+        </form>
       </div>
     );
   }
