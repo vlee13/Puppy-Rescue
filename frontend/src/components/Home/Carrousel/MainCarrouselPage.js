@@ -5,6 +5,8 @@ import Menu from "../Menu/MenuMainPage";
 import UserLogIn from "../LogIn/UserLogIn";
 import actions from "../../../services/index.js";
 
+import "../../CSS/Menu.css";
+
 class MainCarrouselPage extends Component {
   state = {
     showNavbar: true,
@@ -59,56 +61,73 @@ class MainCarrouselPage extends Component {
 
   displayMenu = () => {
     return (
-      <div>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          X
-        </Link>
-        <br />
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          Home
-        </Link>
-        <Link to="/about">
-          <div>About</div>
-        </Link>
-        <Link to="/fosterdog">
-          <div>The dog I'm fostering now</div>
-        </Link>
-        <Link to="/vote">
-          <div>Vote for the next dog I'll foster</div>
-        </Link>
-        <Link to="/helpothers">
-          <div>Help other organizations</div>
-        </Link>
-        <Link to="/game">
-          <div>
-            Play our 90's inspired game <i>Dog Zoey in Space</i>
-          </div>
-        </Link>
-        <Link to="/meetteam">
-          <div>Meet the team</div>
-        </Link>
-        <Link to="/contactus">
-          <div>Contact us</div>
-        </Link>
-        {this.state.isAdmin && (
-          <Link to="/adminpage">
-            <div>Administrator</div>
+      <div className="Background">
+        <div className="Container">
+          <Link
+            className="link"
+            id="X"
+            onClick={() =>
+              this.setState({
+                showMenu: false,
+                showNavbar: true,
+              })
+            }
+          >
+            X
           </Link>
-        )}
+          <br />
+          <Link
+            className="link"
+            onClick={() =>
+              this.setState({
+                showMenu: false,
+                showNavbar: true,
+              })
+            }
+          >
+            Home
+          </Link>
+          <br />
+          <Link to="/about" className="link">
+            <div>About</div>
+          </Link>
+          <br />
+          <Link to="/fosterdog" className="link">
+            <div>The dog I'm fostering now</div>
+          </Link>
+          <br />
+          <Link to="/vote" className="link">
+            <div>Vote for the next dog I'll foster</div>
+          </Link>
+          <br />
+          <Link to="/helpothers" className="link">
+            <div>Help other organizations</div>
+          </Link>
+          <br />
+          <Link to="/game" className="link">
+            <div>
+              Play our 90's inspired game <i>Dog Zoey in Space</i>
+            </div>
+          </Link>
+          <br />
+          <Link to="/meetteam" className="link">
+            <div>Meet the team</div>
+          </Link>
+          <br />
+          <Link to="/contactus" className="link">
+            <div>Contact us</div>
+          </Link>
+          <br />
+          <Link to="/about">
+            <button className="MenuLogInButton">LOG IN</button>
+          </Link>
+
+          {this.state.isAdmin && (
+            <Link to="/adminpage">
+              <div>Administrator</div>
+            </Link>
+          )}
+        </div>
       </div>
     );
   };
@@ -234,11 +253,31 @@ class MainCarrouselPage extends Component {
               saving these canines, one angel baby at a time.{" "}
             </p>
           </div>
+          <Link to="/about">
+            <button className="CarrouselButton">GET TO KNOW US MORE</button>
+          </Link>
+
+          {/* <p className="Text">
+            We are all animal lovers and we all wanted to do something positive
+            for the community, so as our final project in our IronHack bootcamp
+            journey we decided to give back. House of Paws is bigger than us. By
+            fostering these shelter dogs, we believe we can give them a real
+            chance to being adopted into their forever homes.
+          </p>
+          <Link to="/about">
+            <button className="CarrouselButton">GET TO KNOW US BETTER</button>
+          
+            <p> Not everyone who has the heart for animal welfare has the means to
+            foster or adopt. Our team at House of Paws has come up with a
+            creative & easy-to-use platform where you can partner with us to
+            change canine lives. You get to vote which furbaby gets to go home
+            to a safe & loving home.
+          </p>
           <Link to="/fosterdog">
             <button className="CarrouselButton">
-              SHARE YOUR LOVE WITH ASTRO
+              SHARE YOUR LOVE WITH FRED
             </button>
-          </Link>
+          </Link> */}
         </div>
         <img id="SealLogo" />
       </div>

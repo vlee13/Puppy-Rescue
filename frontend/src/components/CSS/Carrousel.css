@@ -1,7 +1,3 @@
-body {
-  /* overflow: hidden; */
-}
-
 /* Main container */
 
 .CarrouselContainer {
@@ -52,6 +48,38 @@ body {
   background-size: cover;
   width: 45vw;
 }
+
+
+.CarrouselImage2 {
+  background-image: url("../../images/pexels-daniel-frank-343241.jpg");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45vw;
+}
+
+.CarrouselImage3 {
+  background-image: url("../../images/pexels-la-miko-3663082.jpg");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45vw;
+}
+
+.CarrouselImage4 {
+  background-image: url("../../images/photo-of-people-beside-dog-2925321.jpg");
+  background-color: #cccccc;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45vw;
+}
+
 
 .CarrouselText {
   width: 45vw;

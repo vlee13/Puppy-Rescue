@@ -25,6 +25,7 @@ import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
+import AddDog from "./components/AddDog/AddDog";
 
 class App extends Component {
   state = {};
@@ -94,6 +95,7 @@ class App extends Component {
 
           <Route exact path="/slider" render={() => <Slider />} />
           <Route exact path="/adminpage" render={() => <AdminPage />} />
+          <Route exact path="/addDog" render={() => <AddDog />} />
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route

@@ -4,6 +4,9 @@ import actions from "../../services/index";
 import SignUp from "../auth/SignUp";
 import LogIn from "../auth/LogIn";
 import MainCarrousel from "./Carrousel/MainCarrouselPage";
+import SecondCarousel from "./Carrousel/SecondCarouselPage";
+import ThirdCarousel from "./Carrousel/ThirdCarouselPage";
+import FourthCarousel from "./Carrousel/FourthCarouselPage";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -70,7 +73,18 @@ class Home extends Component {
             <MainCarrousel {...this.props} />
             <p className="signup">Legend 1</p>
           </div>
-          <div style={{ height: "100vh", background: "salmon" }}>
+
+          <div style={{ height: "100vh", background: "white" }}>
+            <SecondCarousel {...this.props} />
+            <p className="login">Legend 2</p>
+          </div>
+          <div style={{ height: "100vh", background: "white" }}>
+            <ThirdCarousel {...this.props} />
+          </div>
+          {/* <div style={{ height: "100vh", background: "white" }}>
+            <FourthCarousel {...this.props} />
+          </div> */}
+          {/* <div style={{ height: "100vh", background: "salmon" }}>
             <LogIn {...this.props} />
             <p className="login">Legend 2</p>
           </div>
@@ -79,7 +93,8 @@ class Home extends Component {
           </div>
           <div style={{ height: "100vh", background: "yellow" }}>
             <p>Legend 4</p>
-          </div>
+          </div> */}
+
           {/* <div>
                     <img src="assets/3.jpeg" />
                     <p className="legend">Legend 3</p>

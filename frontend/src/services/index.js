@@ -38,6 +38,10 @@ const actions = {
     console.log("hiiii");
     return await service.post("/editDog", dog);
   },
+  addDog: async (dog) => {
+    return await service.post("/addDogs", dog);
+  },
+
   getOrganizations: async (group) => {
     return await service.get("/helpothers");
   },
