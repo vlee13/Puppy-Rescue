@@ -46,7 +46,7 @@ class Vote extends Component {
               <br />
               {`Weight: ${eachDog.weight}`}
               <br />
-              {eachDog.descr}
+              {`"${eachDog.descr}"`}
               <br />
             </div>
           </div>
