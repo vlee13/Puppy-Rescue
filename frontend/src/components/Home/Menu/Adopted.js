@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
+import "../../CSS/Adopted.css";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -11,15 +12,79 @@ const client = new Client({
 
 class Adopted extends Component {
   state = {
-    showNavbar: true,
-    showPage: true,
-    showLogIn: false,
-    showSignUp: false,
-    showMenu: false,
-    showDonate: false,
+    testimonialBox: false,
     adopted: [],
     petfinder: [],
     searchParams: { type: "dog" },
+  };
+
+  displayNavBar = () => {
+    return (
+      <div className="Navbar">
+        <div className="NavbarContainer">
+          <Link to="/" className="link">
+            <div className="NavBarElement">
+              <img id="LogoMark" />
+              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+              <span className="NavBarElementText">House of Paws</span>
+              {/* Remove till here */}
+            </div>
+          </Link>
+          <div className="NavBarElement">
+            <Link to="/about" className="link">
+              <div className="NavBarElementText">About us</div>
+            </Link>
+            <Link to="/fosterdog" className="link">
+              <div className="NavBarElementText">Foster dogs</div>
+            </Link>
+
+            <Link to="/vote" className="link">
+              <div className="NavBarElementText">Vote!</div>
+            </Link>
+
+            <Link to="/adopted" className="link">
+              <div className="NavBarElementText">Adopted</div>
+            </Link>
+
+            <Link to="/contactus" className="link">
+              <div className="NavBarElementText">Contact us</div>
+            </Link>
+            <Link to="/contactus" className="link">
+              <div className="NavBarElementText">|</div>
+            </Link>
+            <button
+              className="navBarButton"
+              onClick={(event) => {
+                event.preventDefault();
+                this.setState({
+                  showLogIn: true,
+                  showPage: false,
+                  showNavbar: false,
+                });
+              }}
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  displayHeader = () => {
+    return (
+      <div className="container">
+        <img className="adoptedHeroImage" />
+        <div className="textForHeroImage">
+          <h1>Our Adoptees!</h1>
+          <p>
+            These are the success stories and history of all the rescues that
+            found their fur-ever homes. <br />
+            Share a little testimonial and some pictures for this album!
+          </p>
+        </div>
+      </div>
+    );
   };
 
   async componentDidMount() {
@@ -61,182 +126,16 @@ class Adopted extends Component {
       });
   };
 
-  displayNavBar = () => {
+  displayAddTestimonial = () => {
     return (
       <div>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            this.setState({
-              showLogIn: true,
-              showPage: false,
-              showNavbar: false,
-            });
-          }}
-        >
-          Log in
-        </button>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            this.setState({
-              showMenu: true,
-              showPage: false,
-              showNavbar: false,
-            });
-          }}
-        >
-          Menu
-        </button>
-      </div>
-    );
-  };
-
-  displayMenu = () => {
-    return (
-      <div>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          X
-        </Link>
-        <br />
-        <Link to="/">
-          <div>Home</div>
-        </Link>
-        <Link to="/about">
-          <div>About</div>
-        </Link>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          The dog I'm fostering now
-        </Link>
-        <Link to="/vote">
-          <div>Vote for the next dog I'll foster</div>
-        </Link>
-        <Link to="/helpothers">
-          <div>Help other organizations</div>
-        </Link>
-        <Link to="/game">
-          <div>
-            Play our 90's inspired game <i>Dog Zoey in Space</i>
-          </div>
-        </Link>
-        <Link to="/meetteam">
-          <div>Meet the team</div>
-        </Link>
-        <Link to="/contactus">
-          <div>Contact us</div>
-        </Link>
-      </div>
-    );
-  };
-
-  displayLogIn = () => {
-    return (
-      <div>
-        <div ClassName="SixImages">
-          <img src="" alt="" ClassName="Image" />
-          <img src="" alt="" ClassName="Image" />
-          <img src="" alt="" ClassName="Image" />
-          <img src="" alt="" ClassName="Image" />
-          <img src="" alt="" ClassName="Image" />
-          <img src="" alt="" ClassName="Image" />
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              this.setState({
-                showPage: true,
-                showLogIn: false,
-                showNavbar: true,
-              });
-              console.log("Hi");
-            }}
-          >
-            BACK
-          </button>
-          <div>
-            <img src="" alt="" ClassName="logoMark" />
-          </div>
-          <h1>Log in to Valerie's Foster Dog</h1>
-          <h2>Enter details below</h2>
-          <label>Email adress</label>
-          <input type="text" id="fname" name="fname" value="" />
-          <br />
-          <label>Password</label>
-          <Link>Forgot your password?</Link>
-          <input type="password" id="fname" name="fpassword" value="" />
-          <br />
-          <button>LOG IN</button>
-          <button
-            onClick={() => {
-              this.setState({
-                showPage: false,
-                showLogIn: false,
-                showSignUp: true,
-                showNavbar: false,
-              });
-            }}
-          >
-            Don't have an account?
-          </button>
-        </div>
-      </div>
-    );
-  };
-
-  displaySignUp = () => {
-    return (
-      <div>
+        <h4>Please share a little testimonial and some pictures with us!</h4>
         <button
           onClick={() => {
-            this.setState({
-              showPage: false,
-              showLogIn: true,
-              showSignUp: false,
-              showNavbar: false,
-            });
-            console.log("Hi");
+            this.setState({ testimonialBox: true });
           }}
         >
-          BACK
-        </button>
-        <img src="" alt="" ClassName="logoMark" />
-        <h1>Be part of our community</h1>
-        <label>Name</label>
-        <input type="text" id="fname" name="fname" value="" />
-        <br />
-        <label>Email adress</label>
-        <input type="text" id="fname" name="fname" value="" />
-        <br />
-        <label>Create a password</label>
-        <input type="text" id="fname" name="fname" value="" />
-        <br />
-        <button>SIGN UP</button>
-        <button
-          onClick={() => {
-            this.setState({
-              showPage: false,
-              showLogIn: true,
-              showSignUp: false,
-              showNavbar: false,
-            });
-            console.log("Hi");
-          }}
-        >
-          <p>Already have an account?</p>
+          Add
         </button>
       </div>
     );
@@ -258,124 +157,36 @@ class Adopted extends Component {
     this.searchFilter();
   };
 
-  displayDonate = () => {
-    return (
-      <div>
-        <button
-          onClick={() => {
-            this.setState({
-              showNavbar: true,
-              showDonate: false,
-            });
-          }}
-        >
-          BACK
-        </button>
-        <img src="" alt="logoMark" className="LogoMark" />
-        <span className="CompanyName">
-          Thanks for sharing your love with Fred
-        </span>
-        <p>Donate with a debit or credit card</p>
-        <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
-          <label htmlFor="cardNumber">Card Number</label>
-          <input
-            onChange={this.handleChange}
-            name="cardNumber"
-            type="number"
-            value={this.state.value}
-            className="formBar"
-          />
-          <br />
-          <label htmlFor="securityCode">Security</label>
-          <input
-            onChange={this.handleChange}
-            name="securityCode"
-            type="number"
-            value={this.state.value}
-            className="smallerFormBar"
-          />
-          <label htmlFor="expirationDate">Expiration Date</label>
-          <input
-            onChange={this.handleChange}
-            name="expirationDate"
-            type="number"
-            value={this.state.value}
-            className="smallerFormBar"
-          />
-          <br />
-          <p>Billing</p>
-          <label htmlFor="adress">Street Address</label>
-          <input
-            onChange={this.handleChange}
-            name="adress"
-            type="text"
-            value={this.state.value}
-            className="formBar"
-          />
-          <br />
-          <label htmlFor="city">City</label>
-          <input
-            onChange={this.handleChange}
-            name="city"
-            type="text"
-            value={this.state.value}
-            className="smallerFormBar"
-          />
-          <label htmlFor="zipCode">Zip Code</label>
-          <input
-            onChange={this.handleChange}
-            name="zipCode"
-            type="number"
-            value={this.state.value}
-            className="smallerFormBar"
-          />
-          <br />
-          <input type="checkbox" id="saveInfo" name="information" value="" />
-          <label for="savingInfo"> Save this information for next time</label>
-          <br />
-          <button type="submit" className="donateButton">
-            DONATE NOW
-          </button>
-        </form>
-      </div>
-    );
-  };
+  // handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   let res = await axios.post("http://localhost:5000/", this.state);
+  //   console.log(res);
+  // };
 
-  displayHeader = () => {
-    return (
-      <div>
-        <img src="" alt="logoMark" className="LogoMark" />
-        <div>
-          <div>
-            <h1>Our Adoptees!</h1>
-            <p>
-              The success stories and history of all the rescues that found
-              their fur-ever homes
-            </p>
-          </div>
-          <hr></hr>
-        </div>
-      </div>
-    );
-  };
+  // displayTestimonialBox = () => {
+  //   return (
+  //     <div>
+  //       <form>
+  //       <textarea
+  //           onChange={this.handleChange}
+  //           name="message"
+  //           value={this.state.value}
+  //           className="textarea"
+  //           rows="5"
+  //         ></textarea>
+  //       </form>
+  //     </div>
+  //   );
+  // };
 
   render() {
     return (
       <div>
-        {this.state.showNavbar ? this.displayNavBar() : ""}
-        {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
-        {this.state.showSignUp ? this.displaySignUp() : ""}
-        {this.state.showMenu & !this.state.showLogIn ? this.displayMenu() : ""}
-        {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
-          ? this.displayHeader()
-          : ""}
-        {!this.state.showLogIn &
-        !this.state.showMenu &
-        !this.state.showSignUp &
-        !this.state.showDonate
-          ? this.displayAdopted()
-          : ""}
-        {this.state.showDonate ? this.displayDonate() : ""}
+        {this.displayNavBar()}
+        {this.displayHeader()}
+        {this.displayAdopted()}
+        {/* {this.displayAddTestimonial()} */}
+        {/* {this.state.testimonialBox ? this.displayTestimonialBox() : ""} */}
 
         <form onSubmit={this.handleSubmit}>
           <label for="location">Location</label>
