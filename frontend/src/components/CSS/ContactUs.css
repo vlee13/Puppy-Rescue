@@ -1,0 +1,21 @@
+.imageForContactUs {
+  margin-top: 8vh;
+  width: 100vw;
+  background-image: url("../../images/pexels-lumn-406014.jpg");
+  background-color: gainsboro;
+  height: 60vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contactUsContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.contactUsTextContainer {
+  width: 60vw;
+  text-align: left;
+}

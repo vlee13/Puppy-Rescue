@@ -16,6 +16,9 @@ class About extends Component {
             </div>
           </Link>
           <div className="NavBarElement">
+            <Link to="/about" className="link">
+              <div className="NavBarElementText">About us</div>
+            </Link>
             <Link to="/fosterdog" className="link">
               <div className="NavBarElementText">Foster dogs</div>
             </Link>
@@ -25,7 +28,7 @@ class About extends Component {
             </Link>
 
             <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopt</div>
+              <div className="NavBarElementText">Adopted</div>
             </Link>
 
             <Link to="/contactus" className="link">
@@ -176,16 +179,14 @@ class About extends Component {
     return (
       <div className="footer">
         {/* Main Container for 3 floats: Dev Team, Navigation and Other links */}
-        <img class="footerLogoMark" />
-        <div className="footerContainer">
-          {/* Development Team */}
 
-          {/* Address / Phone / Social Media */}
+        <div className="footerContainer">
           <div className="floatElement">
-            <p className="address">
+            <img class="footerLogoMark" />
+            <div className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
-            </p>
+            </div>
             <div classNAme="phoneNumber"> 0-800-WeLoveDogs</div>
 
             <span>
@@ -203,10 +204,12 @@ class About extends Component {
           </div>
 
           <div className="floatElement">
-            <h4>Development Team</h4>
+            <h4 className="title">Development Team</h4>
             {/* Carlos */}
-            <h4>Carlos Cesar Valle</h4>
-            <p>Software Developer | UX & Branding Designer</p>
+            <div>Carlos Cesar Valle</div>
+            <div>
+              Software Developer <br /> UX & Branding Designer
+            </div>
             {/* <p className="meetTeamText">From: Miami, FL</p> */}
             <span>
               <a href="https://github.com/carloscesarvalle" target="_blank">
@@ -232,8 +235,10 @@ class About extends Component {
               </a>
             </span>
             {/* Valerie */}
-            <h4>Valerie Lee Kang</h4>
-            <p>Software Developer | Canvas Developer</p>
+            <div>Valerie Lee Kang</div>
+            <div>
+              Software Developer <br /> Canvas Developer
+            </div>
             <span>
               <a href="https://github.com/vlee13" target="_blank">
                 GitHub
@@ -246,8 +251,8 @@ class About extends Component {
               </a>
             </span>
             {/* DP */}
-            <h4>Dionel Panuncia</h4>
-            <p>Software Developer</p>
+            <div>Dionel Panuncia</div>
+            <div>Software Developer</div>
             <span>
               <a href="https://github.com/dpanuncia/" target="_blank">
                 GitHub
@@ -264,7 +269,7 @@ class About extends Component {
           {/* Navigation Bar */}
 
           <div className="floatElement">
-            <h4>Navigation</h4>
+            <h4 className="title">Navigation</h4>
 
             <Link to="/fosterdog" className="footerLink">
               Foster dogs
@@ -282,7 +287,7 @@ class About extends Component {
               Contact us
             </Link>
 
-            <h4>Other links</h4>
+            <h4 className="title">Other links</h4>
             <Link to="/game" className="footerLink">
               Zoey 90's Game
             </Link>
@@ -290,7 +295,7 @@ class About extends Component {
 
           {/* Newsletter and Copyright */}
           <div className="floatElement">
-            <p>Do you want to receive our monthly newsletter?</p>
+            <div>Do you want to receive our monthly newsletter?</div>
             <button
               className="footerButton"
               onClick={(event) => {
@@ -300,12 +305,12 @@ class About extends Component {
             >
               Sign Up
             </button>
-            <p className="footerText">
+            <div className="footerText">
               House of Paws was created with a lot of love during Ironhack
               fulltime web development bootcamp. <br /> All rights reserved.{" "}
               <br /> We also want to show our appreciation to the photograpers.
               Most of their work can be found on pexels.com and unsplash.com.
-            </p>
+            </div>
           </div>
         </div>
       </div>
