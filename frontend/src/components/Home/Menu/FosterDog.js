@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
 import "../../CSS/FosterDog.css";
+import GoogleAuth from "../../auth/GoogleAuth";
+import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 
 class FosterDog extends Component {
   state = {
@@ -166,7 +168,7 @@ class FosterDog extends Component {
           <div>Contact us</div>
         </Link>
         <Link to="/userdonate">
-        <div>Donate </div>
+          <div>Donate </div>
         </Link>
       </div>
     );
@@ -443,7 +445,10 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
+        {!this.props.email && <GoogleAuth setUser={this.props.setUser} />}
+        {!this.props.email && <GoogleAuthLogin setUser={this.props.setUser} />}
         {this.displayFosterDog()}
+
         {/* {this.state.showNavbar ? this.displayNavBar() : ""}
         {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
         {this.state.showSignUp ? this.displaySignUp() : ""}

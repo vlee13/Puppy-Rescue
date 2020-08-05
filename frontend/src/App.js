@@ -23,8 +23,7 @@ import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
-import AddDog from "./components/AddDog/AddDog";
-
+import AddDog from "./components/Admin/AddDog";
 
 class App extends Component {
   state = {};
@@ -80,14 +79,20 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-          <Route exact path="/userdonate" render={() => <UserDonate/>} />
+          <Route exact path="/userdonate" render={() => <UserDonate />} />
           <Route exact path="/menu" render={() => <MenuMainPage />} />
           <Route exact path="/about" render={() => <About />} />
 
           <Route exact path="/vote" render={() => <Vote />} />
-          <Route exact path="/fosterdog" render={() => <FosterDog />} />
+          <Route
+            exact
+            path="/fosterdog"
+            render={() => (
+              <FosterDog email={this.state.email} setUser={this.setUser} />
+            )}
+          />
           <Route exact path="/adopted" render={() => <Adopted />} />
-          
+
           <Route exact path="/game" render={() => <Game />} />
           <Route exact path="/meetteam" render={() => <MeetTeam />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
@@ -124,8 +129,8 @@ class App extends Component {
           />
           <Route component={NotFound} /> */}
         </Switch>
-        {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />}
+        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
       </BrowserRouter>
     );
   }

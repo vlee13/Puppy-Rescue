@@ -36,7 +36,7 @@ class Adopted extends Component {
     console.log(res3);
   }
 
-  showSearch = async () => {
+  searchFilter = async () => {
     let res3 = await client.animal.search(this.state.searchParams);
     this.setState({
       petfinder: res3.data,
@@ -255,7 +255,7 @@ class Adopted extends Component {
     event.preventDefault();
     // let res = await axios.post("http://localhost:5000/", this.state);
     // console.log(res);
-    this.showSearch();
+    this.searchFilter();
   };
 
   displayDonate = () => {

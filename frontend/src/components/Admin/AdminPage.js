@@ -32,9 +32,7 @@ class AdminPage extends Component {
 
             <div className="voteInfo">
               <h1>{eachDog.name}</h1>
-              <button onClick={() => this.vote(eachDog, i)}>
-                {eachDog.votes.length}
-              </button>
+              <button>{eachDog.votes.length}</button>
               <br />
               {`ShelterID: #${eachDog.shelterID}`}
               <br />
