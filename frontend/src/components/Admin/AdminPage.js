@@ -12,12 +12,11 @@ class AdminPage extends Component {
   async componentDidMount() {
     console.log("admin state", this.state);
     let res = await actions.getDogs();
-    let res2 = await actions.clearVotes();
+
     this.setState({
       dogs: res.data.dogs,
-      clearVotes: res2.data,
     });
-    console.log("here", res, res2);
+    console.log("here", res);
   }
 
   displayDogs = () => {
@@ -54,6 +53,15 @@ class AdminPage extends Component {
       });
   };
 
+  clearVoting = async () => {
+    let res2 = await actions.clearVotes();
+    let res = await actions.getDogs();
+    this.setState({
+      dogs: res.data.dogs,
+      clearVotes: res2.data,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -66,9 +74,7 @@ class AdminPage extends Component {
         </div>
         <br />
         <div>
-          <button onClick={() => this.setState({ clearVotes: 0 })}>
-            Clear votes
-          </button>
+          <button onClick={this.clearVoting}>Clear votes</button>
           {this.displayDogs()}
         </div>
       </div>

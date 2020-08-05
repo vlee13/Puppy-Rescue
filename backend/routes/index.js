@@ -76,8 +76,10 @@ router.post("/editDog", (req, res, next) => {
 });
 
 router.post("/adminpage", (req, res, next) => {
-  Dog.updateMany({}, { vote: 0 }, { new: true }).then((dog) => {
-    res.json({ dog });
+  Dog.updateMany({}, { votes: [] }).then((dog) => {
+    User.updateMany({}, { votes: 3 }).then((user) => {
+      res.json({ user, dog });
+    });
   });
 });
 

@@ -19,18 +19,30 @@ class Adopted extends Component {
     showDonate: false,
     adopted: [],
     petfinder: [],
+    searchParams: { type: "dog" },
   };
 
   async componentDidMount() {
     let res = await actions.adoptedDogs();
-    let res2 = await axios.get(`https://api.petfinder.com/v2/types/dog`);
-    let res3 = await client.animal.search();
-    console.log("hello", res2);
+    // let res2 = await axios.get(
+    //   `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/types/dog`
+    // );
+    let res3 = await client.animal.search({ type: "dog" });
+
     this.setState({
       adopted: res.data.adopted,
-      petfinder: res2.data,
+      petfinder: res3.data,
     });
+    console.log(res3);
   }
+
+  showSearch = async () => {
+    let res3 = await client.animal.search(this.state.searchParams);
+    this.setState({
+      petfinder: res3.data,
+    });
+    console.log(res3);
+  };
 
   displayAdopted = () => {
     console.log("display dogs", this.state.adopted);
@@ -231,16 +243,19 @@ class Adopted extends Component {
   };
 
   handleChange = (event) => {
+    let searchCopy = { ...this.state.searchParams };
+    searchCopy[event.target.name] = event.target.value;
     this.setState({
-      [event.target.name]: event.target.value,
+      searchParams: searchCopy,
     });
     console.log(this.state);
   };
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    let res = await axios.post("http://localhost:5000/", this.state);
-    console.log(res);
+    // let res = await axios.post("http://localhost:5000/", this.state);
+    // console.log(res);
+    this.showSearch();
   };
 
   displayDonate = () => {
@@ -363,15 +378,10 @@ class Adopted extends Component {
         {this.state.showDonate ? this.displayDonate() : ""}
 
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="cardNumber">Card Number</label>
-          <input
-            onChange={this.handleChange}
-            name="cardNumber"
-            type="number"
-            value={this.state.value}
-            className="formBar"
-          />
+          <label for="location">Location</label>
+          <input onChange={this.handleChange} name="location" type="number" />
           <br />
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
