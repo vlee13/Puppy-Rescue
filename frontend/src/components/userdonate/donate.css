@@ -1,29 +1,12 @@
-.donate {
-    background-color: blue;
-    background-attachment: fixed;
-    position: relative;
-
-}
-
-#custom {
-    background-color: brown;
-    position: relative;
-
-}
-
-.clearfix {
-    background-color: brown;
-    text-align: center;
-}
-
-.input-group-1 {
-    background-color: cadetblue;
-    text-align: center;
-}
-
 h2 {
     text-align: center;
-    background-color: cadetblue;
+
 }
 
+button {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(113, 111, 241);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
