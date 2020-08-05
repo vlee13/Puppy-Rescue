@@ -11,19 +11,20 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
 import UserLogIn from "./components/Home/LogIn/UserLogIn";
 import UserSignUp from "./components/Home/LogIn/UserSignUp";
-import UserDonate from "./components/Home/LogIn/UserDonate";
+import UserDonate from "./components/userdonate/UserDonate";
 import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
 import Vote from "./components/Home/Menu/Vote";
 import FosterDog from "./components/Home/Menu/FosterDog";
 import Adopted from "./components/Home/Menu/Adopted";
-import HelpOthers from "./components/Home/Menu/HelpOthers";
+
 import Game from "./components/Home/Menu/Game";
 import MeetTeam from "./components/Home/Menu/MeetTeam";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
 import AddDog from "./components/AddDog/AddDog";
+
 
 class App extends Component {
   state = {};
@@ -79,14 +80,14 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-          <Route exact path="/userdonate" render={() => <UserDonate />} />
+          <Route exact path="/userdonate" render={() => <UserDonate/>} />
           <Route exact path="/menu" render={() => <MenuMainPage />} />
           <Route exact path="/about" render={() => <About />} />
 
           <Route exact path="/vote" render={() => <Vote />} />
           <Route exact path="/fosterdog" render={() => <FosterDog />} />
           <Route exact path="/adopted" render={() => <Adopted />} />
-          <Route exact path="/helpothers" render={() => <HelpOthers />} />
+          
           <Route exact path="/game" render={() => <Game />} />
           <Route exact path="/meetteam" render={() => <MeetTeam />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />

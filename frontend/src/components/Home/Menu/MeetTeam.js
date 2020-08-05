@@ -76,6 +76,9 @@ class MeetTeam extends Component {
             Play our 90's inspired game <i>Dog Zoey in Space</i>
           </div>
         </Link>
+        <Link to="/userdonate">
+        <div>Donate </div>
+        </Link>
         <Link
           onClick={() =>
             this.setState({

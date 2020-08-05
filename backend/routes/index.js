@@ -75,6 +75,14 @@ router.post("/editDog", (req, res, next) => {
     .catch((err) => res.json({ err }));
 });
 
+router.post("/adminpage", (req, res, next) => {
+  Dog.updateMany({}, { votes: [] }).then((dog) => {
+    User.updateMany({}, { votes: 3 }).then((user) => {
+      res.json({ user, dog });
+    });
+  });
+});
+
 function isAuth(req, res, next) {
   req.isAuthenticated()
     ? next()

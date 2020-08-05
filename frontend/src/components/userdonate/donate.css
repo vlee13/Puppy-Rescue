@@ -1,0 +1,29 @@
+.donate {
+    background-color: blue;
+    background-attachment: fixed;
+    position: relative;
+
+}
+
+#custom {
+    background-color: brown;
+    position: relative;
+
+}
+
+.clearfix {
+    background-color: brown;
+    text-align: center;
+}
+
+.input-group-1 {
+    background-color: cadetblue;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    background-color: cadetblue;
+}
+
+
