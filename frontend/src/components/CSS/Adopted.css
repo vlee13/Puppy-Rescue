@@ -1,0 +1,22 @@
+.adoptedHeroImage {
+  margin-top: 8vh;
+  width: 100vw;
+  background-image: url("../../images/pexels-ilargian-faus-1629781.jpg");
+  background-color: #cccccc;
+  height: 60vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+}
+
+.textForHeroImage {
+  position: absolute;
+  width: 10vh;
+  left: 5vw;
+  top: 20vh;
+  text-align: left;
+}

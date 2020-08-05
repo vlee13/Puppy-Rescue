@@ -1,10 +1,15 @@
-/* body {
-  overflow: hidden;
-} */
+.imageForFosterDog {
+  margin-top: 8vh;
+  width: 100vw;
+  background-image: url("../../images/pexels-poodles-doodles-1458922.jpg");
+  background-color: gainsboro;
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-/* Main container */
-
-.CarrouselContainer {
+/* .CarrouselContainer {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -15,7 +20,7 @@
 
 /* Navigation bar (Log in and Menu buttons) */
 
-.NavigationBar {
+/* .NavigationBar {
   position: absolute;
   right: 5vw;
   top: 4.5vh;
@@ -39,7 +44,7 @@
 .NavigationBarButton:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
-}
+}  */
 
 /* Hero Image to the left and text to the right*/
 
@@ -47,7 +52,7 @@
   background-image: url("../../images/person-holding-black-and-white-siberian-husky-3671300.jpg");
   background-color: #cccccc;
   height: 100vh;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   width: 45vw;
