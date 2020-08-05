@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
+import "../../CSS/HelpOthers.css";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -223,7 +224,7 @@ class HelpOthers extends Component {
     return (
       <div>
         <img src="" alt="logoMark" className="LogoMark" />
-        <span className="header">Help others</span>
+        <span className="header">Help in other ways</span>
         <hr></hr>
       </div>
     );
@@ -232,14 +233,20 @@ class HelpOthers extends Component {
   displayOrganizations = () => {
     return this.state.organizations.map((eachGroup) => {
       return (
-        <li>
-          <img src={eachGroup.image} alt="orgPic" className="organizationPic" />
-          <a href={eachGroup.homepage}>
-            <h1>{eachGroup.name}</h1>
-          </a>
-          <br />
-          <p>{eachGroup.description}</p>
-        </li>
+        <div className="row">
+          <div className="allOrg">
+            <div className="orgPic">
+              <img src={eachGroup.image} alt="orgPic" />
+            </div>
+            <div className="orgInfo">
+              <a href={eachGroup.homepage}>
+                <h1>{eachGroup.name}</h1>
+              </a>
+              <br />
+              <p className="orgDesc">{eachGroup.description}</p>
+            </div>
+          </div>
+        </div>
       );
     });
   };
