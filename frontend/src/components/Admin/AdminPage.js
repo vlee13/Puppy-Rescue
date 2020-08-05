@@ -64,14 +64,17 @@ class AdminPage extends Component {
     return (
       <div>
         <div>
+          <h1>Add New Dog</h1>
           <AddDog />
         </div>
         <br />
         <div>
+          <h1>Edit Existing Dog</h1>
           <EditDog />
         </div>
         <br />
         <div>
+          <h1>Clear Votes</h1>
           <button onClick={this.clearVoting}>Clear votes</button>
           {this.displayDogs()}
         </div>

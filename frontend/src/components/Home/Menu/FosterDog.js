@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
 import "../../CSS/FosterDog.css";
-import GoogleAuth from "../../auth/GoogleAuth";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 
 class FosterDog extends Component {
@@ -53,24 +52,33 @@ class FosterDog extends Component {
             <Link to="/contactus" className="link">
               <div className="NavBarElementText">|</div>
             </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
+
+            {!this.props.email && (
+              <GoogleAuthLogin
+                render={(renderProps) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                  >
+                    This is my custom Google button
+                  </button>
+                )}
+                buttonText="hello"
+                className="navBarButton"
+                setUser={this.props.setUser}
+              />
+            )}
           </div>
         </div>
       </div>
     );
   };
+  // (event) => {
+  // event.preventDefault();
+  // this.setState({
+  //   showLogIn: true,
+  //   showPage: false,
+  //   showNavbar: false,
 
   displayHeader = () => {
     return (
@@ -361,8 +369,8 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
-        {!this.props.email && <GoogleAuth setUser={this.props.setUser} />}
-        {!this.props.email && <GoogleAuthLogin setUser={this.props.setUser} />}
+        {/* {!this.props.email && <GoogleAuth setUser={this.props.setUser} />}
+        {!this.props.email && <GoogleAuthLogin setUser={this.props.setUser} />} */}
 
         {this.displayNavBar()}
         {this.displayHeader()}

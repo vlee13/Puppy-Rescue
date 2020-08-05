@@ -2,14 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import "../../CSS/Vote.css";
+import VoteBar from "./VoteBar";
 
 class Vote extends Component {
   state = {
-    showNavbar: true,
-    showPage: true,
-    showLogIn: false,
-    showSignUp: false,
-    showMenu: false,
     dogs: [],
   };
   async componentDidMount() {
@@ -18,6 +14,7 @@ class Vote extends Component {
     this.setState({
       dogs: res.data.dogs,
     });
+    console.log("state", this.state);
   }
 
   //This is the old NavBar for the burger. I'm commenting out this just in case backend needs it
@@ -467,6 +464,69 @@ class Vote extends Component {
   };
 
   render() {
+    const data = [
+      {
+        name: "Maddie",
+        uv: 50,
+        pv: 7,
+        amt: 7,
+      },
+      {
+        name: "Lady",
+        uv: 50,
+        pv: 6,
+        amt: 6,
+      },
+      {
+        name: "Bohdi",
+        uv: 50,
+        pv: 3,
+        amt: 3,
+      },
+      {
+        name: "Jackson",
+        uv: 50,
+        pv: 2,
+        amt: 2,
+      },
+      {
+        name: "Sosa",
+        uv: 50,
+        pv: 4,
+        amt: 4,
+      },
+      {
+        name: "Frost",
+        uv: 50,
+        pv: 3,
+        amt: 3,
+      },
+      {
+        name: "Moe",
+        uv: 50,
+        pv: 5,
+        amt: 5,
+      },
+      {
+        name: "Leeloo",
+        uv: 50,
+        pv: 6,
+        amt: 6,
+      },
+      {
+        name: "Kylie",
+        uv: 50,
+        pv: 3,
+        amt: 3,
+      },
+      {
+        name: "Chispa",
+        uv: 50,
+        pv: 13,
+        amt: 13,
+      },
+    ];
+
     return (
       <div>
         {/* {this.state.showNavbar ? this.displayNavBar() : ""}
@@ -480,8 +540,11 @@ class Vote extends Component {
           ? this.displayDogs()
           : ""} */}
         {this.displayNavBar()}
+
         {this.displayHeader()}
+
         {this.displayDogsToVote()}
+        <VoteBar data={data} />
         {this.displayFooter()}
       </div>
     );
