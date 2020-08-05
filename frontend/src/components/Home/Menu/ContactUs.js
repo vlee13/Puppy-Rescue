@@ -5,11 +5,11 @@ import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
   state = {
-    showNavbar: true,
-    showPage: true,
-    showLogIn: false,
-    showSignUp: false,
-    showMenu: false,
+    // showNavbar: true,
+    // showPage: true,
+    // showLogIn: false,
+    // showSignUp: false,
+    // showMenu: false,
   };
 
   displayNavBar = () => {
@@ -279,27 +279,36 @@ class ContactUs extends Component {
       <div>
         <div className="contactUsContainer">
           <div className="contactUsTextContainer">
-            <p>Please fill up these details below and submit.</p>
+            <h4 className="instructions">
+              Please fill up these details below and submit.
+            </h4>
             <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
-              <label htmlFor="name">Name</label>
+              <label className="label" htmlFor="name">
+                Name
+              </label>
+              <br />
               <input
                 onChange={this.handleChange}
                 name="name"
                 type="text"
                 value={this.state.value}
-                className="formBar"
+                className="inputBar"
               />
               <br />
-              <label htmlFor="exampleInputEmail1">Email address</label>
+              <label className="label" htmlFor="exampleInputEmail1">
+                Email address
+              </label>
+              <br />
               <input
                 onChange={this.handleChange}
                 name="email"
                 type="email"
                 value={this.state.value}
-                className="formBar"
+                className="inputBar"
               />
               <br />
               <label htmlFor="message">Message</label>
+              <br />
               <textarea
                 onChange={this.handleChange}
                 name="message"
@@ -308,9 +317,11 @@ class ContactUs extends Component {
                 rows="5"
               ></textarea>
               <br />
-              <button type="submit" className="contactUSButton">
-                Submit
-              </button>
+              <div className="buttonContainer">
+                <button type="submit" className="submitButton">
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -325,12 +336,12 @@ class ContactUs extends Component {
 
         <div className="footerContainer">
           <div className="floatElement">
-            <img class="footerLogoMark" />
+            <img className="footerLogoMark" />
             <div className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
             </div>
-            <div classNAme="phoneNumber"> 0-800-WeLoveDogs</div>
+            <div className="phoneNumber"> 0-800-WeLoveDogs</div>
 
             <span>
               <img id="socialMediaIcon" />
@@ -463,13 +474,6 @@ class ContactUs extends Component {
   render() {
     return (
       <div>
-        {/* {this.state.showNavbar ? this.displayNavBar() : ""}
-        {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
-        {this.state.showSignUp ? this.displaySignUp() : ""}
-        {this.state.showMenu & !this.state.showLogIn ? this.displayMenu() : ""}
-        {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
-          ? this.displayContactUs()
-          : ""} */}
         {this.displayHeader()}
         {this.displayNavBar()}
         {this.displayContactUsPage()}
