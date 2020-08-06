@@ -4,6 +4,7 @@ import axios from "axios";
 import actions from "../../../services/index.js";
 import "../../CSS/FosterDog.css";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
+import { GoogleLogout } from "react-google-login";
 
 class FosterDog extends Component {
   state = {
@@ -17,6 +18,25 @@ class FosterDog extends Component {
       fosterdog: res.data.fosterdog,
     });
   }
+
+  logout = (response) => {
+    console.log(response);
+    // const user = {
+    //   ...response.profileObj,
+    //   password: response.profileObj?.googleId,
+    // };
+    actions
+      .logOut()
+      .then((user) => {
+        this.props.setUser({
+          email: null,
+          createdAt: null,
+          updatedAt: null,
+          _id: null,
+        });
+      })
+      .catch(({ response }) => console.error(response));
+  };
 
   displayNavBar = () => {
     return (
@@ -53,7 +73,9 @@ class FosterDog extends Component {
               <div className="NavBarElementText">|</div>
             </Link>
 
-            {!this.props.email && (
+            {this.props.email ? (
+              <button onClick={this.logout}>Logout</button>
+            ) : (
               <GoogleAuthLogin
                 render={(renderProps) => (
                   <button
@@ -63,7 +85,7 @@ class FosterDog extends Component {
                     This is my custom Google button
                   </button>
                 )}
-                buttonText="hello"
+                buttonText="Login"
                 className="navBarButton"
                 setUser={this.props.setUser}
               />

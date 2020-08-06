@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
@@ -15,7 +14,7 @@ class Adopted extends Component {
   state = {
     testimonialBox: false,
     adopted: [],
-    petfinder: [],
+    petfinderSearch: [],
     searchParams: { type: "dog" },
   };
 
@@ -83,24 +82,20 @@ class Adopted extends Component {
 
   async componentDidMount() {
     let res = await actions.adoptedDogs();
-    // let res2 = await axios.get(
-    //   `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/types/dog`
-    // );
     let res2 = await client.animal.search({ type: "dog" });
 
     this.setState({
       adopted: res.data.adopted,
-      petfinder: res2.data,
+      petfinderSearch: res2.data.animals,
     });
     console.log(res2);
   }
 
-  searchFilter = async () => {
-    let res3 = await client.animal.search(this.state.searchParams);
-    this.setState({
-      petfinder: res3.data,
+  showPetfinderSearch = () => {
+    console.log("petfinder line 103");
+    return this.state.petfinderSearch.map((dog) => {
+      return <li>{dog.name}</li>;
     });
-    console.log(res3);
   };
 
   displayAdopted = () => {
@@ -145,10 +140,14 @@ class Adopted extends Component {
   };
 
   handleSubmit = async (event) => {
+    console.log("submit line 151");
     event.preventDefault();
-    // let res = await axios.post("http://localhost:5000/", this.state);
-    // console.log(res);
-    this.searchFilter();
+
+    let res3 = await client.animal.search(this.state.searchParams);
+    this.setState({
+      petfinderSearch: res3.data.animals,
+    });
+    console.log(res3);
   };
 
   // handleSubmit = async (event) => {
@@ -179,12 +178,19 @@ class Adopted extends Component {
         {this.displayNavBar()}
         {this.displayHeader()}
         {this.displayAdopted()}
+        {this.showPetfinderSearch()}
         {/* {this.displayAddTestimonial()} */}
         {/* {this.state.testimonialBox ? this.displayTestimonialBox() : ""} */}
 
         <form onSubmit={this.handleSubmit}>
           <label for="location">Location</label>
-          <input onChange={this.handleChange} name="location" type="number" />
+          <input onChange={this.handleChange} name="location" type="text" />
+          <br />
+          <label for="distance">Distance</label>
+          <input onChange={this.handleChange} name="distance" type="number" />
+          <br />
+          <label for="size">Size</label>
+          <input onChange={this.handleChange} name="size" type="text" />
           <br />
           <button type="submit">Submit</button>
         </form>
