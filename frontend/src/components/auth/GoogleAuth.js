@@ -19,6 +19,20 @@ const responseGoogle = (props) => {
   };
   return (
     <GoogleLogin
+      render={(renderProps) => (
+        <button
+          // style={{
+          //   width: "10vw",
+          //   height: "10vh",
+          //   backgroundColor: "green",
+          //   borderRadius: "50%",
+          // }}
+          onClick={renderProps.onClick}
+          disabled={renderProps.disabled}
+        >
+          This is my custom Google button
+        </button>
+      )}
       clientId={process.env.REACT_APP_GOOGLEID}
       buttonText="Signup"
       onSuccess={onResponse}

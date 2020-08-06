@@ -4,6 +4,7 @@ import axios from "axios";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
+import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -52,19 +53,12 @@ class Adopted extends Component {
             <Link to="/contactus" className="link">
               <div className="NavBarElementText">|</div>
             </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
+            {!this.props.email && (
+              <GoogleAuthLogin
+                className="navBarButton"
+                setUser={this.props.setUser}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -92,16 +86,16 @@ class Adopted extends Component {
     // let res2 = await axios.get(
     //   `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/types/dog`
     // );
-    let res3 = await client.animal.search({ type: "dog" });
+    let res2 = await client.animal.search({ type: "dog" });
 
     this.setState({
       adopted: res.data.adopted,
-      petfinder: res3.data,
+      petfinder: res2.data,
     });
-    console.log(res3);
+    console.log(res2);
   }
 
-  showSearch = async () => {
+  searchFilter = async () => {
     let res3 = await client.animal.search(this.state.searchParams);
     this.setState({
       petfinder: res3.data,
@@ -154,7 +148,7 @@ class Adopted extends Component {
     event.preventDefault();
     // let res = await axios.post("http://localhost:5000/", this.state);
     // console.log(res);
-    this.showSearch();
+    this.searchFilter();
   };
 
   // handleSubmit = async (event) => {
