@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import {
-  BarChart,
-  Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -10,11 +10,11 @@ import {
 } from "recharts";
 
 export default class Example extends PureComponent {
-  static jsfiddleUrl = "https://jsfiddle.net/alidingling/q4eonc12/";
+  static jsfiddleUrl = "https://jsfiddle.net/alidingling/xqjtetw0/";
 
   render() {
     return (
-      <BarChart
+      <LineChart
         width={700}
         height={300}
         data={this.props.data}
@@ -24,19 +24,20 @@ export default class Example extends PureComponent {
           left: 20,
           bottom: 5,
         }}
-        barSize={20}
       >
-        <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
-        <YAxis domain={[0, 10]} />
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
         <Tooltip />
         <Legend />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Bar
+        <Line
+          type="monotone"
           dataKey="votes.length"
-          fill="#8884d8"
-          background={{ fill: "#eee" }}
+          stroke="#8884d8"
+          activeDot={{ r: 8 }}
         />
-      </BarChart>
+        <Line type="monotone" dataKey="age" stroke="#82ca9d" />
+      </LineChart>
     );
   }
 }
