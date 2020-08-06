@@ -4,13 +4,7 @@ import axios from "axios";
 import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
-  state = {
-    // showNavbar: true,
-    // showPage: true,
-    // showLogIn: false,
-    // showSignUp: false,
-    // showMenu: false,
-  };
+  state = {};
 
   displayNavBar = () => {
     return (
@@ -92,6 +86,7 @@ class ContactUs extends Component {
   };
 
   displayContactUsPage = () => {
+    let audio = new Audio("/bark.mp3");
     return (
       <div>
         <div className="contactUsContainer">
@@ -135,7 +130,11 @@ class ContactUs extends Component {
               ></textarea>
               <br />
               <div className="buttonContainer">
-                <button type="submit" className="submitButton">
+                <button
+                  onClick={() => audio.play()}
+                  type="submit"
+                  className="submitButton"
+                >
                   Submit
                 </button>
               </div>
