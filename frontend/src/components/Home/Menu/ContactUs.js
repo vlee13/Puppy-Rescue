@@ -1,75 +1,76 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import actions from "../../../services/index";
 import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
-  state = {};
-
-  displayNavBar = () => {
-    return (
-      <div className="Navbar">
-        <div className="NavbarContainer">
-          <Link to="/" className="link">
-            <div className="NavBarElement">
-              <img id="LogoMark" />
-              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-              <span className="NavBarElementText">House of Paws</span>
-              {/* Remove till here */}
-            </div>
-          </Link>
-          <div className="NavBarElement">
-            <Link to="/about" className="link">
-              <div className="NavBarElementText">About us</div>
-            </Link>
-            <Link to="/fosterdog" className="link">
-              <div className="NavBarElementText">Foster dogs</div>
-            </Link>
-
-            <Link to="/vote" className="link">
-              <div className="NavBarElementText">Vote!</div>
-            </Link>
-
-            <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopted</div>
-            </Link>
-
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">Contact us</div>
-            </Link>
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">|</div>
-            </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
-          </div>
-        </div>
-      </div>
-    );
+  state = {
+    name: "",
+    email: "",
+    message: "",
   };
+
+  // displayNavBar = () => {
+  //   return (
+  //     <div className="Navbar">
+  //       <div className="NavbarContainer">
+  //         <Link to="/" className="link">
+  //           <div className="NavBarElement">
+  //             <img id="LogoMark" />
+  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+  //             <span className="NavBarElementText">House of Paws</span>
+  //             {/* Remove till here */}
+  //           </div>
+  //         </Link>
+  //         <div className="NavBarElement">
+  //           <Link to="/about" className="link">
+  //             <div className="NavBarElementText">About us</div>
+  //           </Link>
+  //           <Link to="/fosterdog" className="link">
+  //             <div className="NavBarElementText">Foster dogs</div>
+  //           </Link>
+
+  //           <Link to="/vote" className="link">
+  //             <div className="NavBarElementText">Vote!</div>
+  //           </Link>
+
+  //           <Link to="/adopted" className="link">
+  //             <div className="NavBarElementText">Adopted</div>
+  //           </Link>
+
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">Contact us</div>
+  //           </Link>
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">|</div>
+  //           </Link>
+  //           <button
+  //             className="navBarButton"
+  //             onClick={(event) => {
+  //               event.preventDefault();
+  //               this.setState({
+  //                 showLogIn: true,
+  //                 showPage: false,
+  //                 showNavbar: false,
+  //               });
+  //             }}
+  //           >
+  //             Log in
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-    console.log(this.state);
+    this.setState({ [event.target.name]: event.target.value });
   };
-
   handleSubmit = async (event) => {
     event.preventDefault();
-    let res = await axios.post("http://localhost:5000/", this.state);
+    let res = await actions.sendMail(this.state);
     console.log(res);
+    this.setState({ name: "", email: "", message: "" });
   };
 
   displayHeader = () => {
@@ -116,6 +117,7 @@ class ContactUs extends Component {
                 name="email"
                 type="email"
                 value={this.state.value}
+                aria-describedby="emailHelp"
                 className="inputBar"
               />
               <br />
@@ -291,7 +293,7 @@ class ContactUs extends Component {
     return (
       <div>
         {this.displayHeader()}
-        {this.displayNavBar()}
+        {/* {this.displayNavBar()} */}
         {this.displayContactUsPage()}
         {this.displayFooter()}
       </div>

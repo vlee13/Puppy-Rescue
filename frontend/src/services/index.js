@@ -50,6 +50,10 @@ const actions = {
   getOrganizations: async (group) => {
     return await service.get("/helpothers");
   },
+
+  sendMail: async (email) => {
+    return await service.post("/sendmail", email);
+  },
 };
 
 export default actions;

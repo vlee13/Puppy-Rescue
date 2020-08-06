@@ -2,6 +2,38 @@ const router = require("express").Router();
 const Dog = require("../models/Dog.model");
 const User = require("../models/User");
 const Org = require("../models/Org.model");
+const nodemailer = require("nodemailer");
+
+router.post("/sendmail", (req, res, next) => {
+  console.log("sendmail", req.body);
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+      user: "houseofpawsla@gmail.com", // generated ethereal user
+      pass: "Ilovezooey123!", // generated ethereal password
+    },
+  });
+
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
+  });
+
+  transporter
+    .sendMail({
+      from: req.body.email, // sender address
+      to: "houseofpawsla@gmail.com", // list of receivers
+      subject: "", // Subject line
+      text: req.body.message, // plain text body
+      //html: "<b></b>", // html body
+    })
+    .then((res) => console.log(res));
+});
 
 router.get("/", (req, res, next) => {
   res.status(200).json({ msg: "Working" });
