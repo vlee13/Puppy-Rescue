@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
+import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
+import NavBar from "./NavBar";
+import "../../CSS/NavigationBar.css";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -14,62 +16,55 @@ class Adopted extends Component {
   state = {
     testimonialBox: false,
     adopted: [],
-    petfinder: [],
+    petfinderSearch: [],
     searchParams: { type: "dog" },
   };
 
-  displayNavBar = () => {
-    return (
-      <div className="Navbar">
-        <div className="NavbarContainer">
-          <Link to="/" className="link">
-            <div className="NavBarElement">
-              <img id="LogoMark" />
-              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-              <span className="NavBarElementText">House of Paws</span>
-              {/* Remove till here */}
-            </div>
-          </Link>
-          <div className="NavBarElement">
-            <Link to="/about" className="link">
-              <div className="NavBarElementText">About us</div>
-            </Link>
-            <Link to="/fosterdog" className="link">
-              <div className="NavBarElementText">Foster dogs</div>
-            </Link>
+  // displayNavBar = () => {
+  //   return (
+  //     <div className="Navbar">
+  //       <div className="NavbarContainer">
+  //         <Link to="/" className="link">
+  //           <div className="NavBarElement">
+  //             <img id="LogoMark" />
+  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+  //             <span className="NavBarElementText">House of Paws</span>
+  //             {/* Remove till here */}
+  //           </div>
+  //         </Link>
+  //         <div className="NavBarElement">
+  //           <Link to="/about" className="link">
+  //             <div className="NavBarElementText">About us</div>
+  //           </Link>
+  //           <Link to="/fosterdog" className="link">
+  //             <div className="NavBarElementText">Foster dogs</div>
+  //           </Link>
 
-            <Link to="/vote" className="link">
-              <div className="NavBarElementText">Vote!</div>
-            </Link>
+  //           <Link to="/vote" className="link">
+  //             <div className="NavBarElementText">Vote!</div>
+  //           </Link>
 
-            <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopted</div>
-            </Link>
+  //           <Link to="/adopted" className="link">
+  //             <div className="NavBarElementText">Adopted</div>
+  //           </Link>
 
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">Contact us</div>
-            </Link>
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">|</div>
-            </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">Contact us</div>
+  //           </Link>
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">|</div>
+  //           </Link>
+  //           {!this.props.email && (
+  //             <GoogleAuthLogin
+  //               className="navBarButton"
+  //               setUser={this.props.setUser}
+  //             />
+  //           )}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   displayHeader = () => {
     return (
@@ -89,21 +84,20 @@ class Adopted extends Component {
 
   async componentDidMount() {
     let res = await actions.adoptedDogs();
-    let res3 = await client.animal.search({ type: "dog" });
+    let res2 = await client.animal.search({ type: "dog" });
 
     this.setState({
       adopted: res.data.adopted,
-      petfinder: res3.data,
+      petfinderSearch: res2.data.animals,
     });
-    console.log(res3);
+    console.log(res2);
   }
 
-  showSearch = async () => {
-    let res3 = await client.animal.search(this.state.searchParams);
-    this.setState({
-      petfinder: res3.data,
+  showPetfinderSearch = () => {
+    console.log("petfinder line 103");
+    return this.state.petfinderSearch.map((dog) => {
+      return <li>{dog.name}</li>;
     });
-    console.log(res3);
   };
 
   displayAdopted = () => {
@@ -148,23 +142,37 @@ class Adopted extends Component {
   };
 
   handleSubmit = async (event) => {
+    console.log("submit line 151");
     event.preventDefault();
-    this.showSearch();
+
+    let res3 = await client.animal.search(this.state.searchParams);
+    this.setState({
+      petfinderSearch: res3.data.animals,
+    });
+    console.log(res3);
   };
 
   
   render() {
     return (
       <div>
-        {this.displayNavBar()}
+        <NavBar></NavBar>
+        {/* {this.displayNavBar()} */}
         {this.displayHeader()}
         {this.displayAdopted()}
+        {this.showPetfinderSearch()}
         {/* {this.displayAddTestimonial()} */}
         {/* {this.state.testimonialBox ? this.displayTestimonialBox() : ""} */}
 
         <form onSubmit={this.handleSubmit}>
           <label for="location">Location</label>
-          <input onChange={this.handleChange} name="location" type="number" />
+          <input onChange={this.handleChange} name="location" type="text" />
+          <br />
+          <label for="distance">Distance</label>
+          <input onChange={this.handleChange} name="distance" type="number" />
+          <br />
+          <label for="size">Size</label>
+          <input onChange={this.handleChange} name="size" type="text" />
           <br />
           <button type="submit">Submit</button>
         </form>

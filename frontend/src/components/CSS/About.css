@@ -223,13 +223,11 @@ body {
   font-size: 1rem;
 }
 .navBarButton {
-  /* display: inline-block; */
   border-color: grey;
   border-style: solid;
   padding: 0.5rem 1.5rem;
   margin: 7.5vh 0;
   text-decoration: none;
-  /* background: gray; */
   color: grey;
   font-family: sans-serif;
   font-size: 1rem;
@@ -247,12 +245,12 @@ body {
   color: white;
 }
 
-.CarrouselButton:focus {
+.navBarButton:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
 
-.CarrouselButton:active {
+.navBarButton:active {
   transform: scale(0.99);
 }
 

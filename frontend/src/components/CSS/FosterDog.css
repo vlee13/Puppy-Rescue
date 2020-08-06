@@ -103,4 +103,94 @@ p {
   bottom: 5vh;
 }
 
+<<<<<<< HEAD
 
+=======
+.navBarButton {
+  /* display: inline-block; */
+  border-color: grey;
+  border-style: solid;
+  padding: 0.5rem 1.5rem;
+  margin: 7.5vh 0;
+  text-decoration: none;
+  /* background: gray; */
+  color: grey;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 2rem;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.navBarButton:hover,
+.CarrouselButton:focus {
+  background: black;
+  color: white;
+}
+
+.CarrouselButton:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.CarrouselButton:active {
+  transform: scale(0.99);
+}
+
+/* 
+/* * {
+* {
+
+* {
+
+    font-family: Arial, "Free Sans";
+}
+#container {
+    color: #fff;
+background:#000;
+}
+#container #question {
+    display: block;
+    padding: 20px;
+    font-weight: bold;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 40px;
+}
+#container div {
+    font-weight: bold;
+    letter-spacing: -3px;
+    background: #0099cc;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 34px;
+    color: #ffffff;
+    border-left: 20px solid #333;
+    width: 400px;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0 0.5em 0.5em 0;
+    border-radius: 0 1.5em 1.5em 0;
+}
+#container div a {
+    border-radius: 0.3em;
+    text-decoration: none;
+    color: #0099cc;
+    padding: 5px 15px;
+    background: #333;
+    margin: 0 20px;
+}
+#container div a:hover {
+    color: #fff;
+}
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+} */
+>>>>>>> c06d4f97a8bd6605b822d58744a645d92221daf7

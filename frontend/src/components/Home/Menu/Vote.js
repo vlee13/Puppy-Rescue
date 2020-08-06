@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import "../../CSS/Vote.css";
+import VoteBar from "./VoteBar";
+import NavBar from "./NavBar";
+import "../../CSS/NavigationBar.css";
+import LineGraph from "./LineGraph";
+import PieGraph from "./PieGraph";
 
 class Vote extends Component {
   state = {
-    showNavbar: true,
-    showPage: true,
-    showLogIn: false,
-    showSignUp: false,
-    showMenu: false,
     dogs: [],
   };
   async componentDidMount() {
@@ -18,243 +18,8 @@ class Vote extends Component {
     this.setState({
       dogs: res.data.dogs,
     });
+    console.log("state", this.state);
   }
-
-  //This is the old NavBar for the burger. I'm commenting out this just in case backend needs it
-
-  // displayNavBar = () => {
-  //   return (
-  //     <div>
-  //       <button
-  //         onClick={(event) => {
-  //           event.preventDefault();
-  //           this.setState({
-  //             showLogIn: true,
-  //             showPage: false,
-  //             showNavbar: false,
-  //           });
-  //         }}
-  //       >
-  //         Log in
-  //       </button>
-  //       <button
-  //         onClick={(event) => {
-  //           event.preventDefault();
-  //           this.setState({
-  //             showMenu: true,
-  //             showPage: false,
-  //             showNavbar: false,
-  //           });
-  //         }}
-  //       >
-  //         Menu
-  //       </button>
-  //     </div>
-  //   );
-  // };
-
-  // displayMenu = () => {
-  //   return (
-  //     <div>
-  //       <Link
-  //         onClick={() =>
-  //           this.setState({
-  //             showMenu: false,
-  //             showNavbar: true,
-  //           })
-  //         }
-  //       >
-  //         X
-  //       </Link>
-  //       <br />
-  //       <Link to="/">
-  //         <div>Home</div>
-  //       </Link>
-  //       <Link to="/about">
-  //         <div>About</div>
-  //       </Link>
-  //       <Link to="/fosterdog">
-  //         <div>The dog I'm fostering now</div>
-  //       </Link>
-  //       <Link
-  //         onClick={() =>
-  //           this.setState({
-  //             showMenu: false,
-  //             showNavbar: true,
-  //           })
-  //         }
-  //       >
-  //         Vote for the next dog I'll foster
-  //       </Link>
-  //       <Link to="/helpothers">
-  //         <div>Help other organizations</div>
-  //       </Link>
-  //       <Link to="/game">
-  //         <div>
-  //           Play our 90's inspired game <i>Dog Zoey in Space</i>
-  //         </div>
-  //       </Link>
-  //       <Link to="/meetteam">
-  //         <div>Meet the team</div>
-  //       </Link>
-  //       <Link to="/contactus">
-  //         <div>Contact us</div>
-  //       </Link>
-  //     </div>
-  //   );
-  // };
-
-  // displayLogIn = () => {
-  //   return (
-  //     <div>
-  //       <div ClassName="SixImages">
-  //         <img src="" alt="" ClassName="Image" />
-  //         <img src="" alt="" ClassName="Image" />
-  //         <img src="" alt="" ClassName="Image" />
-  //         <img src="" alt="" ClassName="Image" />
-  //         <img src="" alt="" ClassName="Image" />
-  //         <img src="" alt="" ClassName="Image" />
-  //       </div>
-  //       <div>
-  //         <button
-  //           onClick={() => {
-  //             this.setState({
-  //               showPage: true,
-  //               showLogIn: false,
-  //               showNavbar: true,
-  //             });
-  //             console.log("Hi");
-  //           }}
-  //         >
-  //           BACK
-  //         </button>
-  //         <div>
-  //           <img src="" alt="" ClassName="logoMark" />
-  //         </div>
-  //         <h1>Log in to Valerie's Foster Dog</h1>
-  //         <h2>Enter details below</h2>
-  //         <label>Email adress</label>
-  //         <input type="text" id="fname" name="fname" value="" />
-  //         <br />
-  //         <label>Password</label>
-  //         <Link>Forgot your password?</Link>
-  //         <input type="password" id="fname" name="fpassword" value="" />
-  //         <br />
-  //         <button>LOG IN</button>
-  //         <button
-  //           onClick={() => {
-  //             this.setState({
-  //               showPage: false,
-  //               showLogIn: false,
-  //               showSignUp: true,
-  //               showNavbar: false,
-  //             });
-  //           }}
-  //         >
-  //           Don't have an account?
-  //         </button>
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
-  // displaySignUp = () => {
-  //   return (
-  //     <div>
-  //       <button
-  //         onClick={() => {
-  //           this.setState({
-  //             showPage: false,
-  //             showLogIn: true,
-  //             showSignUp: false,
-  //             showNavbar: false,
-  //           });
-  //           console.log("Hi");
-  //         }}
-  //       >
-  //         BACK
-  //       </button>
-  //       <img src="" alt="" ClassName="logoMark" />
-  //       <h1>Be part of our community</h1>
-  //       <label>Name</label>
-  //       <input type="text" id="fname" name="fname" value="" />
-  //       <br />
-  //       <label>Email adress</label>
-  //       <input type="text" id="fname" name="fname" value="" />
-  //       <br />
-  //       <label>Create a password</label>
-  //       <input type="text" id="fname" name="fname" value="" />
-  //       <br />
-  //       <button>SIGN UP</button>
-  //       <button
-  //         onClick={() => {
-  //           this.setState({
-  //             showPage: false,
-  //             showLogIn: true,
-  //             showSignUp: false,
-  //             showNavbar: false,
-  //           });
-  //           console.log("Hi");
-  //         }}
-  //       >
-  //         <p>Already have an account?</p>
-  //       </button>
-  //     </div>
-  //   );
-  // };
-
-  displayNavBar = () => {
-    return (
-      <div className="Navbar">
-        <div className="NavbarContainer">
-          <Link to="/" className="link">
-            <div className="NavBarElement">
-              <img id="LogoMark" />
-              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-              <span className="NavBarElementText">House of Paws</span>
-              {/* Remove till here */}
-            </div>
-          </Link>
-          <div className="NavBarElement">
-            <Link to="/about" className="link">
-              <div className="NavBarElementText">About us</div>
-            </Link>
-            <Link to="/fosterdog" className="link">
-              <div className="NavBarElementText">Foster dogs</div>
-            </Link>
-
-            <Link to="/vote" className="link">
-              <div className="NavBarElementText">Vote!</div>
-            </Link>
-
-            <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopted</div>
-            </Link>
-
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">Contact us</div>
-            </Link>
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">|</div>
-            </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   displayHeader = () => {
     return (
@@ -479,9 +244,14 @@ class Vote extends Component {
         {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
           ? this.displayDogs()
           : ""} */}
-        {this.displayNavBar()}
+        <NavBar></NavBar>
+
         {this.displayHeader()}
+
         {this.displayDogsToVote()}
+        {/* <VoteBar data={this.state.dogs} /> */}
+        <PieGraph data={this.state.dogs} />
+        <LineGraph data={this.state.dogs} />
         {this.displayFooter()}
       </div>
     );

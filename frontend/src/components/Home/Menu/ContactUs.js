@@ -1,72 +1,66 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
+import NavBar from "./NavBar";
+import "../../CSS/NavigationBar.css";
 import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
-  state = {
-    showNavbar: true,
-    showPage: true,
-    showLogIn: false,
-    showSignUp: false,
-    showMenu: false,
-  };
+  state = {};
 
-  displayNavBar = () => {
-    return (
-      <div className="Navbar">
-        <div className="NavbarContainer">
-          <Link to="/" className="link">
-            <div className="NavBarElement">
-              <img id="LogoMark" />
-              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-              <span className="NavBarElementText">House of Paws</span>
-              {/* Remove till here */}
-            </div>
-          </Link>
-          <div className="NavBarElement">
-            <Link to="/about" className="link">
-              <div className="NavBarElementText">About us</div>
-            </Link>
-            <Link to="/fosterdog" className="link">
-              <div className="NavBarElementText">Foster dogs</div>
-            </Link>
+  // displayNavBar = () => {
+  //   return (
+  //     <div className="Navbar">
+  //       <div className="NavbarContainer">
+  //         <Link to="/" className="link">
+  //           <div className="NavBarElement">
+  //             <img id="LogoMark" />
+  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+  //             <span className="NavBarElementText">House of Paws</span>
+  //             {/* Remove till here */}
+  //           </div>
+  //         </Link>
+  //         <div className="NavBarElement">
+  //           <Link to="/about" className="link">
+  //             <div className="NavBarElementText">About us</div>
+  //           </Link>
+  //           <Link to="/fosterdog" className="link">
+  //             <div className="NavBarElementText">Foster dogs</div>
+  //           </Link>
 
-            <Link to="/vote" className="link">
-              <div className="NavBarElementText">Vote!</div>
-            </Link>
+  //           <Link to="/vote" className="link">
+  //             <div className="NavBarElementText">Vote!</div>
+  //           </Link>
 
-            <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopted</div>
-            </Link>
+  //           <Link to="/adopted" className="link">
+  //             <div className="NavBarElementText">Adopted</div>
+  //           </Link>
 
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">Contact us</div>
-            </Link>
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">|</div>
-            </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">Contact us</div>
+  //           </Link>
 
-  
-
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">|</div>
+  //           </Link>
+  //           <button
+  //             className="navBarButton"
+  //             onClick={(event) => {
+  //               event.preventDefault();
+  //               this.setState({
+  //                 showLogIn: true,
+  //                 showPage: false,
+  //                 showNavbar: false,
+  //               });
+  //             }}
+  //           >
+  //             Log in
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   handleChange = (event) => {
     this.setState({
@@ -94,8 +88,65 @@ class ContactUs extends Component {
     );
   }
 
-   
-    
+  displayContactUsPage = () => {
+    let audio = new Audio("/bark.mp3");
+    return (
+      <div>
+        <div className="contactUsContainer">
+          <div className="contactUsTextContainer">
+            <h4 className="instructions">
+              Please fill up these details below and submit.
+            </h4>
+            <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
+              <label className="label" htmlFor="name">
+                Name
+              </label>
+              <br />
+              <input
+                onChange={this.handleChange}
+                name="name"
+                type="text"
+                value={this.state.value}
+                className="inputBar"
+              />
+              <br />
+              <label className="label" htmlFor="exampleInputEmail1">
+                Email address
+              </label>
+              <br />
+              <input
+                onChange={this.handleChange}
+                name="email"
+                type="email"
+                value={this.state.value}
+                className="inputBar"
+              />
+              <br />
+              <label htmlFor="message">Message</label>
+              <br />
+              <textarea
+                onChange={this.handleChange}
+                name="message"
+                value={this.state.value}
+                className="textarea"
+                rows="5"
+              ></textarea>
+              <br />
+              <div className="buttonContainer">
+                <button
+                  onClick={() => audio.play()}
+                  type="submit"
+                  className="submitButton"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   displayFooter = () => {
     return (
@@ -104,12 +155,12 @@ class ContactUs extends Component {
 
         <div className="footerContainer">
           <div className="floatElement">
-            <img class="footerLogoMark" />
+            <img className="footerLogoMark" />
             <div className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
             </div>
-            <div classNAme="phoneNumber"> 0-800-WeLoveDogs</div>
+            <div className="phoneNumber"> 0-800-WeLoveDogs</div>
 
             <span>
               <img id="socialMediaIcon" />
@@ -242,9 +293,9 @@ class ContactUs extends Component {
   render() {
     return (
       <div>
-        
+        <NavBar></NavBar>
         {this.displayHeader()}
-        {this.displayNavBar()}
+        {/* {this.displayNavBar()} */}
         {this.displayContactUsPage()}
         {this.displayFooter()}
       </div>

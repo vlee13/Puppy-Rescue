@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
 import "../../CSS/FosterDog.css";
+import NavBar from "./NavBar";
+import "../../CSS/NavigationBar.css";
+import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
+import { GoogleLogout } from "react-google-login";
 
 class FosterDog extends Component {
   state = {
-    showNavbar: true,
-    showPage: true,
-    showLogIn: false,
-    showSignUp: false,
-    showMenu: false,
-    showDonate: false,
     fosterdog: [],
   };
 
@@ -22,6 +20,101 @@ class FosterDog extends Component {
       fosterdog: res.data.fosterdog,
     });
   }
+
+  logout = (response) => {
+    console.log(response);
+    // const user = {
+    //   ...response.profileObj,
+    //   password: response.profileObj?.googleId,
+    // };
+    actions
+      .logOut()
+      .then((user) => {
+        this.props.setUser({
+          email: null,
+          createdAt: null,
+          updatedAt: null,
+          _id: null,
+        });
+      })
+      .catch(({ response }) => console.error(response));
+  };
+
+  // displayNavBar = () => {
+  //   return (
+  //     <div className="Navbar">
+  //       <div className="NavbarContainer">
+  //         <Link to="/" className="link">
+  //           <div className="NavBarElement">
+  //             <img id="LogoMark" />
+  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+  //             <span className="NavBarElementText">House of Paws</span>
+  //             {/* Remove till here */}
+  //           </div>
+  //         </Link>
+  //         <div className="NavBarElement">
+  //           <Link to="/about" className="link">
+  //             <div className="NavBarElementText">About us</div>
+  //           </Link>
+  //           <Link to="/fosterdog" className="link">
+  //             <div className="NavBarElementText">Foster dogs</div>
+  //           </Link>
+
+  //           <Link to="/vote" className="link">
+  //             <div className="NavBarElementText">Vote!</div>
+  //           </Link>
+
+  //           <Link to="/adopted" className="link">
+  //             <div className="NavBarElementText">Adopted</div>
+  //           </Link>
+
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">Contact us</div>
+  //           </Link>
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">|</div>
+  //           </Link>
+
+  //           {this.props.email ? (
+  //             <button onClick={this.logout}>Logout</button>
+  //           ) : (
+  //             <GoogleAuthLogin
+  //               render={(renderProps) => (
+  //                 <button
+  //                   onClick={renderProps.onClick}
+  //                   disabled={renderProps.disabled}
+  //                 >
+  //                   This is my custom Google button
+  //                 </button>
+  //               )}
+  //               buttonText="Login"
+  //               className="navBarButton"
+  //               setUser={this.props.setUser}
+  //             />
+  //           )}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+  displayHeader = () => {
+    return (
+      <div className="container">
+        <img className="imageForFosterDog" />
+        <div className="textForHeroImage">
+          <h1>Our fostered dogs!</h1>
+          <p>
+            These are the winners. <br />
+            <br />
+            You love them. <br />
+            <br />
+            They rock and roll.
+          </p>
+        </div>
+      </div>
+    );
+  };
 
   displayFosterDog = () => {
     console.log("display dogs", this.state.fosterdog);
@@ -40,6 +133,11 @@ class FosterDog extends Component {
               <h1>{eachDog.name}</h1>
               <br />
               <p>{eachDog.descr}</p>
+              <a href="https://www.patreon.com/houseofpaws">
+                <button>
+                  <b>DONATE</b>
+                </button>{" "}
+              </a>
             </div>
           </div>
         );
@@ -75,6 +173,7 @@ class FosterDog extends Component {
     //   );
   };
 
+<<<<<<< HEAD
   displayNavBar = () => {
     return (
       <div className="NavigationBar">
@@ -314,35 +413,63 @@ class FosterDog extends Component {
     );
   };
 
+
+  // Old Code Commented Out
+
+  // displayMenu = () => {
+
   //   return (
   //     <div>
-  //       <img src="" alt="fosterDogImage" className="HeroImage" />
-  //       <div className="textAlignedToRight">
-  //         <img src="" alt="logoMark" className="LogoMark" />
-  //         <span className="CompanyName">Dog I'm fostering now</span>
-  //         <h1 className="Tagline">Fred Flinston</h1>
-  //         <p>Votes</p>
-  //         <p>Started Fostering</p>
-  //         <p>Breed</p>
-  //         <p>text</p>
-  //         <button
-  //           onClick={() => {
-  //             this.setState({
-  //               showPage: false,
-  //               showLogIn: false,
-  //               showSignUp: false,
-  //               showNavbar: false,
-  //               showDonate: true,
-  //             });
-  //             console.log("Hi");
-  //           }}
-  //           className="button"
-  //         >
-  //           Share your love with Fred
-  //         </button>
-  //       </div>
+  //       <Link
+  //         onClick={() =>
+  //           this.setState({
+  //             showMenu: false,
+  //             showNavbar: true,
+  //           })
+  //         }
+  //       >
+  //         X
+  //       </Link>
+  //       <br />
+  //       <Link to="/">
+  //         <div>Home</div>
+  //       </Link>
+  //       <Link to="/about">
+  //         <div>About</div>
+  //       </Link>
+  //       <Link
+  //         onClick={() =>
+  //           this.setState({
+  //             showMenu: false,
+  //             showNavbar: true,
+  //           })
+  //         }
+  //       >
+  //         The dog I'm fostering now
+  //       </Link>
+  //       <Link to="/vote">
+  //         <div>Vote for the next dog I'll foster</div>
+  //       </Link>
+  //       <Link to="/helpothers">
+  //         <div>Help other organizations</div>
+  //       </Link>
+  //       <Link to="/game">
+  //         <div>
+  //           Play our 90's inspired game <i>Dog Zoey in Space</i>
+  //         </div>
+  //       </Link>
+  //       <Link to="/meetteam">
+  //         <div>Meet the team</div>
+  //       </Link>
+  //       <Link to="/contactus">
+  //         <div>Contact us</div>
+  //       </Link>
+  //       <Link to="/userdonate">
+  //         <div>Donate </div>
+  //       </Link>
   //     </div>
   //   );
+  // };
 
   handleChange = (event) => {
     this.setState({
@@ -357,7 +484,10 @@ class FosterDog extends Component {
     console.log(res);
   };
 
+
   displayDonate = () => {
+  displayFooter = () => {
+
     return (
       <div>
         <button
@@ -443,6 +573,13 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
+
+        {/* {!this.props.email && <GoogleAuth setUser={this.props.setUser} />}
+        {!this.props.email && <GoogleAuthLogin setUser={this.props.setUser} />} */}
+
+        <NavBar></NavBar>
+        {this.displayHeader()}
+
         {this.displayFosterDog()}
         {/* {this.state.showNavbar ? this.displayNavBar() : ""}
         {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
