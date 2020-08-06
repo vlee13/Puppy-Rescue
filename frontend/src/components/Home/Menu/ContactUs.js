@@ -1,63 +1,66 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
+import NavBar from "./NavBar";
 import "../../CSS/ContactUs.css";
+import "../../CSS/NavigationBar.css";
 
 class ContactUs extends Component {
   state = {};
 
-  displayNavBar = () => {
-    return (
-      <div className="Navbar">
-        <div className="NavbarContainer">
-          <Link to="/" className="link">
-            <div className="NavBarElement">
-              <img id="LogoMark" />
-              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-              <span className="NavBarElementText">House of Paws</span>
-              {/* Remove till here */}
-            </div>
-          </Link>
-          <div className="NavBarElement">
-            <Link to="/about" className="link">
-              <div className="NavBarElementText">About us</div>
-            </Link>
-            <Link to="/fosterdog" className="link">
-              <div className="NavBarElementText">Foster dogs</div>
-            </Link>
+  // displayNavBar = () => {
+  //   return (
+  //     <div className="Navbar">
+  //       <div className="NavbarContainer">
+  //         <Link to="/" className="link">
+  //           <div className="NavBarElement">
+  //             <img id="LogoMark" />
+  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+  //             <span className="NavBarElementText">House of Paws</span>
+  //             {/* Remove till here */}
+  //           </div>
+  //         </Link>
+  //         <div className="NavBarElement">
+  //           <Link to="/about" className="link">
+  //             <div className="NavBarElementText">About us</div>
+  //           </Link>
+  //           <Link to="/fosterdog" className="link">
+  //             <div className="NavBarElementText">Foster dogs</div>
+  //           </Link>
 
-            <Link to="/vote" className="link">
-              <div className="NavBarElementText">Vote!</div>
-            </Link>
+  //           <Link to="/vote" className="link">
+  //             <div className="NavBarElementText">Vote!</div>
+  //           </Link>
 
-            <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopted</div>
-            </Link>
+  //           <Link to="/adopted" className="link">
+  //             <div className="NavBarElementText">Adopted</div>
+  //           </Link>
 
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">Contact us</div>
-            </Link>
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">|</div>
-            </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">Contact us</div>
+  //           </Link>
+
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">|</div>
+  //           </Link>
+  //           <button
+  //             className="navBarButton"
+  //             onClick={(event) => {
+  //               event.preventDefault();
+  //               this.setState({
+  //                 showLogIn: true,
+  //                 showPage: false,
+  //                 showNavbar: false,
+  //               });
+  //             }}
+  //           >
+  //             Log in
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   handleChange = (event) => {
     this.setState({
@@ -290,8 +293,9 @@ class ContactUs extends Component {
   render() {
     return (
       <div>
+        <NavBar></NavBar>
         {this.displayHeader()}
-        {this.displayNavBar()}
+        {/* {this.displayNavBar()} */}
         {this.displayContactUsPage()}
         {this.displayFooter()}
       </div>

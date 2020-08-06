@@ -22,6 +22,7 @@ import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
 import AddDog from "./components/Admin/AddDog";
+import Navbar from "./components/Home/Menu/NavBar";
 
 class App extends Component {
   state = {};
@@ -57,6 +58,8 @@ class App extends Component {
           )} 
         </nav> */}
         <Switch>
+          <Route exact path="/navbar" render={() => <Navbar />} />
+
           <Route
             exact
             path="/home"
@@ -77,11 +80,9 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-          <Route exact path="/userdonate" render={() => <UserDonate />} />
-          <Route exact path="/menu" render={() => <MenuMainPage />} />
+          {/* <Route exact path="/userdonate" render={() => <UserDonate />} /> */}
+          {/* <Route exact path="/menu" render={() => <MenuMainPage />} /> */}
           <Route exact path="/about" render={() => <About />} />
-
-          <Route exact path="/vote" render={() => <Vote />} />
           <Route
             exact
             path="/fosterdog"
@@ -89,14 +90,16 @@ class App extends Component {
               <FosterDog email={this.state.email} setUser={this.setUser} />
             )}
           />
+          <Route exact path="/vote" render={() => <Vote />} />
+
           <Route exact path="/adopted" render={() => <Adopted />} />
 
           <Route exact path="/game" render={() => <Game />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
 
-          <Route exact path="/slider" render={() => <Slider />} />
+          {/* <Route exact path="/slider" render={() => <Slider />} /> */}
           <Route exact path="/adminpage" render={() => <AdminPage />} />
-          <Route exact path="/addDog" render={() => <AddDog />} />
+          {/* <Route exact path="/addDog" render={() => <AddDog />} /> */}
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
