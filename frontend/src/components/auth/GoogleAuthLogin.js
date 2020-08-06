@@ -1,6 +1,7 @@
 import React from "react";
 import actions from "../../services/index";
 import { GoogleLogin } from "react-google-login";
+import "../CSS/NavigationBar.css";
 
 const responseGoogle = (props) => {
   console.log(props);
@@ -21,16 +22,17 @@ const responseGoogle = (props) => {
     <GoogleLogin
       render={(renderProps) => (
         <button
-          style={{
-            width: "10vw",
-            height: "10vh",
-            backgroundColor: "green",
-            borderRadius: "50%",
-          }}
+          // style={{
+          //   width: "10vw",
+          //   height: "10vh",
+          //   backgroundColor: "green",
+          //   borderRadius: "50%",
+          // }}
+          className="navBarButton"
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
         >
-          This is my custom Google button
+          Login
         </button>
       )}
       clientId={process.env.REACT_APP_GOOGLEID}

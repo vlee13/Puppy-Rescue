@@ -1,62 +1,10 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../CSS/NavigationBar.css";
+import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
+import { GoogleLogout } from "react-google-login";
 
 class NavBar extends Component {
-  //   displayNavBar = () => {
-  //     return (
-  //       <div className="Navbar">
-  //         <div className="NavbarContainer">
-  //           <Link to="/" className="link">
-  //             <div className="NavBarElement">
-  //               <img id="LogoMark" />
-  //               {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-  //               <span className="NavBarElementText">House of Paws</span>
-  //               {/* Remove till here */}
-  //             </div>
-  //           </Link>
-  //           <div className="NavBarElement">
-  //             <Link to="/about" className="link">
-  //               <div className="NavBarElementText">About us</div>
-  //             </Link>
-  //             <Link to="/fosterdog" className="link">
-  //               <div className="NavBarElementText">Foster dogs</div>
-  //             </Link>
-
-  //             <Link to="/vote" className="link">
-  //               <div className="NavBarElementText">Vote!</div>
-  //             </Link>
-
-  //             <Link to="/adopted" className="link">
-  //               <div className="NavBarElementText">Adopted</div>
-  //             </Link>
-
-  //             <Link to="/contactus" className="link">
-  //               <div className="NavBarElementText">Contact us</div>
-  //             </Link>
-
-  //             <Link to="/contactus" className="link">
-  //               <div className="NavBarElementText">|</div>
-  //             </Link>
-  //             <button
-  //               className="navBarButton"
-  //               onClick={(event) => {
-  //                 event.preventDefault();
-  //                 this.setState({
-  //                   showLogIn: true,
-  //                   showPage: false,
-  //                   showNavbar: false,
-  //                 });
-  //               }}
-  //             >
-  //               Log in
-  //             </button>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     );
-  //   };
-
   render() {
     return (
       <div className="Navbar">
@@ -114,19 +62,24 @@ class NavBar extends Component {
             <Link to="/contactus" className="link">
               <div className="NavBarElementText">|</div>
             </Link>
-            <button
-              className="navBarButton"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({
-                  showLogIn: true,
-                  showPage: false,
-                  showNavbar: false,
-                });
-              }}
-            >
-              Log in
-            </button>
+
+            {this.props.email ? (
+              <button onClick={this.logout}>Logout</button>
+            ) : (
+              <GoogleAuthLogin
+                render={(renderProps) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                  >
+                    Log in
+                  </button>
+                )}
+                buttonText="Login"
+                className="navBarButton"
+                setUser={this.props.setUser}
+              />
+            )}
           </div>
         </div>
       </div>

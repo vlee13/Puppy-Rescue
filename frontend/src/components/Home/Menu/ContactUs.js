@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import NavBar from "./NavBar";
-import "../../CSS/ContactUs.css";
 import "../../CSS/NavigationBar.css";
+import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
   state = {};
