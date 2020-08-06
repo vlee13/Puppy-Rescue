@@ -89,9 +89,6 @@ class Adopted extends Component {
 
   async componentDidMount() {
     let res = await actions.adoptedDogs();
-    // let res2 = await axios.get(
-    //   `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/types/dog`
-    // );
     let res3 = await client.animal.search({ type: "dog" });
 
     this.setState({
@@ -152,33 +149,10 @@ class Adopted extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    // let res = await axios.post("http://localhost:5000/", this.state);
-    // console.log(res);
     this.showSearch();
   };
 
-  // handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   let res = await axios.post("http://localhost:5000/", this.state);
-  //   console.log(res);
-  // };
-
-  // displayTestimonialBox = () => {
-  //   return (
-  //     <div>
-  //       <form>
-  //       <textarea
-  //           onChange={this.handleChange}
-  //           name="message"
-  //           value={this.state.value}
-  //           className="textarea"
-  //           rows="5"
-  //         ></textarea>
-  //       </form>
-  //     </div>
-  //   );
-  // };
-
+  
   render() {
     return (
       <div>

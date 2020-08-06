@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import actions from "../services/index";
-import Axios from "axios";
+//import Axios from "axios";
 
 class Home extends Component {
   async componentDidMount() {

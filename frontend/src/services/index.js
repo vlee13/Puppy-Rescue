@@ -38,7 +38,9 @@ const actions = {
   clearVotes: async (dog) => {
     return await service.post("/adminpage", dog);
   },
-
+  sendMail: async (email) => {
+    return await service.post("/sendmail", email);
+  },
   editDog: async (dog) => {
     console.log("hiiii");
     return await service.post("/editDog", dog);

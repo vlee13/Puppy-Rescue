@@ -9,45 +9,6 @@
   background-size: cover;
 }
 
-/* .CarrouselContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-}
-
-/* Navigation bar (Log in and Menu buttons) */
-
-/* .NavigationBar {
-  position: absolute;
-  right: 5vw;
-  top: 4.5vh;
-}
-
-.NavigationBarButton {
-  border: none;
-  padding: 0 1rem;
-  margin: 0;
-  text-decoration: none;
-  background: none;
-  color: black;
-  font-size: 1vw;
-}
-
-.NavigationBarButton:hover {
-  color: blue;
-  cursor: pointer;
-}
-
-.NavigationBarButton:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}  */
-
-/* Hero Image to the left and text to the right*/
-
 .FosterDogImage {
   background-image: url("../../images/person-holding-black-and-white-siberian-husky-3671300.jpg");
   background-color: #cccccc;
@@ -142,55 +103,4 @@ p {
   bottom: 5vh;
 }
 
-/* * {
-* {
 
-* {
-
-    font-family: Arial, "Free Sans";
-}
-#container {
-    color: #fff;
-background:#000;
-}
-#container #question {
-    display: block;
-    padding: 20px;
-    font-weight: bold;
-    letter-spacing: -3px;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 40px;
-}
-#container div {
-    font-weight: bold;
-    letter-spacing: -3px;
-    background: #0099cc;
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 34px;
-    color: #ffffff;
-    border-left: 20px solid #333;
-    width: 400px;
-    -webkit-border-radius: 0.5em;
-    -moz-border-radius: 0 0.5em 0.5em 0;
-    border-radius: 0 1.5em 1.5em 0;
-}
-#container div a {
-    border-radius: 0.3em;
-    text-decoration: none;
-    color: #0099cc;
-    padding: 5px 15px;
-    background: #333;
-    margin: 0 20px;
-}
-#container div a:hover {
-    color: #fff;
-}
-body {
-    margin: 0;
-    padding: 0;
-
-}
-
-} */

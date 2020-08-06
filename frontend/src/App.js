@@ -17,9 +17,9 @@ import About from "./components/Home/Menu/About";
 import Vote from "./components/Home/Menu/Vote";
 import FosterDog from "./components/Home/Menu/FosterDog";
 import Adopted from "./components/Home/Menu/Adopted";
-
+import Con from "./components/Home/Menu/Con";
 import Game from "./components/Home/Menu/Game";
-import MeetTeam from "./components/Home/Menu/MeetTeam";
+
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
@@ -38,9 +38,13 @@ class App extends Component {
     let res = await actions.logOut();
     this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
+  test = async () => {
+    let res = await actions.sendMail();
+  };
   render() {
     return (
       <BrowserRouter>
+      <button onClick={this.test}>submit</button>
         {/* <NavLink to="/">Menu |</NavLink> */}
         {/* {this.state.email}
         <nav>
@@ -89,7 +93,7 @@ class App extends Component {
           <Route exact path="/adopted" render={() => <Adopted />} />
           
           <Route exact path="/game" render={() => <Game />} />
-          <Route exact path="/meetteam" render={() => <MeetTeam />} />
+          <Route eaxt path="/con" render={() => <Con />} />
           <Route exact path="/contactus" render={() => <ContactUs />} />
 
           <Route exact path="/slider" render={() => <Slider />} />
