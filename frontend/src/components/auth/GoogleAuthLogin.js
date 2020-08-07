@@ -17,17 +17,9 @@ const responseGoogle = (props) => {
         console.log(user);
         props.setUser(user.data);
       })
-<<<<<<< HEAD
-      .catch(({ response }) => console.error(response.data));
-      
-    
-    };
-  
-=======
       .catch((response) => console.error(response));
   };
 
->>>>>>> e0fba163149f5e9b9d1572982ddbec4de71aa14f
   return (
     <GoogleLogin
       render={(renderProps) => (
