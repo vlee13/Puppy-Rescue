@@ -17,7 +17,10 @@ const responseGoogle = (props) => {
         props.setUser({ ...user.data });
       })
       .catch(({ response }) => console.error(response.data));
-  };
+      
+    
+    };
+  
   return (
     <GoogleLogin
       render={(renderProps) => (
@@ -31,7 +34,7 @@ const responseGoogle = (props) => {
           className="navBarButton"
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
-        >
+        > 
           Login
         </button>
       )}
