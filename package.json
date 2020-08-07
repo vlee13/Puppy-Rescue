@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/FTWD-OCT-2019/ironplate#readme",
   "dependencies": {
-    "create-react-app": "^3.4.1"
+    "create-react-app": "^3.4.1",
+    "recharts": "^1.8.5"
   }
 }
