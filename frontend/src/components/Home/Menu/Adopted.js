@@ -149,22 +149,6 @@ class Adopted extends Component {
     console.log(res3);
   };
 
-  // displayTestimonialBox = () => {
-  //   return (
-  //     <div>
-  //       <form>
-  //       <textarea
-  //           onChange={this.handleChange}
-  //           name="message"
-  //           value={this.state.value}
-  //           className="textarea"
-  //           rows="5"
-  //         ></textarea>
-  //       </form>
-  //     </div>
-  //   );
-  // };
-
   displayForm = () => {
     return (
       <div>

@@ -9,45 +9,6 @@
   background-size: cover;
 }
 
-/* .CarrouselContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-}
-
-/* Navigation bar (Log in and Menu buttons) */
-
-/* .NavigationBar {
-  position: absolute;
-  right: 5vw;
-  top: 4.5vh;
-}
-
-.NavigationBarButton {
-  border: none;
-  padding: 0 1rem;
-  margin: 0;
-  text-decoration: none;
-  background: none;
-  color: black;
-  font-size: 1vw;
-}
-
-.NavigationBarButton:hover {
-  color: blue;
-  cursor: pointer;
-}
-
-.NavigationBarButton:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}  */
-
-/* Hero Image to the left and text to the right*/
-
 .FosterDogImage {
   background-image: url("../../images/person-holding-black-and-white-siberian-husky-3671300.jpg");
   background-color: #cccccc;

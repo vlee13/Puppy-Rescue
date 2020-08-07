@@ -36,9 +36,13 @@ class App extends Component {
     let res = await actions.logOut();
     this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
+  test = async () => {
+    let res = await actions.sendMail();
+  };
   render() {
     return (
       <BrowserRouter>
+        <button onClick={this.test}>submit</button>
         {/* <NavLink to="/">Menu |</NavLink> */}
         {/* {this.state.email}
         <nav>
@@ -114,6 +118,7 @@ class App extends Component {
           />
 
           <Route exact path="/game" render={() => <Game />} />
+
           <Route
             exact
             path="/contactus"
@@ -122,37 +127,9 @@ class App extends Component {
             )}
           />
 
-          {/* <Route exact path="/slider" render={() => <Slider />} /> */}
-          <Route exact path="/adminpage" render={() => <AdminPage />} />
-          {/* <Route exact path="/addDog" render={() => <AddDog />} /> */}
+          <Route exact path="/contactus" render={() => <ContactUs />} />
 
-          {/* <Route exact path="/" render={(props) => <Home {...props} />} />
-          <Route
-            exact
-            path="/sign-up"
-            render={(props) => <SignUp {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
-            path="/log-in"
-            render={(props) => <LogIn {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/contact"
-            render={(props) => <Contact {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/meetteam"
-            render={(props) => <MeetTheTeam {...props} user={this.state} />}
-          />
-          <Route component={NotFound} /> */}
+          <Route exact path="/adminpage" render={() => <AdminPage />} />
         </Switch>
         {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
         {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}

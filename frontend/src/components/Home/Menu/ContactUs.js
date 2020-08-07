@@ -86,7 +86,7 @@ class ContactUs extends Component {
         </div>
       </div>
     );
-  };
+  }
 
   displayContactUsPage = () => {
     let audio = new Audio("/bark.mp3");
