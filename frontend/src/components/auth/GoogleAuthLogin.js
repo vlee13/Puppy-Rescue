@@ -32,7 +32,7 @@ const responseGoogle = (props) => {
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
         >
-          Login
+          Log in
         </button>
       )}
       clientId={process.env.REACT_APP_GOOGLEID}

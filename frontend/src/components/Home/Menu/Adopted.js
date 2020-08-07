@@ -6,6 +6,7 @@ import "../../CSS/Adopted.css";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 import NavBar from "./NavBar";
 import "../../CSS/NavigationBar.css";
+import Footer from "./Footer";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -19,52 +20,6 @@ class Adopted extends Component {
     petfinderSearch: [],
     searchParams: { type: "dog" },
   };
-
-  // displayNavBar = () => {
-  //   return (
-  //     <div className="Navbar">
-  //       <div className="NavbarContainer">
-  //         <Link to="/" className="link">
-  //           <div className="NavBarElement">
-  //             <img id="LogoMark" />
-  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-  //             <span className="NavBarElementText">House of Paws</span>
-  //             {/* Remove till here */}
-  //           </div>
-  //         </Link>
-  //         <div className="NavBarElement">
-  //           <Link to="/about" className="link">
-  //             <div className="NavBarElementText">About us</div>
-  //           </Link>
-  //           <Link to="/fosterdog" className="link">
-  //             <div className="NavBarElementText">Foster dogs</div>
-  //           </Link>
-
-  //           <Link to="/vote" className="link">
-  //             <div className="NavBarElementText">Vote!</div>
-  //           </Link>
-
-  //           <Link to="/adopted" className="link">
-  //             <div className="NavBarElementText">Adopted</div>
-  //           </Link>
-
-  //           <Link to="/contactus" className="link">
-  //             <div className="NavBarElementText">Contact us</div>
-  //           </Link>
-  //           <Link to="/contactus" className="link">
-  //             <div className="NavBarElementText">|</div>
-  //           </Link>
-  //           {!this.props.email && (
-  //             <GoogleAuthLogin
-  //               className="navBarButton"
-  //               setUser={this.props.setUser}
-  //             />
-  //           )}
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // };
 
   displayHeader = () => {
     return (
@@ -152,32 +107,9 @@ class Adopted extends Component {
     console.log(res3);
   };
 
-  // handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   let res = await axios.post("http://localhost:5000/", this.state);
-  //   console.log(res);
-  // };
-
-  // displayTestimonialBox = () => {
-  //   return (
-  //     <div>
-  //       <form>
-  //       <textarea
-  //           onChange={this.handleChange}
-  //           name="message"
-  //           value={this.state.value}
-  //           className="textarea"
-  //           rows="5"
-  //         ></textarea>
-  //       </form>
-  //     </div>
-  //   );
-  // };
-
   render() {
     return (
       <div>
-        <NavBar></NavBar>
         {/* {this.displayNavBar()} */}
         {this.displayHeader()}
         {this.displayAdopted()}

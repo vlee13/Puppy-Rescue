@@ -11,6 +11,10 @@
   background-size: cover;
 }
 
+#contactUsTagline {
+  width: 55vw;
+}
+
 /* Form */
 
 .instructions {
@@ -74,4 +78,45 @@
 
 .submitButton:active {
   transform: scale(0.99);
+}
+
+/* Effect */
+
+.underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0.25rem;
+  background: none;
+  color: black;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  margin: 0.25rem 0 0.25rem 0;
+  cursor: default;
+}
+
+.underline:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: -5px;
+  background: #000;
+  height: 1px;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: left right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+  right: 0;
 }
