@@ -24,10 +24,7 @@ class Vote extends Component {
         <img className="imageForVote" />
         <div className="textForHeroImage">
           <h1>Vote.</h1>
-          <p>
-            We can only take one dog to be fostered in this house. Help us
-            choose! You have three votes.
-          </p>
+          <p>Help us elect our next fostered dog.</p>
         </div>
       </div>
     );
@@ -90,6 +87,24 @@ class Vote extends Component {
     return (
       <div>
         {this.displayHeader()}
+        <div className="voteExplanaitionContainer">
+          <p className="voteExplanaitionText">
+            We can only take one dog to be fostered in this house. Help us
+            choose! You have three votes. We can only take one dog to be
+            fostered in this house. Help us choose! You have three votes. We can
+            only take one dog to be fostered in this house. Help us choose! You
+            have three votes. We can only take one dog to be fostered in this
+            house. Help us choose! You have three votes. We can only take one
+            dog to be fostered in this house. Help us choose! You have three
+            votes. We can only take one dog to be fostered in this house. Help
+            us choose! You have three votes. We can only take one dog to be
+            fostered in this house. Help us choose! You have three votes. We can
+            only take one dog to be fostered in this house. Help us choose! You
+            have three votes. We can only take one dog to be fostered in this
+            house. Help us choose! You have three votes. We can only take one
+            dog to be fostered in this house.
+          </p>
+        </div>
         {this.displayDogsToVote()}
         {/* <VoteBar data={this.state.dogs} /> */}
         <PieGraph data={this.state.dogs} />

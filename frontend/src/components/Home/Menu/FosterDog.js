@@ -6,6 +6,8 @@ import "../../CSS/FosterDog.css";
 import "../../CSS/NavigationBar.css";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 import { GoogleLogout } from "react-google-login";
+import Footer from "./Footer";
+import NavBar from "../Menu/NavBar";
 
 class FosterDog extends Component {
   state = {
@@ -44,14 +46,8 @@ class FosterDog extends Component {
       <div className="container">
         <img className="imageForFosterDog" />
         <div className="textForHeroImage">
-          <h1>Our fostered dogs!</h1>
-          <p>
-            These are the winners. <br />
-            <br />
-            You love them. <br />
-            <br />
-            They rock and roll.
-          </p>
+          <h1>This cutie is our winner!</h1>
+          <p>Because you voted and we listened.</p>
         </div>
       </div>
     );
@@ -64,23 +60,68 @@ class FosterDog extends Component {
       .map((eachDog) => {
         return (
           <div>
-            <div className="CompanyName">
-              <h1>You voted, we listened!</h1>
-              <p>Text here about fostering</p>
+            <div className="electionTextContainer">
+              <p className="electionText">
+                After a dificult election we have a winner. Thank you so much
+                for participating and being awesome. We wouldnt be able to run
+                House of Paws without your support. After a dificult election we
+                have a winner. Thank you so much for participating and being
+                awesome. We wouldnt be able to run House of Paws without your
+                support. After a dificult election we have a winner. Thank you
+                so much for participating and being awesome. We wouldnt be able
+                to run House of Paws without your support. After a dificult
+                election we have a winner. Thank you so much for participating
+                and being awesome. We wouldnt be able to run House of Paws
+                without your support. After a dificult election we have a
+                winner. Thank you so much for participating and being awesome.
+                We wouldnt be able to run House of Paws without your support.
+              </p>
             </div>
-            <div key={`dog-key-${eachDog.name}`}>
-              <img src={eachDog.image} alt="fosterdogpic" />
-              <br />
+            <h1 className="fosterDogName">Meet {eachDog.name}!</h1>
+
+            <div className="fosterDogBodyPage">
+              <div className="fosterDogTextInsideBG">
+                <p>
+                  {eachDog.descr} After a dificult election we have a winner.
+                  Thank you so much for participating and being awesome. We
+                  wouldnt be able to run House of Paws without your support.
+                  After a dificult election we have a winner. Thank you so much
+                  for participating and being awesome. We wouldnt be able to run
+                  House of Paws without your support. After a dificult election
+                  we have a winner. Thank you so much for participating and
+                  being awesome. We wouldnt be able to run House of Paws without
+                  your support. After a dificult election we have a winner.
+                  Thank you so much for participating and being awesome. We
+                  wouldnt be able to run House of Paws without your support.
+                  After a dificult election we have a winner. Thank you so much
+                  for participating and being awesome. We wouldnt be able to run
+                  House of Paws without your support. Thank you so much for
+                  participating and being awesome. We wouldnt be able to run
+                  House of Paws without your support.
+                  <br /> <br /> Please donate to our patron account by clicking
+                  on the button below.
+                </p>
+                <div className="donateButtonContainer">
+                  <button className="donateButton">
+                    <a
+                      className="Link"
+                      href="https://www.patreon.com/houseofpaws"
+                    >
+                      DONATE
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* <div key={`dog-key-${eachDog.name}`}> */}
+            {/* <img src={eachDog.image} alt="fosterdogpic" /> */}
+            {/* <br />
               <h1>{eachDog.name}</h1>
               <br />
-              <p>{eachDog.descr}</p>
-              <a href="https://www.patreon.com/houseofpaws">
-                <button>
-                  <b>DONATE</b>
-                </button>{" "}
-              </a>
-            </div>
+              <p>{eachDog.descr}</p> */}
           </div>
+          // </div>
         );
       });
   };
@@ -101,11 +142,7 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
-        {/* {!this.props.email && <GoogleAuth setUser={this.props.setUser} />}
-        {!this.props.email && <GoogleAuthLogin setUser={this.props.setUser} />} */}
-
         {this.displayHeader()}
-
         {this.displayFosterDog()}
       </div>
     );

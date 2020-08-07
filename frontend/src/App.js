@@ -49,12 +49,14 @@ class App extends Component {
           user={this.state}
           logOut={this.logOut}
         ></NavBar>
+        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
+        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
         <Switch>
-          <Route
+          {/* <Route
             exact
             path="/home"
             render={(props) => <Home {...props} setUser={this.setUser} />}
-          />
+          /> */}
           <Route exact path="/" render={() => <Slider />} />
           <Route
             exact

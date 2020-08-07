@@ -56,20 +56,20 @@
 .background6 {
   margin-top: 0vh;
   width: 100vw;
-  background-image: url("../../images/Helpothers.png");
+  background-image: url("../../images/DogsAppBG.jpg");
   background-color: #cccccc;
   height: 100vh;
-  background-position: left;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .backgroundForGame {
   width: 100vw;
-  background-image: url("../../images/Game2.png");
+  background-image: url("../../images/Game2.jpg");
   background-color: #cccccc;
   height: 90vh;
-  background-position: left;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

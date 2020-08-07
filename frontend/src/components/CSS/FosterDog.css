@@ -1,140 +1,93 @@
 .imageForFosterDog {
   margin-top: 5.5vh;
   width: 100vw;
-  background-image: url("../../images/pexels-poodles-doodles-1458922.jpg");
+  background-image: url("../../images/kt-35FPKt3Yko4-unsplash.jpg");
   background-color: gainsboro;
   height: 60vh;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.FosterDogImage {
-  background-image: url("../../images/person-holding-black-and-white-siberian-husky-3671300.jpg");
-  background-color: #cccccc;
+.electionTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.electionText {
+  width: 60vw;
+  text-align: left;
+  margin: 7.5vh 0 5vh 5vw;
+}
+
+.fosterDogName {
+  width: 100vw;
+  margin: 12.5vh 0;
+}
+
+.fosterDogBodyPage {
+  width: 100vw;
+  background-image: url("../../images/FosterDogCollage.jpg");
+  background-color: gainsboro;
   height: 100vh;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 45vw;
+  position: relative;
 }
 
-.CarrouselText {
+.fosterDogTextInsideBG {
   width: 45vw;
-  margin: 17.5vh 5vw 5vh 5vw;
+  position: absolute;
+  margin: 0vh 0 5vh 5vw;
   text-align: left;
 }
 
-/* Styles inside text-container */
+/* Foster Dog Description and Donate button */
 
-#LogoMark {
-  background-image: url("");
-  background-color: #cccccc;
-  height: 3vh;
-  width: 1.5vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0;
-  margin: 0;
-}
-
-.CompanyName {
-  font-size: 1.25vw;
-  margin-left: 0.75vw;
-}
-
-h1 {
+.donateButtonContainer {
   width: 45vw;
-  font-size: 3.25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-p {
-  width: 45vw;
-  font-size: 1vw;
-}
-
-/* Carrousel button */
-
-.CarrouselButton {
-  /* display: inline-block; */
-  border: none;
-  padding: 1.25rem 4.25rem;
-  margin: 7.5vh 0;
-  text-decoration: none;
-  background: gray;
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 1.25vh;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.CarrouselButton:hover,
-.CarrouselButton:focus {
-  background: black;
-}
-
-.CarrouselButton:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-.CarrouselButton:active {
-  transform: scale(0.99);
-}
-
-#SealLogo {
-  background-image: url("");
-  background-color: #cccccc;
-  height: 20vh;
-  width: 10vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  right: 5vw;
-  bottom: 5vh;
-}
-
-.navBarButton {
-  /* display: inline-block; */
+.donateButton {
   border-color: grey;
   border-style: solid;
-  padding: 0.5rem 1.5rem;
-  margin: 7.5vh 0;
+  padding: 0.75rem 5rem;
+  margin: 10vh 0;
   text-decoration: none;
-  /* background: gray; */
   color: grey;
   font-family: sans-serif;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  border-radius: 2rem;
+  /* border-radius: 2rem; */
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-.navBarButton:hover,
+.donateButton:hover,
 .CarrouselButton:focus {
   background: black;
   color: white;
 }
 
-.CarrouselButton:focus {
+.donateButton:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
 
-.CarrouselButton:active {
+.donateButton:active {
   transform: scale(0.99);
+}
+
+.Link {
+  text-decoration: none;
+  color: gray;
 }
 
 /* 
