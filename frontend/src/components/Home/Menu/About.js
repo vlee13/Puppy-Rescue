@@ -90,7 +90,7 @@ class About extends Component {
         {/* Help other organizations */}
 
         <div className="container">
-          <img className="background6" />
+          <img className="background5" />
           <div className="whiteBGleft">
             <h1 className="header">Help other organizations</h1>
             <p className="text">
@@ -104,19 +104,19 @@ class About extends Component {
               injuries–off the streets and provide medical care. They also work
               to find forever homes for these animals.
             </p>
-            <ul>https://www.hopeforpaws.org</ul>
+           <button><a href='https://www.hopeforpaws.org'>Explore hope for paws</a></button>
             <h5>A purposeful rescue</h5>
             <p>
               A Purposeful rescue that saves overlooked dogs from high-kill Los
               Angeles area shelters.
             </p>
-            <ul>http://www.apurposefulrescue.or</ul>
+            <button><a href='http://www.apurposefulrescue.org'>Explore Purposeful Rescue</a></button>
             <h5>American pit bull foundation</h5>
             <p>
               The American Pit Bull Foundation works to educate and change the
               perception and stereotypes surrounding Pit Bulls.
             </p>
-            <ul>https://apbf.dog</ul>
+            <button><a href='https://apbf.dog'>Explore Purposeful Rescue</a></button>
             <h5>Animal aid unlimited</h5>
             <p>
               Animal Aid Unlimited take animals off the street who need medical
@@ -167,9 +167,9 @@ class About extends Component {
               SURVIVE. KEEP ZOOEY ALIVE FOR AS LONG AS POSSIBLE GET THE HIGHEST
               SCORE TO WIN, and GAME OVER WHEN ALIENS REACH YOU.
             </p>
-            <Link to="/game">
-              <button>Play!</button>
-            </Link>
+            <div className="game">
+            <button><a href='https://vlee13.github.io/SPACE-ZOOEY/'>Play!</a></button>
+            </div>
           </div>
         </div>
       </div>
