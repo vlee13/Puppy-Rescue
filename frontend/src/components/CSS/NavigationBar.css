@@ -42,15 +42,18 @@ body {
 }
 
 #LogoMark {
-  background-image: url("");
-  background-color: #cccccc;
+  background-image: url("../../images/Logo-Horizontal.gif");
+  /* background-color: #cccccc; */
   height: 3vh;
-  width: 1.5vw;
-  background-position: center;
+  width: 10vw;
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
   margin: 0;
+  background-size: auto;
+  z-index: 1;
+  border: 0;
 }
 
 /* .background { */
@@ -378,21 +381,4 @@ body {
   display: block;
   padding: 1rem;
   font-size: 1rem;
-}
-
-.navBarButton2 {
-  border-color: grey;
-  border-style: solid;
-  padding: 0.5rem 1.5rem;
-  margin: 7.5vh 0;
-  text-decoration: none;
-  color: grey;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 2rem;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
