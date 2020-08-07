@@ -42,11 +42,11 @@ class Adopted extends Component {
       <div className="container">
         <img className="adoptedHeroImage" />
         <div className="textForHeroImage">
-          <h1>Our Adoptees!</h1>
+          <h1>Our Alumni!</h1>
           <p>
-            These are the success stories and history of all the rescues that
-            found their fur-ever homes. <br />
-            Share a little testimonial and some pictures for this album!
+            These are the success stories of all our foster babies that ended up
+            finding their fur-ever homes. <br />
+            See all our happy endings!
           </p>
         </div>
       </div>
@@ -68,7 +68,7 @@ class Adopted extends Component {
     console.log("petfinder line 103");
     return this.state.petfinderSearch.map((eachdog) => {
       return (
-        <div>
+        <div className="petfinderDog">
           <div className="searchImage">
             <img
               src={
@@ -80,17 +80,21 @@ class Adopted extends Component {
           </div>
           <br />
           <div className="searchDescription">
-            {eachdog.name}
+            {`Name: ${eachdog.name}`}
             <br />
-            {eachdog.gender}
+            {`Gender: ${eachdog.gender}`}
             <br />
-            {eachdog.age}
+            {`Age: ${eachdog.age}`}
             <br />
+            {`Breed: ${eachdog.breeds?.primary}/${eachdog.breeds?.secondary}`}
+
+            <br />
+            {`Address: ${eachdog.contact?.address}`}
+            <br />
+            {`Email: ${eachdog.contact?.phone}`}
+            <br />
+            <a href={eachdog.url}>Adopt Here</a>
           </div>
-          {/* <br />
-          {eachdog.contact.address}
-          <br />
-          {eachdog.contact.phone} */}
         </div>
       );
     });
@@ -102,30 +106,15 @@ class Adopted extends Component {
       .filter((eachDog) => eachDog.status === "adopted")
       .map((eachDog) => {
         return (
-          <div key={`dog-key-${eachDog.name}`}>
+          <div className="alumni" key={`dog-key-${eachDog.name}`}>
             <img src={eachDog.image} alt="adoptionpic" />
-            <br />
+
             <h1>{eachDog.name}</h1>
-            <br />
-            <p>{eachDog.descr}</p>
+
+            <h2 className="alumDescr">{eachDog.descr}</h2>
           </div>
         );
       });
-  };
-
-  displayAddTestimonial = () => {
-    return (
-      <div>
-        <h4>Please share a little testimonial and some pictures with us!</h4>
-        <button
-          onClick={() => {
-            this.setState({ testimonialBox: true });
-          }}
-        >
-          Add
-        </button>
-      </div>
-    );
   };
 
   handleChange = (event) => {
@@ -148,86 +137,82 @@ class Adopted extends Component {
     console.log(res3);
   };
 
-  displayForm = () => {
-    return (
-      <div>
-        <div>
-          <h1>Want to know about adoptable dogs near you?</h1>
-          <h2>
-            Enter your zipcode or city and any other desired specifications.
-          </h2>
-        </div>
-
-        <div className="petfinder">
-          <form onSubmit={this.handleSubmit}>
-            <label for="location">Location</label>
-            <input onChange={this.handleChange} name="location" type="text" />
-            <br />
-            <label for="distance">Distance</label>
-            <input onChange={this.handleChange} name="distance" type="number" />
-            <br />
-            <label for="size">Size</label>
-            <input onChange={this.handleChange} name="size" type="text" />
-            <br />
-            <p>Please select your gender:</p>
-            <input type="radio" id="male" name="gender" value="male" />
-            <label for="male">Male</label>
-            <br />
-            <input type="radio" id="female" name="gender" value="female" />
-            <label for="female">Female</label>
-            <br />
-
-            <label for="weight">Weight</label>
-            <input onChange={this.handleChange} name="weight" type="text" />
-            <br />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
-    );
-  };
-
   render() {
     return (
       <div>
         {this.displayHeader()}
         <div className="alumni">{this.displayAdopted()}</div>
         <hr></hr>
+
         <div>
           <div className="petfinderText">
-            <h1>Want to know about adoptable dogs near you?</h1>
+            <h1>Want to look for dogs to adopt near you?</h1>
             <h2>
-              Enter your zipcode or city and any other desired specifications.
+              Enter your zipcode/city and any other desired specifications.
             </h2>
           </div>
 
           <div className="petfinderForm">
             <form onSubmit={this.handleSubmit}>
-              <label for="location">Location</label>
-              <input onChange={this.handleChange} name="location" type="text" />
-              <br />
-              <label for="distance">Distance</label>
-              <input
-                onChange={this.handleChange}
-                name="distance"
-                type="number"
-              />
-              <br />
-              <label for="size">Size</label>
-              <input onChange={this.handleChange} name="size" type="text" />
-              <br />
-              <p>Please select your gender:</p>
-              <input type="radio" id="male" name="gender" value="male" />
-              <label for="male">Male</label>
-              <br />
-              <input type="radio" id="female" name="gender" value="female" />
-              <label for="female">Female</label>
-              <br />
+              <div className="formText">
+                <label for="location">Location:</label>
+                <input
+                  onChange={this.handleChange}
+                  name="location"
+                  type="text"
+                />
+                <br />
+                <label for="distance">Distance/Miles:</label>
+                <input
+                  onChange={this.handleChange}
+                  name="distance"
+                  type="number"
+                />
+                <br />
 
-              <label for="weight">Weight</label>
-              <input onChange={this.handleChange} name="weight" type="text" />
-              <br />
-              <button type="submit">Submit</button>
+                <label for="breed">Breed:</label>
+                <input onChange={this.handleChange} name="breed" type="text" />
+                <br />
+              </div>
+
+              <div className="formRadio">
+                <p className="radioGender">Dog Gender:</p>
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+                <br />
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+                <br />
+                <p className="radioAge">Dog Age:</p>
+                <input type="radio" id="baby" name="age" value="baby" />
+                <label for="baby">Baby</label>
+                <br />
+                <input type="radio" id="young" name="age" value="young" />
+                <label for="young">Young</label>
+                <br />
+                <input type="radio" id="adult" name="age" value="adult" />
+                <label for="adult">Adult</label>
+                <br />
+                <input type="radio" id="senior" name="age" value="senior" />
+                <label for="senior">Senior</label>
+                <br />
+                <p className="radioSize">Dog Size:</p>
+                <input type="radio" id="small" name="size" value="small" />
+                <label for="small">Small</label>
+                <br />
+                <input type="radio" id="medium" name="size" value="medium" />
+                <label for="medium">Medium</label>
+                <br />
+                <input type="radio" id="large" name="size" value="large" />
+                <label for="large">Large</label>
+                <br />
+                <input type="radio" id="xlarge" name="size" value="xlarge" />
+                <label for="xlarge">XLarge</label>
+                <br />
+              </div>
+              <button className="formsubmit" type="submit">
+                Submit
+              </button>
             </form>
           </div>
           <div className="displayPetfinder">{this.showPetfinderSearch()}</div>
