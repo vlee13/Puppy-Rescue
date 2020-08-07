@@ -3,6 +3,40 @@ const Dog = require("../models/Dog.model");
 const User = require("../models/User");
 const Org = require("../models/Org.model");
 const nodemailer = require("nodemailer");
+
+router.post("/sendmail", (req, res, next) => {
+  console.log("sendmail", req.body);
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // use SSL
+    service: "gmail",
+    auth: {
+      user: "houseofpawsla@gmail.com", // generated ethereal user
+      pass: "Ilovezooey123!", // generated ethereal password
+    },
+  });
+
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
+  });
+
+  transporter
+    .sendMail({
+      from: req.body.email, // sender address
+      to: "houseofpawsla@gmail.com", // list of receivers
+      subject: "", // Subject line
+      text: req.body.message, // plain text body
+      //html: "<b></b>", // html body
+    })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err, "apple"));
+});
+
 router.get("/", (req, res, next) => {
   res.status(200).json({ msg: "Working" });
 });
@@ -84,44 +118,39 @@ router.post("/adminpage", (req, res, next) => {
 });
 
 router.post("/sendmail", (req, res, next) => {
-  console.log("sendmail",req.body)
-  
+  console.log("sendmail", req.body);
 
   let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: "smtp.gmail.com",
     port: 465,
     secure: true, // use SSL
-  auth: {
-    user: "dpanuncia@gmail.com", // generated ethereal user
-    pass: "on4had123!", // generated ethereal password
-  },
+    auth: {
+      user: "dpanuncia@gmail.com", // generated ethereal user
+      pass: "on4had123!", // generated ethereal password
+    },
+  });
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
+  });
+  transporter
+    .sendMail({
+      from: req.body.email, // sender address
+      to: "dpanuncia@gmail.com", // list of receivers
+      subject: "", // Subject line
+      text: req.body.message, // plain text body
+      //html: "<b></b>", // html body
+    })
+    .then((res) => console.log(res));
 });
-transporter.verify(function(error, success) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Server is ready to take our messages");
-  }
-});
-transporter.sendMail({
-  from: req.body.email , // sender address
-  to: "dpanuncia@gmail.com", // list of receivers
-  subject: "", // Subject line
-  text: req.body.message, // plain text body
-  //html: "<b></b>", // html body
-  
-}).then(res => console.log(res))
-
-});
-
-
 
 function isAuth(req, res, next) {
   req.isAuthenticated()
     ? next()
     : res.status(401).json({ msg: "Log in first" });
 }
-
-
 
 module.exports = router;

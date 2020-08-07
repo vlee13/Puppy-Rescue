@@ -33,7 +33,7 @@ const responseGoogle = (props) => {
           className="navBarButton"
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
-        > 
+        >
           Login
         </button>
       )}

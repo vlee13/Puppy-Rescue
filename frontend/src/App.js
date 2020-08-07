@@ -22,6 +22,7 @@ import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
 import NavBar from "./components/Home/Menu/NavBar";
+import Footer from "./components/Home/Menu/Footer";
 
 class App extends Component {
   state = {};
@@ -43,24 +44,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <button onClick={this.test}>submit</button>
-        {/* <NavLink to="/">Menu |</NavLink> */}
-        {/* {this.state.email}
-        <nav>
-          <NavLink to="/">Menu |</NavLink>
-          {this.state.email ? (
-            <Fragment>
-              <NavLink onClick={this.logOut} to="/">
-                Log Out |
-              </NavLink>
-              <NavLink to="/profile">Profile|</NavLink>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <NavLink to="/sign-up">Sign Up |</NavLink>
-              <NavLink to="/log-in">Log In |</NavLink>
-            </Fragment>
-          )} 
-        </nav> */}
         <NavBar
           setUser={this.setUser}
           user={this.state}
@@ -131,8 +114,7 @@ class App extends Component {
 
           <Route exact path="/adminpage" render={() => <AdminPage />} />
         </Switch>
-        {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
-        {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}
+        <Footer></Footer>
       </BrowserRouter>
     );
   }

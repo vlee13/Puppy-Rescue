@@ -4,59 +4,6 @@ import "../../CSS/About.css";
 import "../../CSS/NavigationBar.css";
 
 class About extends Component {
-  // displayNavBar = () => {
-  //   return (
-  //     <div className="Navbar">
-  //       <div className="NavbarContainer">
-  //         <Link to="/" className="link">
-  //           <div className="NavBarElement">
-  //             <img id="LogoMark" />
-  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-  //             <span className="NavBarElementText">House of Paws</span>
-  //             {/* Remove till here */}
-  //           </div>
-  //         </Link>
-  //         <div className="NavBarElement">
-  //           <Link to="/about" className="link">
-  //             <div className="NavBarElementText">About us</div>
-  //           </Link>
-  //           <Link to="/fosterdog" className="link">
-  //             <div className="NavBarElementText">Foster dogs</div>
-  //           </Link>
-
-  //           <Link to="/vote" className="link">
-  //             <div className="NavBarElementText">Vote!</div>
-  //           </Link>
-
-  //           <Link to="/adopted" className="link">
-  //             <div className="NavBarElementText">Adopted</div>
-  //           </Link>
-
-  //           <Link to="/contactus" className="link">
-  //             <div className="NavBarElementText">Contact us</div>
-  //           </Link>
-  //           <Link to="/contactus" className="link">
-  //             <div className="NavBarElementText">|</div>
-  //           </Link>
-  //           <button
-  //             className="navBarButton"
-  //             onClick={(event) => {
-  //               event.preventDefault();
-  //               this.setState({
-  //                 showLogIn: true,
-  //                 showPage: false,
-  //                 showNavbar: false,
-  //               });
-  //             }}
-  //           >
-  //             Log in
-  //           </button>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
   displayPage = () => {
     return (
       <div>
@@ -151,7 +98,7 @@ class About extends Component {
               list of other organizations that put a lot of effort helping dogs.
               Please take a look of them and help them as well.
             </p>
-            <h5>Hope for paws</h5>
+            <h5 className="underline">Hope for paws</h5>
             <p>
               They bring animals who are suffering–often from abuse, neglect, or
               injuries–off the streets and provide medical care. They also work
@@ -229,155 +176,8 @@ class About extends Component {
     );
   };
 
-  displayFooter = () => {
-    return (
-      <div className="footer">
-        {/* Main Container for 3 floats: Dev Team, Navigation and Other links */}
-
-        <div className="footerContainer">
-          <div className="floatElement">
-            <img class="footerLogoMark" />
-            <div className="address">
-              House of Valerie Apt. 911, <br />
-              Kimchi 00911 USA
-            </div>
-            <div classNAme="phoneNumber"> 0-800-WeLoveDogs</div>
-
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-          </div>
-
-          <div className="floatElement">
-            <h4 className="title">Development Team</h4>
-            {/* Carlos */}
-            <div>Carlos Cesar Valle</div>
-            <div>
-              Software Developer <br /> UX & Branding Designer
-            </div>
-            {/* <p className="meetTeamText">From: Miami, FL</p> */}
-            <span>
-              <a href="https://github.com/carloscesarvalle" target="_blank">
-                GitHub
-              </a>
-            </span>
-            <span>|</span>
-            <span>
-              <a
-                href="https://www.linkedin.com/in/carloscesarvalle/"
-                target="_blank"
-              >
-                LinkedIn
-              </a>
-            </span>
-            <span>|</span>
-            <span>
-              <a
-                href="https://www.behance.net/carloscesarvalle"
-                target="_blank"
-              >
-                Behance
-              </a>
-            </span>
-            {/* Valerie */}
-            <div>Valerie Lee Kang</div>
-            <div>
-              Software Developer <br /> Canvas Developer
-            </div>
-            <span>
-              <a href="https://github.com/vlee13" target="_blank">
-                GitHub
-              </a>
-            </span>
-            <span>|</span>
-            <span>
-              <a href="https://www.linkedin.com/in/vlee13/" target="_blank">
-                LinkedIn
-              </a>
-            </span>
-            {/* DP */}
-            <div>Dionel Panuncia</div>
-            <div>Software Developer</div>
-            <span>
-              <a href="https://github.com/dpanuncia/" target="_blank">
-                GitHub
-              </a>
-            </span>
-            <span>|</span>
-            <span>
-              <a href="https://www.linkedin.com/in/dpanuncia/" target="_blank">
-                LinkedIn
-              </a>
-            </span>
-          </div>
-
-          {/* Navigation Bar */}
-
-          <div className="floatElement">
-            <h4 className="title">Navigation</h4>
-
-            <Link to="/fosterdog" className="footerLink">
-              Foster dogs
-            </Link>
-
-            <Link to="/vote" className="footerLink">
-              Vote!
-            </Link>
-
-            <Link to="/helpothers" className="footerLink">
-              Help others
-            </Link>
-
-            <Link to="/contactus" className="footerLink">
-              Contact us
-            </Link>
-
-            <h4 className="title">Other links</h4>
-            <Link to="/game" className="footerLink">
-              Zoey 90's Game
-            </Link>
-          </div>
-
-          {/* Newsletter and Copyright */}
-          <div className="floatElement">
-            <div>Do you want to receive our monthly newsletter?</div>
-            <button
-              className="footerButton"
-              onClick={(event) => {
-                event.preventDefault();
-                console.log("clicking");
-              }}
-            >
-              Sign Up
-            </button>
-            <div className="footerText">
-              House of Paws was created with a lot of love during Ironhack
-              fulltime web development bootcamp. <br /> All rights reserved.{" "}
-              <br /> We also want to show our appreciation to the photograpers.
-              Most of their work can be found on pexels.com and unsplash.com.
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   render() {
-    return (
-      <div>
-        {this.displayPage()}
-        {this.displayFooter()}
-      </div>
-    );
+    return <div>{this.displayPage()}</div>;
   }
 }
 export default About;

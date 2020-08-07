@@ -1,0 +1,102 @@
+.footer {
+  background-color: rgb(78, 78, 78);
+  text-align: left;
+  color: white;
+}
+
+#socialMediaIcon {
+  background-image: url("");
+  background-color: #242323;
+  height: 5vh;
+  width: 3vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footerContainer {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 5vw 2vw 2vw 4vw;
+}
+
+.floatElement {
+  width: 20vw;
+  margin: 0 0 4vw 0;
+}
+
+.floatElement2 {
+  width: 15vw;
+  margin: 0 0vw 10vw 2vw;
+}
+
+.floatElement3 {
+  width: 20vw;
+  /* margin: 4vw 0vw 4vw 0vw; */
+}
+
+.title {
+  margin-top: 0;
+}
+
+.footerLink {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footerText {
+  max-width: 25vw;
+  font-size: 1vw;
+}
+
+.footerLogoMark {
+  background-image: url(/static/media/IMG_7917.421c0f89.jpg);
+  background-color: #cccccc;
+  height: 3vh;
+  width: 1.5vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2.5vh;
+}
+
+#socialMediaIcon {
+  background-image: url("");
+  background-color: #242323;
+  height: 3rem;
+  width: 2.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.address,
+.phoneNumber {
+  margin-bottom: 1rem;
+}
+
+.teamMember {
+  margin: 1.5rem 0 0.25rem 0;
+  font-weight: bold;
+}
+.teamMemberCredits {
+  margin-bottom: 0.25rem;
+  line-height: 1.5rem;
+}
+
+.teamMemberLink1 {
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.teamMemberLink2 {
+  margin: 0 0.5rem 0 0.5rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
