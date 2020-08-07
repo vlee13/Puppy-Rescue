@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import axios from "axios";
 import actions from "../../../services/index";
+import "../../CSS/NavigationBar.css";
 import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {

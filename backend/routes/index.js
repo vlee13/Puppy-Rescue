@@ -8,8 +8,9 @@ router.post("/sendmail", (req, res, next) => {
   console.log("sendmail", req.body);
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true, // use SSL
+    port: 587,
+    secure: false, // use SSL
+    service: "gmail",
     auth: {
       user: "houseofpawsla@gmail.com", // generated ethereal user
       pass: "Ilovezooey123!", // generated ethereal password
@@ -32,7 +33,8 @@ router.post("/sendmail", (req, res, next) => {
       text: req.body.message, // plain text body
       //html: "<b></b>", // html body
     })
-    .then((res) => console.log(res));
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err, "apple"));
 });
 
 router.get("/", (req, res, next) => {

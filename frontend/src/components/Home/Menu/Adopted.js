@@ -1,14 +1,34 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
-import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
+import Slider from "react-slick";
+// import "../../CSS/PetfinderSlides.css";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
   secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
 });
+
+// const settings = {
+//   dots: false,
+//   infinte: true,
+//   speed: 10,
+//   arrows: true,
+//   slidesToScroll: 5,
+//   slidesToShow: 5,
+//   className: "slides",
+// responsive: [
+//   {
+//     breakpoint: 420,
+//     settings: {
+//       dots: false,
+//       slidesToShow: 2,
+//       slidesToScroll: 1,
+//     },
+//   },
+// ],
+// };
 
 class Adopted extends Component {
   state = {
@@ -16,52 +36,6 @@ class Adopted extends Component {
     adopted: [],
     petfinderSearch: [],
     searchParams: { type: "dog" },
-  };
-
-  displayNavBar = () => {
-    return (
-      <div className="Navbar">
-        <div className="NavbarContainer">
-          <Link to="/" className="link">
-            <div className="NavBarElement">
-              <img id="LogoMark" />
-              {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
-              <span className="NavBarElementText">House of Paws</span>
-              {/* Remove till here */}
-            </div>
-          </Link>
-          <div className="NavBarElement">
-            <Link to="/about" className="link">
-              <div className="NavBarElementText">About us</div>
-            </Link>
-            <Link to="/fosterdog" className="link">
-              <div className="NavBarElementText">Foster dogs</div>
-            </Link>
-
-            <Link to="/vote" className="link">
-              <div className="NavBarElementText">Vote!</div>
-            </Link>
-
-            <Link to="/adopted" className="link">
-              <div className="NavBarElementText">Adopted</div>
-            </Link>
-
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">Contact us</div>
-            </Link>
-            <Link to="/contactus" className="link">
-              <div className="NavBarElementText">|</div>
-            </Link>
-            {!this.props.email && (
-              <GoogleAuthLogin
-                className="navBarButton"
-                setUser={this.props.setUser}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-    );
   };
 
   displayHeader = () => {
@@ -93,8 +67,33 @@ class Adopted extends Component {
 
   showPetfinderSearch = () => {
     console.log("petfinder line 103");
-    return this.state.petfinderSearch.map((dog) => {
-      return <li>{dog.name}</li>;
+    return this.state.petfinderSearch.map((eachdog) => {
+      return (
+        <div>
+          <div className="searchImage">
+            <img
+              src={
+                eachdog.photos[0]?.medium ||
+                "https://azadchaiwala.pk/getImage?i=&t=course"
+              }
+              alt="Img"
+            />
+          </div>
+          <br />
+          <div className="searchDescription">
+            {eachdog.name}
+            <br />
+            {eachdog.gender}
+            <br />
+            {eachdog.age}
+            <br />
+          </div>
+          {/* <br />
+          {eachdog.contact.address}
+          <br />
+          {eachdog.contact.phone} */}
+        </div>
+      );
     });
   };
 
@@ -150,12 +149,6 @@ class Adopted extends Component {
     console.log(res3);
   };
 
-  // handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   let res = await axios.post("http://localhost:5000/", this.state);
-  //   console.log(res);
-  // };
-
   // displayTestimonialBox = () => {
   //   return (
   //     <div>
@@ -172,28 +165,92 @@ class Adopted extends Component {
   //   );
   // };
 
+  displayForm = () => {
+    return (
+      <div>
+        <div>
+          <h1>Want to know about adoptable dogs near you?</h1>
+          <h2>
+            Enter your zipcode or city and any other desired specifications.
+          </h2>
+        </div>
+
+        <div className="petfinder">
+          <form onSubmit={this.handleSubmit}>
+            <label for="location">Location</label>
+            <input onChange={this.handleChange} name="location" type="text" />
+            <br />
+            <label for="distance">Distance</label>
+            <input onChange={this.handleChange} name="distance" type="number" />
+            <br />
+            <label for="size">Size</label>
+            <input onChange={this.handleChange} name="size" type="text" />
+            <br />
+            <p>Please select your gender:</p>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+            <br />
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <br />
+
+            <label for="weight">Weight</label>
+            <input onChange={this.handleChange} name="weight" type="text" />
+            <br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    );
+  };
+
   render() {
     return (
       <div>
-        {this.displayNavBar()}
         {this.displayHeader()}
-        {this.displayAdopted()}
-        {this.showPetfinderSearch()}
-        {/* {this.displayAddTestimonial()} */}
-        {/* {this.state.testimonialBox ? this.displayTestimonialBox() : ""} */}
+        <div className="alumni">{this.displayAdopted()}</div>
+        <hr></hr>
+        <div>
+          <div className="petfinderText">
+            <h1>Want to know about adoptable dogs near you?</h1>
+            <h2>
+              Enter your zipcode or city and any other desired specifications.
+            </h2>
+          </div>
 
-        <form onSubmit={this.handleSubmit}>
-          <label for="location">Location</label>
-          <input onChange={this.handleChange} name="location" type="text" />
-          <br />
-          <label for="distance">Distance</label>
-          <input onChange={this.handleChange} name="distance" type="number" />
-          <br />
-          <label for="size">Size</label>
-          <input onChange={this.handleChange} name="size" type="text" />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+          <div className="petfinderForm">
+            <form onSubmit={this.handleSubmit}>
+              <label for="location">Location</label>
+              <input onChange={this.handleChange} name="location" type="text" />
+              <br />
+              <label for="distance">Distance</label>
+              <input
+                onChange={this.handleChange}
+                name="distance"
+                type="number"
+              />
+              <br />
+              <label for="size">Size</label>
+              <input onChange={this.handleChange} name="size" type="text" />
+              <br />
+              <p>Please select your gender:</p>
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Male</label>
+              <br />
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+              <br />
+
+              <label for="weight">Weight</label>
+              <input onChange={this.handleChange} name="weight" type="text" />
+              <br />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <div className="displayPetfinder">{this.showPetfinderSearch()}</div>
+        </div>
+
+        {/* <Slider {...settings}>{this.showPetfinderSearch()}</Slider> */}
       </div>
     );
   }

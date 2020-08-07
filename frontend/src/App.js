@@ -21,7 +21,7 @@ import Game from "./components/Home/Menu/Game";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
-import AddDog from "./components/Admin/AddDog";
+import NavBar from "./components/Home/Menu/NavBar";
 
 class App extends Component {
   state = {};
@@ -32,6 +32,7 @@ class App extends Component {
   }
   setUser = (user) => this.setState(user);
   logOut = async () => {
+    console.log("logout");
     let res = await actions.logOut();
     this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
@@ -56,6 +57,11 @@ class App extends Component {
             </Fragment>
           )} 
         </nav> */}
+        <NavBar
+          setUser={this.setUser}
+          user={this.state}
+          logOut={this.logOut}
+        ></NavBar>
         <Switch>
           <Route
             exact
@@ -77,26 +83,48 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-          <Route exact path="/userdonate" render={() => <UserDonate />} />
-          <Route exact path="/menu" render={() => <MenuMainPage />} />
-          <Route exact path="/about" render={() => <About />} />
-
-          <Route exact path="/vote" render={() => <Vote />} />
+          {/* <Route exact path="/userdonate" render={() => <UserDonate />} /> */}
+          {/* <Route exact path="/menu" render={() => <MenuMainPage />} /> */}
+          <Route
+            exact
+            path="/about"
+            render={() => <About setUser={this.setUser} user={this.state} />}
+          />
           <Route
             exact
             path="/fosterdog"
             render={() => (
-              <FosterDog email={this.state.email} setUser={this.setUser} />
+              <FosterDog
+                email={this.state.email}
+                setUser={this.setUser}
+                user={this.state}
+              />
             )}
           />
-          <Route exact path="/adopted" render={() => <Adopted />} />
+          <Route
+            exact
+            path="/vote"
+            render={() => <Vote setUser={this.setUser} user={this.state} />}
+          />
+
+          <Route
+            exact
+            path="/adopted"
+            render={() => <Adopted setUser={this.setUser} user={this.state} />}
+          />
 
           <Route exact path="/game" render={() => <Game />} />
-          <Route exact path="/contactus" render={() => <ContactUs />} />
+          <Route
+            exact
+            path="/contactus"
+            render={() => (
+              <ContactUs setUser={this.setUser} user={this.state} />
+            )}
+          />
 
-          <Route exact path="/slider" render={() => <Slider />} />
+          {/* <Route exact path="/slider" render={() => <Slider />} /> */}
           <Route exact path="/adminpage" render={() => <AdminPage />} />
-          <Route exact path="/addDog" render={() => <AddDog />} />
+          {/* <Route exact path="/addDog" render={() => <AddDog />} /> */}
 
           {/* <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
