@@ -114,8 +114,10 @@ class Vote extends Component {
         </div>
         {this.displayDogsToVote()}
         {/* <VoteBar data={this.state.dogs} /> */}
-        <PieGraph data={this.state.dogs} />
-        <LineGraph data={this.state.dogs} />
+        <div className="voteGraphs">
+          <PieGraph data={this.state.dogs} />
+          <LineGraph data={this.state.dogs} />
+        </div>
         <Footer
           setUser={this.props.setUser}
           user={this.props.user}

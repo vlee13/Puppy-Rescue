@@ -25,6 +25,13 @@
   margin-left: 20vw;
 }
 
+.voteGraphs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10vh auto;
+}
+
 .voteExplanaitionContainer {
   display: flex;
   justify-content: center;
