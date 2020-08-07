@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
-import Slider from "react-slick";
+//import Slider from "react-slick";
 // import "../../CSS/PetfinderSlides.css";
 
 const client = new Client({
