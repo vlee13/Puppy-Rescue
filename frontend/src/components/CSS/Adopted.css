@@ -32,3 +32,73 @@
   text-align: left;
   margin: 7.5vh 0 5vh 5vw;
 }
+.alumni {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh 5vw;
+}
+
+.alumDescr {
+  width: 20vw;
+  font-weight: lighter;
+}
+
+.petfinderDog {
+  display: inline-table;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: 5vh 5vw;
+  border: 1px solid black;
+  padding: 3vh 3vw;
+  width: 20vw;
+}
+
+.petfinderText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh auto;
+}
+
+.searchDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.petfinderForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.formText {
+  display: flex;
+
+  align-items: center;
+}
+
+.formRadio {
+  display: inline-flexbox;
+
+  margin: 2vw;
+}
+
+.radioGender,
+.radioSize,
+.radioAge {
+  display: inline;
+
+  align-items: center;
+}
+
+.formsubmit {
+  margin: 5vh;
+}

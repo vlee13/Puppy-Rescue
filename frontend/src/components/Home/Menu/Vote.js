@@ -4,6 +4,8 @@ import "../../CSS/Vote.css";
 import "../../CSS/NavigationBar.css";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
 
 class Vote extends Component {
   state = {
@@ -86,6 +88,11 @@ class Vote extends Component {
   render() {
     return (
       <div>
+        <NavBar
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></NavBar>
         {this.displayHeader()}
         <div className="voteExplanaitionContainer">
           <p className="voteExplanaitionText">
@@ -109,6 +116,11 @@ class Vote extends Component {
         {/* <VoteBar data={this.state.dogs} /> */}
         <PieGraph data={this.state.dogs} />
         <LineGraph data={this.state.dogs} />
+        <Footer
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></Footer>
       </div>
     );
   }

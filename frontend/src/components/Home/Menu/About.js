@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/About.css";
 import "../../CSS/NavigationBar.css";
+import NavBar from "../Menu/NavBar";
+import Footer from "../Menu/Footer";
 
 class About extends Component {
   displayPage = () => {
@@ -177,7 +179,21 @@ class About extends Component {
   };
 
   render() {
-    return <div>{this.displayPage()}</div>;
+    return (
+      <div>
+        <NavBar
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></NavBar>
+        {this.displayPage()}
+        <Footer
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></Footer>
+      </div>
+    );
   }
 }
 export default About;
