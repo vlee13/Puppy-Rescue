@@ -105,7 +105,7 @@ class About extends Component {
         {/* Help other organizations */}
 
         <div className="container">
-          <img className="background6" />
+          <img className="background5" />
           <div className="whiteBGleft">
             <h1 className="header">Help other organizations</h1>
             <p className="text">
@@ -180,9 +180,9 @@ class About extends Component {
               SURVIVE. KEEP ZOOEY ALIVE FOR AS LONG AS POSSIBLE GET THE HIGHEST
               SCORE TO WIN, and GAME OVER WHEN ALIENS REACH YOU.
             </p>
-            <Link to="/game">
-              <button>Play!</button>
-            </Link>
+            <div className="game">
+            <button><a href='https://vlee13.github.io/SPACE-ZOOEY/'>Play!</a></button>
+            </div>
           </div>
         </div>
       </div>
