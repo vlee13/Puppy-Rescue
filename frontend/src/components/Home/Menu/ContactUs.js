@@ -1,21 +1,83 @@
 import React, { Component } from "react";
 import axios from "axios";
+<<<<<<< HEAD
+=======
+import actions from "../../../services/index";
+import "../../CSS/NavigationBar.css";
+>>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
 import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
-  state = {};
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-    console.log(this.state);
+  state = {
+    name: "",
+    email: "",
+    message: "",
   };
 
+<<<<<<< HEAD
+=======
+  // displayNavBar = () => {
+  //   return (
+  //     <div className="Navbar">
+  //       <div className="NavbarContainer">
+  //         <Link to="/" className="link">
+  //           <div className="NavBarElement">
+  //             <img id="LogoMark" />
+  //             {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
+  //             <span className="NavBarElementText">House of Paws</span>
+  //             {/* Remove till here */}
+  //           </div>
+  //         </Link>
+  //         <div className="NavBarElement">
+  //           <Link to="/about" className="link">
+  //             <div className="NavBarElementText">About us</div>
+  //           </Link>
+  //           <Link to="/fosterdog" className="link">
+  //             <div className="NavBarElementText">Foster dogs</div>
+  //           </Link>
+
+  //           <Link to="/vote" className="link">
+  //             <div className="NavBarElementText">Vote!</div>
+  //           </Link>
+
+  //           <Link to="/adopted" className="link">
+  //             <div className="NavBarElementText">Adopted</div>
+  //           </Link>
+
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">Contact us</div>
+  //           </Link>
+  //           <Link to="/contactus" className="link">
+  //             <div className="NavBarElementText">|</div>
+  //           </Link>
+  //           <button
+  //             className="navBarButton"
+  //             onClick={(event) => {
+  //               event.preventDefault();
+  //               this.setState({
+  //                 showLogIn: true,
+  //                 showPage: false,
+  //                 showNavbar: false,
+  //               });
+  //             }}
+  //           >
+  //             Log in
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+>>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
   handleSubmit = async (event) => {
     event.preventDefault();
-    let res = await axios.post("http://localhost:5000/", this.state);
+    let res = await actions.sendMail(this.state);
     console.log(res);
+    this.setState({ name: "", email: "", message: "" });
   };
 
   displayHeader = () => {
@@ -29,7 +91,7 @@ class ContactUs extends Component {
         </div>
       </div>
     );
-  };
+  }
 
   displayContactUsPage = () => {
     let audio = new Audio("/bark.mp3");
@@ -64,6 +126,7 @@ class ContactUs extends Component {
                 name="email"
                 type="email"
                 value={this.state.value}
+                aria-describedby="emailHelp"
                 className="inputBar"
               />
               <br />

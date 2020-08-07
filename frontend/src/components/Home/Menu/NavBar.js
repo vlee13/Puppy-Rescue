@@ -6,6 +6,7 @@ import { GoogleLogout } from "react-google-login";
 
 class NavBar extends Component {
   render() {
+    console.log(this.props.setUser);
     return (
       <div className="Navbar">
         <div className="NavbarContainer">
@@ -26,7 +27,6 @@ class NavBar extends Component {
             >
               About us
             </NavLink>
-
             <NavLink
               to="/vote"
               exact
@@ -63,8 +63,11 @@ class NavBar extends Component {
               <div className="NavBarElementText">|</div>
             </Link>
 
-            {this.props.email ? (
-              <button onClick={this.logout}>Logout</button>
+            {this.props.user?.email ? (
+              <React.Fragment>
+                Welcome, {this.props.user.name}
+                <button onClick={this.props.logOut}>Logout</button>
+              </React.Fragment>
             ) : (
               <GoogleAuthLogin
                 render={(renderProps) => (

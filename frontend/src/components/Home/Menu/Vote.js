@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import "../../CSS/Vote.css";
 import VoteBar from "./VoteBar";
-import NavBar from "./NavBar";
 import "../../CSS/NavigationBar.css";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
@@ -93,6 +92,20 @@ class Vote extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
+=======
+        {/* {this.state.showNavbar ? this.displayNavBar() : ""}
+        {this.state.showLogIn & !this.state.showMenu ? this.displayLogIn() : ""}
+        {this.state.showSignUp ? this.displaySignUp() : ""}
+        {this.state.showMenu & !this.state.showLogIn ? this.displayMenu() : ""}
+        {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
+          ? this.displayHeader()
+          : ""}
+        {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
+          ? this.displayDogs()
+          : ""} */}
+
+>>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
         {this.displayHeader()}
 
         {this.displayDogsToVote()}

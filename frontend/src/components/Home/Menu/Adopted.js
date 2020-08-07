@@ -1,17 +1,41 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
+<<<<<<< HEAD
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 import NavBar from "./NavBar";
 import "../../CSS/NavigationBar.css";
 import Footer from "./Footer";
+=======
+import Slider from "react-slick";
+// import "../../CSS/PetfinderSlides.css";
+>>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
   secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
 });
+
+// const settings = {
+//   dots: false,
+//   infinte: true,
+//   speed: 10,
+//   arrows: true,
+//   slidesToScroll: 5,
+//   slidesToShow: 5,
+//   className: "slides",
+// responsive: [
+//   {
+//     breakpoint: 420,
+//     settings: {
+//       dots: false,
+//       slidesToShow: 2,
+//       slidesToScroll: 1,
+//     },
+//   },
+// ],
+// };
 
 class Adopted extends Component {
   state = {
@@ -50,8 +74,33 @@ class Adopted extends Component {
 
   showPetfinderSearch = () => {
     console.log("petfinder line 103");
-    return this.state.petfinderSearch.map((dog) => {
-      return <li>{dog.name}</li>;
+    return this.state.petfinderSearch.map((eachdog) => {
+      return (
+        <div>
+          <div className="searchImage">
+            <img
+              src={
+                eachdog.photos[0]?.medium ||
+                "https://azadchaiwala.pk/getImage?i=&t=course"
+              }
+              alt="Img"
+            />
+          </div>
+          <br />
+          <div className="searchDescription">
+            {eachdog.name}
+            <br />
+            {eachdog.gender}
+            <br />
+            {eachdog.age}
+            <br />
+          </div>
+          {/* <br />
+          {eachdog.contact.address}
+          <br />
+          {eachdog.contact.phone} */}
+        </div>
+      );
     });
   };
 
@@ -107,28 +156,99 @@ class Adopted extends Component {
     console.log(res3);
   };
 
+<<<<<<< HEAD
   render() {
     return (
       <div>
         {/* {this.displayNavBar()} */}
-        {this.displayHeader()}
-        {this.displayAdopted()}
-        {this.showPetfinderSearch()}
-        {/* {this.displayAddTestimonial()} */}
-        {/* {this.state.testimonialBox ? this.displayTestimonialBox() : ""} */}
+=======
+  displayForm = () => {
+    return (
+      <div>
+        <div>
+          <h1>Want to know about adoptable dogs near you?</h1>
+          <h2>
+            Enter your zipcode or city and any other desired specifications.
+          </h2>
+        </div>
 
-        <form onSubmit={this.handleSubmit}>
-          <label for="location">Location</label>
-          <input onChange={this.handleChange} name="location" type="text" />
-          <br />
-          <label for="distance">Distance</label>
-          <input onChange={this.handleChange} name="distance" type="number" />
-          <br />
-          <label for="size">Size</label>
-          <input onChange={this.handleChange} name="size" type="text" />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+        <div className="petfinder">
+          <form onSubmit={this.handleSubmit}>
+            <label for="location">Location</label>
+            <input onChange={this.handleChange} name="location" type="text" />
+            <br />
+            <label for="distance">Distance</label>
+            <input onChange={this.handleChange} name="distance" type="number" />
+            <br />
+            <label for="size">Size</label>
+            <input onChange={this.handleChange} name="size" type="text" />
+            <br />
+            <p>Please select your gender:</p>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+            <br />
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <br />
+
+            <label for="weight">Weight</label>
+            <input onChange={this.handleChange} name="weight" type="text" />
+            <br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div>
+>>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
+        {this.displayHeader()}
+        <div className="alumni">{this.displayAdopted()}</div>
+        <hr></hr>
+        <div>
+          <div className="petfinderText">
+            <h1>Want to know about adoptable dogs near you?</h1>
+            <h2>
+              Enter your zipcode or city and any other desired specifications.
+            </h2>
+          </div>
+
+          <div className="petfinderForm">
+            <form onSubmit={this.handleSubmit}>
+              <label for="location">Location</label>
+              <input onChange={this.handleChange} name="location" type="text" />
+              <br />
+              <label for="distance">Distance</label>
+              <input
+                onChange={this.handleChange}
+                name="distance"
+                type="number"
+              />
+              <br />
+              <label for="size">Size</label>
+              <input onChange={this.handleChange} name="size" type="text" />
+              <br />
+              <p>Please select your gender:</p>
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Male</label>
+              <br />
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+              <br />
+
+              <label for="weight">Weight</label>
+              <input onChange={this.handleChange} name="weight" type="text" />
+              <br />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <div className="displayPetfinder">{this.showPetfinderSearch()}</div>
+        </div>
+
+        {/* <Slider {...settings}>{this.showPetfinderSearch()}</Slider> */}
       </div>
     );
   }

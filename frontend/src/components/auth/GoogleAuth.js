@@ -15,7 +15,7 @@ const responseGoogle = (props) => {
       .then((user) => {
         props.setUser({ ...user.data });
       })
-      .catch(({ response }) => console.error(response.data));
+      .catch((response) => console.error(response));
   };
   return (
     <GoogleLogin
