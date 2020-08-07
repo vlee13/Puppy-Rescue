@@ -10,18 +10,16 @@ const Fourth = () => {
         <img className="CarrouselImage4" />
         <div className="CarrouselText">
           <img id="LogoMark" />
-          <span className="CompanyName">Our dogs need your help</span>
-          <h1 className="Tagline">You can adopt one of our amazing fellas.</h1>
+          <span className="CompanyName">Alumni</span>
+          <h1 className="Tagline">
+            See all our dogs that have been adopted & their stories.
+          </h1>
           <p className="Text">
-            You can adopt. Read the testimonials. You'll love it. You can adopt.
-            Read the testimonials. You'll love it.You can adopt. Read the
-            testimonials. You'll love it.You can adopt. Read the testimonials.
-            You'll love it.
+            Read the testimonials. See the difference you made with us. We hope
+            it inspires you to adopt one day! You will love it.
           </p>
           <Link to="/about">
-            <button className="CarrouselButton">
-              GET TO KNOW THEM A BIT BETTER
-            </button>
+            <button className="CarrouselButton">TESTIMONIALS</button>
           </Link>
         </div>
         <img id="SealLogo" />

@@ -42,7 +42,7 @@ class NavBar extends Component {
               className="NavBarElementText"
               activeClassName="active"
             >
-              Foster dog
+              Foster Dog
             </NavLink>
             <NavLink
               to="/adopted"

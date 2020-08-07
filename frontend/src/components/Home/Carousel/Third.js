@@ -11,13 +11,15 @@ class Third extends Component {
         <div className="CarrouselText">
           <img id="LogoMark" />
           <span className="CompanyName">There is a winner</span>
-          <h1 className="Tagline">Meet our amazing current foster, Astro!</h1>
+          <h1 className="Tagline">
+            Meet our current foster, the adorable Astro!
+          </h1>
           <p className="Text">
-            We are all animal lovers and we all wanted to do something positive
-            for the community, so as our final project in our IronHack bootcamp
-            journey we decided to give back. House of Paws is bigger than us. By
-            fostering these shelter dogs, we believe we can give them a real
-            chance to being adopted into their forever homes.
+            We will foster Astro until he is ready to be adopted!
+            <br />
+            Fostering gives the chance for shelter dogs to believe they are safe
+            and loved. They no longer have to live in anxiety and fear, locked
+            behind a cage all day.
           </p>
           <Link to="/fosterdog">
             <button className="CarrouselButton">
