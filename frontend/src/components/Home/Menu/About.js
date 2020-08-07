@@ -15,12 +15,12 @@ class About extends Component {
           <img className="background1" />
           <div className="textForHeroImage">
             <h1>
-              Not everyone who love dogs can foster or adopt. We are here to
-              help.
+              Everyone loves dogs. Not everyone can foster or adopt. We are here
+              to help.
             </h1>
             <p>
-              We foster one of the most abandoned dogs from our local shelter to
-              show a potential adopter how awesome this dog is.
+              We foster the most abandoned dogs from our local shelter to show
+              potential adopters how amazing these angel babies are.
             </p>
           </div>
         </div>
@@ -33,11 +33,15 @@ class About extends Component {
             <div className="textForBG">
               <h1 className="header">Our history</h1>
               <p className="text">
-                Not everyone who has the heart for animal welfare has the means
-                to foster or adopt. Our team at House of Paws has come up with a
-                creative & easy-to-use platform where you can partner with us,
-                and see that every shelter dog has a chance to find a safe &
-                loving home.
+                In the U.S. alone, about 3.3 million canines enter the shelters
+                every YEAR. A lot of these shelters simply don't have the space
+                to hold all the animals and as a result, dogs live in cramped
+                cages every single day, and about 670,000 dogs are euthanized.
+                <br />
+                We know these facts can be daunting and it can make you question
+                where to even start. That's exactly why House of Paws was
+                initiated so EVERYONE can easily and actively participate in
+                saving these canines, one angel baby at a time.
               </p>
             </div>
           </div>
@@ -51,6 +55,12 @@ class About extends Component {
             <div className="textForBG2">
               <h1 className="header">What we do</h1>
               <p className="text">
+                Not everyone who has the heart for animal welfare has the means
+                to foster or adopt. Our team at House of Paws has come up with a
+                creative & easy-to-use platform where you can partner with us,
+                and see that every shelter dog has a chance to find a safe &
+                loving home.
+                <br />
                 We hand pick 10 most "unwanted" shelter dogs by selecting the
                 oldest or those that have been at the shelter the longest. You
                 as a member can{" "}
@@ -60,8 +70,9 @@ class About extends Component {
                 up to 3 times to choose which dog gets to be rescued from the
                 shelter! Every 1st of the month as long as a foster is
                 available, the shelter dog with the highest votes is selected to
-                go home to a foster and a warm bed. We want people to adopt this
-                cuttie dogs. You can check our lovely stories of adopted dogs{" "}
+                go home to a foster and a warm bed. We believe fostering will
+                give these dogs the best chances of getting adopted to their
+                forever homes. Check out our House of Paws Alumni{" "}
                 <Link to="/adopted">
                   <span>here.</span>
                 </Link>
@@ -80,8 +91,10 @@ class About extends Component {
               Donations will go directly towards the care and wellbeing of the
               foster dogs including: doctor's bills, any medications needed, any
               grooming needed, food, treats, toys, collar, leash, food/water
-              bowl, a bed, etc. All update details will be provided in biweekly
-              membership newsletters. Any more questions?{" "}
+              bowl, a bed, etc.
+              <br />
+              Sign up and you will get all updates and details of our foster
+              dogs in a monthly membership newsletter. Any more questions?{" "}
               <Link to="/fosterdog">
                 <button>Contact us.</button>
               </Link>{" "}
@@ -96,63 +109,61 @@ class About extends Component {
           <div className="whiteBGleft">
             <h1 className="header">Help other organizations</h1>
             <p className="text">
-              We believe in giving back to our community. Here you can find a
-              list of other organizations that put a lot of effort helping dogs.
-              Please take a look of them and help them as well.
+              We would like to highlight some of our favorites! Please take a
+              look and consider helping out.
             </p>
-            <h5 className="underline">Hope for paws</h5>
-            <p>
+            {/* <h5 className="underline">Hope for Paws</h5> */}
+            {/* <p>
               They bring animals who are suffering–often from abuse, neglect, or
-              injuries–off the streets and provide medical care. They also work
-              to find forever homes for these animals.
-            </p>
-            <ul>https://www.hopeforpaws.org</ul>
-            <h5>A purposeful rescue</h5>
+              injuries–off the streets and provide medical care.
+            </p> */}
+            {/* <br /> */}
             <p>
-              A Purposeful rescue that saves overlooked dogs from high-kill Los
-              Angeles area shelters.
+              <a href="https://www.hopeforpaws.org">Hope for Paws</a>
             </p>
-            <ul>http://www.apurposefulrescue.or</ul>
-            <h5>American pit bull foundation</h5>
+            <br />
+            {/* <h5>A Purposeful Rescue</h5> */}
+            {/* <p>
+              They save overlooked dogs from high-kill shelters in the Los
+              Angeles area.
+            </p> */}
             <p>
-              The American Pit Bull Foundation works to educate and change the
-              perception and stereotypes surrounding Pit Bulls.
+              <a href="https://www.hopeforpaws.org">A Purposeful Rescue</a>
             </p>
-            <ul>https://apbf.dog</ul>
-            <h5>Animal aid unlimited</h5>
+            <br />
+            {/* <h5>American Pit Bull Foundation</h5> */}
+            {/* <p>
+              Their work is in educating, changing the perception of, and saving
+              Pit Bull breeds.
+            </p> */}
             <p>
-              Animal Aid Unlimited take animals off the street who need medical
-              attention and provide them with the care they need.
+              <a href="https://www.hopeforpaws.org">
+                American Pit Bull Foundation
+              </a>
             </p>
-            <ul>https://www.animalaidunlimited.org</ul>
-            <h5>Best friends animal society</h5>
-            <p>
+            <br />
+            {/* <h5>Best friends animal society</h5> */}
+            {/* <p>
               Best Friends Animal Society is a group dedicated to bringing an
               end to the killing of shelter animals.
-            </p>
-            <ul>https://bestfriends.or</ul>
-            <h5>Jameson animal rescue ranch</h5>
+            </p> */}
             <p>
-              Not only do they rescue and find homes for dogs, but they also
-              offer assistance to low-income families with animals, people
-              displaced by natural disasters, victims of abuse, senior citizens,
-              and more.
+              <a href="https://www.hopeforpaws.org">
+                Best Friends Animal Society
+              </a>
             </p>
-            <ul>https://www.jamesonanimalrescueranch.or</ul>
-            <h5>Muttville</h5>
+            <br />
+            {/* <h5>Muttville Senior Dog Rescue</h5> */}
+            {/* <p>
+              They are dedicated to finding homes or hospice care for senior
+              dogs in need. Their success stories are truly heartwarming.
+            </p> */}
             <p>
-              Muttville Senior Dog Rescue is dedicated to finding homes or
-              hospice for older dogs in need of help. Their success stories are
-              truly heartwarming.
+              <a href="https://www.hopeforpaws.org">
+                Muttville Senior Dog Rescue
+              </a>
             </p>
-            <ul>https://muttville.or</ul>
-            <h5>ASPCA</h5>
-            <p>
-              The American Society regularly assist in rescuing dogs from dog
-              fighting rings, puppy mills, hoarding cases, and other neglectful
-              or abusive situations.
-            </p>
-            <ul>https://www.aspca.or</ul>
+            <br />
           </div>
         </div>
 
