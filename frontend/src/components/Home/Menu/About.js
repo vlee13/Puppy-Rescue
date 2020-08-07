@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/About.css";
-import NavBar from "./NavBar";
 import "../../CSS/NavigationBar.css";
 
 class About extends Component {
@@ -375,8 +374,6 @@ class About extends Component {
   render() {
     return (
       <div>
-        <NavBar></NavBar>
-        {/* {this.displayNavBar()} */}
         {this.displayPage()}
         {this.displayFooter()}
       </div>

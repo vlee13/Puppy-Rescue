@@ -17,18 +17,11 @@ import About from "./components/Home/Menu/About";
 import Vote from "./components/Home/Menu/Vote";
 import FosterDog from "./components/Home/Menu/FosterDog";
 import Adopted from "./components/Home/Menu/Adopted";
-<<<<<<< HEAD
-import Con from "./components/Home/Menu/Con";
 import Game from "./components/Home/Menu/Game";
-
-=======
-import Game from "./components/Home/Menu/Game";
->>>>>>> c06d4f97a8bd6605b822d58744a645d92221daf7
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
-import AddDog from "./components/Admin/AddDog";
-import Navbar from "./components/Home/Menu/NavBar";
+import NavBar from "./components/Home/Menu/NavBar";
 
 class App extends Component {
   state = {};
@@ -39,6 +32,7 @@ class App extends Component {
   }
   setUser = (user) => this.setState(user);
   logOut = async () => {
+    console.log("logout");
     let res = await actions.logOut();
     this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
   };
@@ -48,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <button onClick={this.test}>submit</button>
+        <button onClick={this.test}>submit</button>
         {/* <NavLink to="/">Menu |</NavLink> */}
         {/* {this.state.email}
         <nav>
@@ -67,9 +61,12 @@ class App extends Component {
             </Fragment>
           )} 
         </nav> */}
+        <NavBar
+          setUser={this.setUser}
+          user={this.state}
+          logOut={this.logOut}
+        ></NavBar>
         <Switch>
-          <Route exact path="/navbar" render={() => <Navbar />} />
-
           <Route
             exact
             path="/home"
@@ -92,56 +89,47 @@ class App extends Component {
           />
           {/* <Route exact path="/userdonate" render={() => <UserDonate />} /> */}
           {/* <Route exact path="/menu" render={() => <MenuMainPage />} /> */}
-          <Route exact path="/about" render={() => <About />} />
+          <Route
+            exact
+            path="/about"
+            render={() => <About setUser={this.setUser} user={this.state} />}
+          />
           <Route
             exact
             path="/fosterdog"
             render={() => (
-              <FosterDog email={this.state.email} setUser={this.setUser} />
+              <FosterDog
+                email={this.state.email}
+                setUser={this.setUser}
+                user={this.state}
+              />
             )}
           />
-          <Route exact path="/vote" render={() => <Vote />} />
+          <Route
+            exact
+            path="/vote"
+            render={() => <Vote setUser={this.setUser} user={this.state} />}
+          />
 
-          <Route exact path="/adopted" render={() => <Adopted />} />
+          <Route
+            exact
+            path="/adopted"
+            render={() => <Adopted setUser={this.setUser} user={this.state} />}
+          />
 
           <Route exact path="/game" render={() => <Game />} />
-<<<<<<< HEAD
-          <Route eaxt path="/con" render={() => <Con />} />
-=======
->>>>>>> c06d4f97a8bd6605b822d58744a645d92221daf7
+
+          <Route
+            exact
+            path="/contactus"
+            render={() => (
+              <ContactUs setUser={this.setUser} user={this.state} />
+            )}
+          />
+
           <Route exact path="/contactus" render={() => <ContactUs />} />
 
-          {/* <Route exact path="/slider" render={() => <Slider />} /> */}
           <Route exact path="/adminpage" render={() => <AdminPage />} />
-          {/* <Route exact path="/addDog" render={() => <AddDog />} /> */}
-
-          {/* <Route exact path="/" render={(props) => <Home {...props} />} />
-          <Route
-            exact
-            path="/sign-up"
-            render={(props) => <SignUp {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
-            path="/log-in"
-            render={(props) => <LogIn {...props} setUser={this.setUser} />}
-          />
-          <Route
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/contact"
-            render={(props) => <Contact {...props} user={this.state} />}
-          />
-          <Route
-            exact
-            path="/meetteam"
-            render={(props) => <MeetTheTeam {...props} user={this.state} />}
-          />
-          <Route component={NotFound} /> */}
         </Switch>
         {/* {!this.state.email && <GoogleAuth setUser={this.setUser} />}
         {!this.state.email && <GoogleAuthLogin setUser={this.setUser} />} */}

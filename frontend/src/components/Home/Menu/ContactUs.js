@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
-import NavBar from "./NavBar";
+import actions from "../../../services/index";
 import "../../CSS/NavigationBar.css";
 import "../../CSS/ContactUs.css";
 
 class ContactUs extends Component {
-  state = {};
+  state = {
+    name: "",
+    email: "",
+    message: "",
+  };
 
   // displayNavBar = () => {
   //   return (
@@ -39,7 +43,6 @@ class ContactUs extends Component {
   //           <Link to="/contactus" className="link">
   //             <div className="NavBarElementText">Contact us</div>
   //           </Link>
-
   //           <Link to="/contactus" className="link">
   //             <div className="NavBarElementText">|</div>
   //           </Link>
@@ -63,16 +66,13 @@ class ContactUs extends Component {
   // };
 
   handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-    console.log(this.state);
+    this.setState({ [event.target.name]: event.target.value });
   };
-
   handleSubmit = async (event) => {
     event.preventDefault();
-    let res = await axios.post("http://localhost:5000/", this.state);
+    let res = await actions.sendMail(this.state);
     console.log(res);
+    this.setState({ name: "", email: "", message: "" });
   };
 
   displayHeader = () => {
@@ -119,6 +119,7 @@ class ContactUs extends Component {
                 name="email"
                 type="email"
                 value={this.state.value}
+                aria-describedby="emailHelp"
                 className="inputBar"
               />
               <br />
@@ -293,7 +294,6 @@ class ContactUs extends Component {
   render() {
     return (
       <div>
-        <NavBar></NavBar>
         {this.displayHeader()}
         {/* {this.displayNavBar()} */}
         {this.displayContactUsPage()}

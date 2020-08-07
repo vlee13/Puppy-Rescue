@@ -6,7 +6,7 @@ import "../CSS/NavigationBar.css";
 const responseGoogle = (props) => {
   console.log(props);
   const onResponse = (response) => {
-    
+    console.log(response);
     const user = {
       ...response.profileObj,
       password: response.profileObj?.googleId,
@@ -14,13 +14,20 @@ const responseGoogle = (props) => {
     actions
       .logIn(user)
       .then((user) => {
-        props.setUser({ ...user.data });
+        console.log(user);
+        props.setUser(user.data);
       })
+<<<<<<< HEAD
       .catch(({ response }) => console.error(response.data));
       
     
     };
   
+=======
+      .catch((response) => console.error(response));
+  };
+
+>>>>>>> e0fba163149f5e9b9d1572982ddbec4de71aa14f
   return (
     <GoogleLogin
       render={(renderProps) => (

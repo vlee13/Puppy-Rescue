@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import "../../CSS/Vote.css";
 import VoteBar from "./VoteBar";
-import NavBar from "./NavBar";
 import "../../CSS/NavigationBar.css";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
@@ -244,7 +243,6 @@ class Vote extends Component {
         {!this.state.showLogIn & !this.state.showMenu & !this.state.showSignUp
           ? this.displayDogs()
           : ""} */}
-        <NavBar></NavBar>
 
         {this.displayHeader()}
 
