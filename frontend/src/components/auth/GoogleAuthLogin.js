@@ -33,13 +33,8 @@ const responseGoogle = (props) => {
           className="navBarButton"
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
-<<<<<<< HEAD
         >
-          Log in
-=======
-        > 
           Login
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
         </button>
       )}
       clientId={process.env.REACT_APP_GOOGLEID}

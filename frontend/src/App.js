@@ -21,13 +21,8 @@ import Game from "./components/Home/Menu/Game";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
-<<<<<<< HEAD
-import AddDog from "./components/Admin/AddDog";
-import Navbar from "./components/Home/Menu/NavBar";
-import Footer from "./components/Home/Menu/Footer";
-=======
 import NavBar from "./components/Home/Menu/NavBar";
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
+import Footer from "./components/Home/Menu/Footer";
 
 class App extends Component {
   state = {};
@@ -48,35 +43,12 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-<<<<<<< HEAD
-        <Navbar></Navbar>
-
-=======
         <button onClick={this.test}>submit</button>
-        {/* <NavLink to="/">Menu |</NavLink> */}
-        {/* {this.state.email}
-        <nav>
-          <NavLink to="/">Menu |</NavLink>
-          {this.state.email ? (
-            <Fragment>
-              <NavLink onClick={this.logOut} to="/">
-                Log Out |
-              </NavLink>
-              <NavLink to="/profile">Profile|</NavLink>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <NavLink to="/sign-up">Sign Up |</NavLink>
-              <NavLink to="/log-in">Log In |</NavLink>
-            </Fragment>
-          )} 
-        </nav> */}
         <NavBar
           setUser={this.setUser}
           user={this.state}
           logOut={this.logOut}
         ></NavBar>
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
         <Switch>
           <Route
             exact
@@ -98,10 +70,6 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-<<<<<<< HEAD
-
-          <Route exact path="/about" render={() => <About />} />
-=======
           {/* <Route exact path="/userdonate" render={() => <UserDonate />} /> */}
           {/* <Route exact path="/menu" render={() => <MenuMainPage />} /> */}
           <Route
@@ -109,21 +77,10 @@ class App extends Component {
             path="/about"
             render={() => <About setUser={this.setUser} user={this.state} />}
           />
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
           <Route
             exact
             path="/fosterdog"
             render={() => (
-<<<<<<< HEAD
-              <FosterDog email={this.state.email} setUser={this.setUser} />
-            )}
-          />
-          <Route exact path="/vote" render={() => <Vote />} />
-
-          <Route exact path="/adopted" render={() => <Adopted />} />
-
-          <Route exact path="/game" render={() => <Game />} />
-=======
               <FosterDog
                 email={this.state.email}
                 setUser={this.setUser}
@@ -153,7 +110,6 @@ class App extends Component {
             )}
           />
 
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
           <Route exact path="/contactus" render={() => <ContactUs />} />
 
           <Route exact path="/adminpage" render={() => <AdminPage />} />

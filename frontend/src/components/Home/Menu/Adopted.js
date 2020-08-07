@@ -2,15 +2,7 @@ import React, { Component } from "react";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
-<<<<<<< HEAD
-import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
-import NavBar from "./NavBar";
-import "../../CSS/NavigationBar.css";
-import Footer from "./Footer";
-=======
-import Slider from "react-slick";
 // import "../../CSS/PetfinderSlides.css";
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -156,12 +148,6 @@ class Adopted extends Component {
     console.log(res3);
   };
 
-<<<<<<< HEAD
-  render() {
-    return (
-      <div>
-        {/* {this.displayNavBar()} */}
-=======
   displayForm = () => {
     return (
       <div>
@@ -204,7 +190,6 @@ class Adopted extends Component {
   render() {
     return (
       <div>
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
         {this.displayHeader()}
         <div className="alumni">{this.displayAdopted()}</div>
         <hr></hr>

@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/About.css";
-<<<<<<< HEAD
-=======
 import "../../CSS/NavigationBar.css";
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
 
 class About extends Component {
   displayPage = () => {
@@ -180,16 +177,7 @@ class About extends Component {
   };
 
   render() {
-<<<<<<< HEAD
     return <div>{this.displayPage()}</div>;
-=======
-    return (
-      <div>
-        {this.displayPage()}
-        {this.displayFooter()}
-      </div>
-    );
->>>>>>> e42e2a358ed3f6f214645ebb1b74314d7effcf7c
   }
 }
 export default About;
