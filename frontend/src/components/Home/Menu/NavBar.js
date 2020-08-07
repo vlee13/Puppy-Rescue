@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../CSS/NavigationBar.css";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
+import GoogleAuth from "../../auth/GoogleAuth";
 import { GoogleLogout } from "react-google-login";
 
 class NavBar extends Component {
@@ -60,6 +61,19 @@ class NavBar extends Component {
               Contact us
             </NavLink>
             <Link to="/contactus" className="link">
+              {/* <div className="NavBarElementText">|</div> */}
+            </Link>
+            {this.props.user?.role === "admin" && (
+              <NavLink
+                to="/adminpage"
+                exact
+                className="NavBarElementText"
+                activeClassName="active"
+              >
+                Admin Page
+              </NavLink>
+            )}
+            <Link to="/adminpage" className="link">
               <div className="NavBarElementText">|</div>
             </Link>
 
@@ -69,19 +83,34 @@ class NavBar extends Component {
                 <button onClick={this.props.logOut}>Logout</button>
               </React.Fragment>
             ) : (
-              <GoogleAuthLogin
-                render={(renderProps) => (
-                  <button
-                    onClick={renderProps.onClick}
-                    disabled={renderProps.disabled}
-                  >
-                    Log in
-                  </button>
-                )}
-                buttonText="Login"
-                className="navBarButton"
-                setUser={this.props.setUser}
-              />
+              <React.Fragment>
+                <GoogleAuthLogin
+                  render={(renderProps) => (
+                    <button
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                    >
+                      Log in
+                    </button>
+                  )}
+                  buttonText="Login"
+                  className="navBarButton"
+                  setUser={this.props.setUser}
+                />
+                <GoogleAuth
+                  render={(renderProps) => (
+                    <button
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                    >
+                      Sign up
+                    </button>
+                  )}
+                  buttonText="Signup"
+                  className="navBarButton"
+                  setUser={this.props.setUser}
+                />
+              </React.Fragment>
             )}
           </div>
         </div>

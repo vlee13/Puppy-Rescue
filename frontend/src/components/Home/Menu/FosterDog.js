@@ -7,7 +7,7 @@ import "../../CSS/NavigationBar.css";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 import { GoogleLogout } from "react-google-login";
 import Footer from "./Footer";
-import NavBar from "../Menu/NavBar";
+import NavBar from "./NavBar";
 
 class FosterDog extends Component {
   state = {
@@ -146,8 +146,18 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
+        <NavBar
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></NavBar>
         {this.displayHeader()}
         {this.displayFosterDog()}
+        <Footer
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></Footer>
       </div>
     );
   }

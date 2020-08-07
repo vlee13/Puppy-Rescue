@@ -3,6 +3,8 @@ import axios from "axios";
 import actions from "../../../services/index";
 import "../../CSS/NavigationBar.css";
 import "../../CSS/ContactUs.css";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 class ContactUs extends Component {
   state = {
@@ -100,8 +102,18 @@ class ContactUs extends Component {
   render() {
     return (
       <div>
+        <NavBar
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></NavBar>
         {this.displayHeader()}
         {this.displayContactUsPage()}
+        <Footer
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></Footer>
       </div>
     );
   }

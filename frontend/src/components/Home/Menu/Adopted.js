@@ -3,6 +3,7 @@ import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
 import Footer from "./Footer";
+import NavBar from "./NavBar";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
@@ -140,6 +141,11 @@ class Adopted extends Component {
   render() {
     return (
       <div>
+        <NavBar
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></NavBar>
         {this.displayHeader()}
         <div className="alumni">{this.displayAdopted()}</div>
         <hr></hr>
@@ -217,7 +223,11 @@ class Adopted extends Component {
           </div>
           <div className="displayPetfinder">{this.showPetfinderSearch()}</div>
         </div>
-
+        <Footer
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></Footer>
         {/* <Slider {...settings}>{this.showPetfinderSearch()}</Slider> */}
       </div>
     );

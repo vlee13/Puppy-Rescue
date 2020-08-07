@@ -30,7 +30,7 @@ const responseGoogle = (props) => {
           onClick={renderProps.onClick}
           disabled={renderProps.disabled}
         >
-          This is my custom Google button
+          Signup
         </button>
       )}
       clientId={process.env.REACT_APP_GOOGLEID}
