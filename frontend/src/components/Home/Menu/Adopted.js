@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import actions from "../../../services/index.js";
 import { Client } from "@petfinder/petfinder-js";
 import "../../CSS/Adopted.css";
-import Slider from "react-slick";
-// import "../../CSS/PetfinderSlides.css";
+import Footer from "./Footer";
 
 const client = new Client({
   apiKey: "23pouIgSc9wnfPif1QGkqRi7OU1OmwWwWLwiUXzmpeztRBPJKA",
