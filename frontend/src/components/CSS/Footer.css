@@ -78,13 +78,18 @@
   margin-bottom: 1rem;
 }
 
+.teamTitle {
+  margin: 0 0 0.5rem 0;
+}
+
 .teamMember {
-  margin: 1.5rem 0 0.25rem 0;
+  margin: 2rem 0 0.25rem 0;
   font-weight: bold;
 }
 .teamMemberCredits {
   margin-bottom: 0.25rem;
   line-height: 1.5rem;
+  font-style: italic;
 }
 
 .teamMemberLink1 {
@@ -94,9 +99,51 @@
   cursor: pointer;
 }
 
+.teamMemberLink1:hover {
+  color: orange;
+}
+
 .teamMemberLink2 {
   margin: 0 0.5rem 0 0.5rem;
   text-decoration: none;
   color: white;
   cursor: pointer;
+}
+
+.teamMemberLink2:hover {
+  color: orange;
+}
+
+.footerNavBarTitle1 {
+  margin: 0 0 2rem 0;
+}
+
+.footerNavBarTitle2 {
+  margin: 3rem 0 1.5rem 0;
+}
+
+.footerNavLink {
+  display: block;
+  margin: 1rem 0 0.5rem 0;
+  text-decoration: none;
+  color: white;
+}
+
+.footerNavLink:hover {
+  color: orange;
+}
+
+.footerQuestion {
+  margin: 0 0 0.5rem 0;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+}
+
+.footerAcknowledgement {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
 }

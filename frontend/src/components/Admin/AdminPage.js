@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import AddDog from "./AddDog";
 import EditDog from "./EditDog";
 import actions from "../../services/index";
+import NavBar from "../Home/Menu/NavBar";
+import "../CSS/Admin.css";
 
 class AdminPage extends Component {
   state = {
@@ -63,20 +65,27 @@ class AdminPage extends Component {
   render() {
     return (
       <div>
-        <div>
-          <h1>Add New Dog</h1>
-          <AddDog />
-        </div>
-        <br />
-        <div>
-          <h1>Edit Existing Dog</h1>
-          <EditDog />
-        </div>
-        <br />
-        <div>
-          <h1>Clear Votes</h1>
-          <button onClick={this.clearVoting}>Clear votes</button>
-          {this.displayDogs()}
+        <NavBar
+          setUser={this.props.setUser}
+          user={this.props.user}
+          logOut={this.props.logOut}
+        ></NavBar>
+        <div className="adminbody">
+          <div>
+            <h1>Add New Dog</h1>
+            <AddDog />
+          </div>
+          <br />
+          <div>
+            <h1>Edit Existing Dog</h1>
+            <EditDog />
+          </div>
+          <br />
+          <div>
+            <h1>Clear Votes</h1>
+            <button onClick={this.clearVoting}>Clear votes</button>
+            {this.displayDogs()}
+          </div>
         </div>
       </div>
     );

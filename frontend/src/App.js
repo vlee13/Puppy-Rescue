@@ -21,8 +21,9 @@ import Game from "./components/Home/Menu/Game";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
-import NavBar from "./components/Home/Menu/NavBar";
+// import NavBar from "./components/Home/Menu/NavBar";
 import Footer from "./components/Home/Menu/Footer";
+// import { useHistory } from "react-router-dom";
 
 class App extends Component {
   state = {};
@@ -35,26 +36,36 @@ class App extends Component {
   logOut = async () => {
     console.log("logout");
     let res = await actions.logOut();
-    this.setUser({ email: null, createdAt: null, updatedAt: null, _id: null }); //FIX
+    this.setUser({
+      email: null,
+      createdAt: null,
+      updatedAt: null,
+      _id: null,
+      role: null,
+    }); //FIX
   };
   test = async () => {
     let res = await actions.sendMail();
   };
   render() {
+    // const history = useHistory();
+    // console.log(history);
     return (
       <BrowserRouter>
-        <button onClick={this.test}>submit</button>
-        <NavBar
+        {/* <button onClick={this.test}>submit</button> */}
+        {/* {this.props.location && ( */}
+        {/* <NavBar
           setUser={this.setUser}
           user={this.state}
           logOut={this.logOut}
-        ></NavBar>
+        ></NavBar> */}
+        {/* )} */}
         <Switch>
-          <Route
+          {/* <Route
             exact
             path="/home"
             render={(props) => <Home {...props} setUser={this.setUser} />}
-          />
+          /> */}
           <Route exact path="/" render={() => <Slider />} />
           <Route
             exact
@@ -75,7 +86,13 @@ class App extends Component {
           <Route
             exact
             path="/about"
-            render={() => <About setUser={this.setUser} user={this.state} />}
+            render={() => (
+              <About
+                setUser={this.setUser}
+                user={this.state}
+                logOut={this.logOut}
+              />
+            )}
           />
           <Route
             exact
@@ -85,19 +102,32 @@ class App extends Component {
                 email={this.state.email}
                 setUser={this.setUser}
                 user={this.state}
+                logOut={this.logOut}
               />
             )}
           />
           <Route
             exact
             path="/vote"
-            render={() => <Vote setUser={this.setUser} user={this.state} />}
+            render={() => (
+              <Vote
+                setUser={this.setUser}
+                user={this.state}
+                logOut={this.logOut}
+              />
+            )}
           />
 
           <Route
             exact
             path="/adopted"
-            render={() => <Adopted setUser={this.setUser} user={this.state} />}
+            render={() => (
+              <Adopted
+                setUser={this.setUser}
+                user={this.state}
+                logOut={this.logOut}
+              />
+            )}
           />
 
           <Route exact path="/game" render={() => <Game />} />
@@ -106,15 +136,26 @@ class App extends Component {
             exact
             path="/contactus"
             render={() => (
-              <ContactUs setUser={this.setUser} user={this.state} />
+              <ContactUs
+                setUser={this.setUser}
+                user={this.state}
+                logOut={this.logOut}
+              />
             )}
           />
 
-          <Route exact path="/contactus" render={() => <ContactUs />} />
-
-          <Route exact path="/adminpage" render={() => <AdminPage />} />
+          <Route
+            exact
+            path="/adminpage"
+            render={() => (
+              <AdminPage
+                setUser={this.setUser}
+                user={this.state}
+                logOut={this.logOut}
+              />
+            )}
+          />
         </Switch>
-        <Footer></Footer>
       </BrowserRouter>
     );
   }
