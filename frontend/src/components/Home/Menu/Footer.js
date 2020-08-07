@@ -11,11 +11,11 @@ class Footer extends Component {
         <div className="footerContainer">
           <div className="floatElement">
             <img class="footerLogoMark" />
-            <div className="address">
+            <h4 className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
-            </div>
-            <div classNAme="phoneNumber"> 0-800-WeLoveDogs</div>
+            </h4>
+            <h4 classNAme="phoneNumber"> 0-800-WeLoveDogs</h4>
 
             <span>
               <img id="socialMediaIcon" />
@@ -32,7 +32,7 @@ class Footer extends Component {
           </div>
 
           <div className="floatElement">
-            <h4 className="title">Development Team</h4>
+            <h4 className="teamTitle">Development Team</h4>
             {/* Carlos */}
             <div className="teamMember">Carlos Cesar Valle</div>
             <div className="teamMemberCredits">
@@ -119,38 +119,37 @@ class Footer extends Component {
           {/* Navigation Bar links on Footer*/}
 
           <div className="floatElement">
-            <h4 className="title">Navigation</h4>
+            <h4 className="footerNavBarTitle1">Navigation</h4>
 
-            <Link to="/fosterdog" className="footerLink">
-              Foster dogs
+            <Link to="/fosterdog" className="footerNavLink">
+              Foster dog
             </Link>
 
-            <Link to="/vote" className="footerLink">
-              Vote!
+            <Link to="/vote" className="footerNavLink">
+              Vote
             </Link>
 
-            <Link to="/helpothers" className="footerLink">
+            <Link to="/helpothers" className="footerNavLink">
               Help others
             </Link>
 
-            <Link to="/contactus" className="footerLink">
+            <Link to="/contactus" className="footerNavLink">
               Contact us
             </Link>
 
-            <h4 className="title">Other links</h4>
-            <Link to="/game" className="footerLink">
+            <h4 className="footerNavBarTitle2">Other links</h4>
+            <Link to="/game" className="footerNavLink">
               Zoey 90's Game
             </Link>
           </div>
 
           {/* Newsletter, acknowledgement and copyright */}
           <div className="floatElement">
-            <p>
-              Do you want to receive our monthly newsletter? <br />
-              Create an account!
-            </p>
-
-            <p className="footerText">
+            <h4 className="footerQuestion">
+              Do you want to receive our monthly newsletter?
+            </h4>
+            <p className="text">Create an account!</p>
+            <p className="footerAcknowledgement">
               House of Paws was created with a lot of love during Ironhack
               fulltime web development bootcamp. <br /> All rights reserved.{" "}
               <br /> We also want to show our appreciation to the photograpers.

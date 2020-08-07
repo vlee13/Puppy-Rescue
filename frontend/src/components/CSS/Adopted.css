@@ -1,5 +1,5 @@
 .adoptedHeroImage {
-  margin-top: 8vh;
+  margin-top: 5.5vh;
   width: 100vw;
   background-image: url("../../images/pexels-ilargian-faus-1629781.jpg");
   background-color: #cccccc;
@@ -21,12 +21,23 @@
   text-align: left;
 }
 
+.adoptedExplanaitionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adoptedExplanaitionText {
+  width: 60vw;
+  text-align: left;
+  margin: 7.5vh 0 5vh 5vw;
+}
 .alumni {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5vh 5vw
+  margin: 5vh 5vw;
 }
 
 .alumDescr {
@@ -44,7 +55,6 @@
   border: 1px solid black;
   padding: 3vh 3vw;
   width: 20vw;
-
 }
 
 .petfinderText {
@@ -52,7 +62,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10vh auto
+  margin: 10vh auto;
 }
 
 .searchDescription {
@@ -78,7 +88,7 @@
 .formRadio {
   display: inline-flexbox;
 
-  margin: 2vw
+  margin: 2vw;
 }
 
 .radioGender,
@@ -87,9 +97,8 @@
   display: inline;
 
   align-items: center;
-
 }
 
 .formsubmit {
-  margin: 5vh
+  margin: 5vh;
 }

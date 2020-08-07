@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import actions from "../../../services/index.js";
 import "../../CSS/Vote.css";
-import VoteBar from "./VoteBar";
 import "../../CSS/NavigationBar.css";
 import LineGraph from "./LineGraph";
 import PieGraph from "./PieGraph";
@@ -28,10 +26,7 @@ class Vote extends Component {
         <img className="imageForVote" />
         <div className="textForHeroImage">
           <h1>Vote.</h1>
-          <p>
-            We can only take one dog to be fostered in this house. Help us
-            choose! You have three votes.
-          </p>
+          <p>Help us elect our next fostered dog.</p>
         </div>
       </div>
     );
@@ -99,6 +94,24 @@ class Vote extends Component {
           logOut={this.props.logOut}
         ></NavBar>
         {this.displayHeader()}
+        <div className="voteExplanaitionContainer">
+          <p className="voteExplanaitionText">
+            We can only take one dog to be fostered in this house. Help us
+            choose! You have three votes. We can only take one dog to be
+            fostered in this house. Help us choose! You have three votes. We can
+            only take one dog to be fostered in this house. Help us choose! You
+            have three votes. We can only take one dog to be fostered in this
+            house. Help us choose! You have three votes. We can only take one
+            dog to be fostered in this house. Help us choose! You have three
+            votes. We can only take one dog to be fostered in this house. Help
+            us choose! You have three votes. We can only take one dog to be
+            fostered in this house. Help us choose! You have three votes. We can
+            only take one dog to be fostered in this house. Help us choose! You
+            have three votes. We can only take one dog to be fostered in this
+            house. Help us choose! You have three votes. We can only take one
+            dog to be fostered in this house.
+          </p>
+        </div>
         {this.displayDogsToVote()}
         {/* <VoteBar data={this.state.dogs} /> */}
         <div className="voteGraphs">

@@ -61,11 +61,11 @@ class App extends Component {
         ></NavBar> */}
         {/* )} */}
         <Switch>
-          <Route
+          {/* <Route
             exact
             path="/home"
             render={(props) => <Home {...props} setUser={this.setUser} />}
-          />
+          /> */}
           <Route exact path="/" render={() => <Slider />} />
           <Route
             exact

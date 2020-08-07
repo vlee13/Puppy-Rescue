@@ -46,14 +46,8 @@ class FosterDog extends Component {
       <div className="container">
         <img className="imageForFosterDog" />
         <div className="textForHeroImage">
-          <h1>Our fostered dogs!</h1>
-          <p>
-            These are the winners. <br />
-            <br />
-            You love them. <br />
-            <br />
-            They rock and roll.
-          </p>
+          <h1>This cutie is our winner!</h1>
+          <p>Because you voted and we listened.</p>
         </div>
       </div>
     );
@@ -66,68 +60,70 @@ class FosterDog extends Component {
       .map((eachDog) => {
         return (
           <div>
-            <div className="CompanyName">
-              <h1>You voted, we listened!</h1>
-              <p>Text here about fostering</p>
+            <div className="electionTextContainer">
+              <p className="electionText">
+                After a dificult election we have a winner. Thank you so much
+                for participating and being awesome. We wouldnt be able to run
+                House of Paws without your support. After a dificult election we
+                have a winner. Thank you so much for participating and being
+                awesome. We wouldnt be able to run House of Paws without your
+                support. After a dificult election we have a winner. Thank you
+                so much for participating and being awesome. We wouldnt be able
+                to run House of Paws without your support. After a dificult
+                election we have a winner. Thank you so much for participating
+                and being awesome. We wouldnt be able to run House of Paws
+                without your support. After a dificult election we have a
+                winner. Thank you so much for participating and being awesome.
+                We wouldnt be able to run House of Paws without your support.
+              </p>
             </div>
-            <div key={`dog-key-${eachDog.name}`}>
-              <img src={eachDog.image} alt="fosterdogpic" />
-              <br />
+            <h1 className="fosterDogName">Meet {eachDog.name}!</h1>
+
+            <div className="fosterDogBodyPage">
+              <div className="fosterDogTextInsideBG">
+                <p>
+                  {eachDog.descr} After a dificult election we have a winner.
+                  Thank you so much for participating and being awesome. We
+                  wouldnt be able to run House of Paws without your support.
+                  After a dificult election we have a winner. Thank you so much
+                  for participating and being awesome. We wouldnt be able to run
+                  House of Paws without your support. After a dificult election
+                  we have a winner. Thank you so much for participating and
+                  being awesome. We wouldnt be able to run House of Paws without
+                  your support. After a dificult election we have a winner.
+                  Thank you so much for participating and being awesome. We
+                  wouldnt be able to run House of Paws without your support.
+                  After a dificult election we have a winner. Thank you so much
+                  for participating and being awesome. We wouldnt be able to run
+                  House of Paws without your support. Thank you so much for
+                  participating and being awesome. We wouldnt be able to run
+                  House of Paws without your support.
+                  <br /> <br /> Please donate to our patron account by clicking
+                  on the button below.
+                </p>
+                <div className="donateButtonContainer">
+                  <button className="donateButton">
+                    <a
+                      className="Link"
+                      href="https://www.patreon.com/houseofpaws"
+                    >
+                      DONATE
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* <div key={`dog-key-${eachDog.name}`}> */}
+            {/* <img src={eachDog.image} alt="fosterdogpic" /> */}
+            {/* <br />
               <h1>{eachDog.name}</h1>
               <br />
-              <p>{eachDog.descr}</p>
-              <a href="https://www.patreon.com/houseofpaws">
-                <button>
-                  <b>DONATE</b>
-                </button>{" "}
-              </a>
-            </div>
+              <p>{eachDog.descr}</p> */}
           </div>
+          // </div>
         );
       });
-  };
-
-  displayPage = () => {
-    return (
-      <div className="CarrouselContainer">
-        <img className="FosterDogImage" />
-        <div className="CarrouselText">
-          <img id="LogoMark" />
-          <span className="CompanyName">Dog I'm fostering now</span>
-          <h1 className="Tagline">Chispa</h1>
-          <p>
-            Total votes:
-            <br /> ----animated bar------
-          </p>
-          <p>
-            Started Fostering: <br />
-            10/02/2020
-          </p>
-          <p>
-            We are all animal lovers and we all wanted to do something positive
-            for the community, so as our final project in our IronHack bootcamp
-            journey we decided to give back. House of Paws is bigger than us. By
-            fostering these shelter dogs, we believe we can give them a real
-            chance to being adopted into their forever homes.
-          </p>
-          <button
-            onClick={() => {
-              this.setState({
-                showPage: false,
-                showLogIn: false,
-                showSignUp: false,
-                showNavbar: false,
-                showDonate: true,
-              });
-              console.log("Hi");
-            }}
-            className="CarrouselButton"
-          >
-            SHARE YOUR LOVE WITH CHISPA
-          </button>
-        </div>
-      </div>
-    );
   };
 
   handleChange = (event) => {

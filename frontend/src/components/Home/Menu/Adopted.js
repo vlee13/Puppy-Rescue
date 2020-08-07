@@ -147,6 +147,24 @@ class Adopted extends Component {
           logOut={this.props.logOut}
         ></NavBar>
         {this.displayHeader()}
+        <div className="adoptedExplanaitionContainer">
+          <p className="adoptedExplanaitionText">
+            We can only take one dog to be fostered in this house. Help us
+            choose! You have three votes. We can only take one dog to be
+            fostered in this house. Help us choose! You have three votes. We can
+            only take one dog to be fostered in this house. Help us choose! You
+            have three votes. We can only take one dog to be fostered in this
+            house. Help us choose! You have three votes. We can only take one
+            dog to be fostered in this house. Help us choose! You have three
+            votes. We can only take one dog to be fostered in this house. Help
+            us choose! You have three votes. We can only take one dog to be
+            fostered in this house. Help us choose! You have three votes. We can
+            only take one dog to be fostered in this house. Help us choose! You
+            have three votes. We can only take one dog to be fostered in this
+            house. Help us choose! You have three votes. We can only take one
+            dog to be fostered in this house.
+          </p>
+        </div>
         <div className="alumni">{this.displayAdopted()}</div>
         <hr></hr>
 

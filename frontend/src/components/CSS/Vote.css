@@ -1,5 +1,5 @@
 .imageForVote {
-  margin-top: 8vh;
+  margin-top: 5.5vh;
   width: 100vw;
   background-image: url("../../images/pexels-gilberto-reyes-825949.jpg");
   background-color: gainsboro;
@@ -30,4 +30,16 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 10vh auto;
+}
+
+.voteExplanaitionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voteExplanaitionText {
+  width: 60vw;
+  text-align: left;
+  margin: 7.5vh 0 5vh 5vw;
 }
