@@ -86,7 +86,7 @@ class ContactUs extends Component {
         </div>
       </div>
     );
-  }
+  };
 
   displayContactUsPage = () => {
     let audio = new Audio("/bark.mp3");
@@ -295,6 +295,7 @@ class ContactUs extends Component {
     return (
       <div>
         {this.displayHeader()}
+
         {/* {this.displayNavBar()} */}
         {this.displayContactUsPage()}
         {this.displayFooter()}

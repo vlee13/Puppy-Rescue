@@ -4,7 +4,6 @@ import axios from "axios";
 import actions from "../../../services/index.js";
 import "../../CSS/FosterDog.css";
 import "../../CSS/NavigationBar.css";
-import NavBar from "../Menu/NavBar";
 
 class FosterDog extends Component {
   state = {
@@ -82,94 +81,6 @@ class FosterDog extends Component {
           </div>
         );
       });
-  };
-
-  displayNavBar = () => {
-    return (
-      <div className="NavigationBar">
-        {/* <button
-          className="NavigationBarButton">
-          Log in
-        </button>
-      <div>
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            this.setState({
-              showLogIn: true,
-              showPage: false,
-              showNavbar: false,
-            });
-          }}
-        
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            this.setState({
-              showMenu: true,
-              showPage: false,
-              showNavbar: false,
-            });
-          }}
-        >
-          Menu
-        </button> */}
-      </div>
-    );
-  };
-
-  displayMenu = () => {
-    return (
-      <div>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          X
-        </Link>
-        <br />
-        <Link to="/">
-          <div>Home</div>
-        </Link>
-        <Link to="/about">
-          <div>About</div>
-        </Link>
-        <Link
-          onClick={() =>
-            this.setState({
-              showMenu: false,
-              showNavbar: true,
-            })
-          }
-        >
-          The dog I'm fostering now
-        </Link>
-        <Link to="/vote">
-          <div>Vote for the next dog I'll foster</div>
-        </Link>
-        <Link to="/helpothers">
-          <div>Help other organizations</div>
-        </Link>
-        <Link to="/game">
-          <div>
-            Play our 90's inspired game <i>Dog Zoey in Space</i>
-          </div>
-        </Link>
-        <Link to="/meetteam">
-          <div>Meet the team</div>
-        </Link>
-        <Link to="/contactus">
-          <div>Contact us</div>
-        </Link>
-        <Link to="/userdonate">
-          <div>Donate </div>
-        </Link>
-      </div>
-    );
   };
 
   displayLogIn = () => {
@@ -330,14 +241,8 @@ class FosterDog extends Component {
   render() {
     return (
       <div>
-        {/* {!this.props.email && <GoogleAuth setUser={this.props.setUser} />}
-        {!this.props.email && <GoogleAuthLogin setUser={this.props.setUser} />} */}
-
-        <NavBar></NavBar>
         {this.displayHeader()}
-
         {this.displayFosterDog()}
-        {this.displayFooter()}
       </div>
     );
   }

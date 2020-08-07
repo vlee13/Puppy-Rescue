@@ -374,6 +374,8 @@ class About extends Component {
   render() {
     return (
       <div>
+        
+        {/* {this.displayNavBar()} */}
         {this.displayPage()}
         {this.displayFooter()}
       </div>
