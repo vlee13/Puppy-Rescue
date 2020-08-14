@@ -1,31 +1,9 @@
 # House of Paws
 
-## About Us
+This app helps you search and gives resources for rescuing and adopting shelter dogs. You can vote for which dog our foster should pick up from the shelter to house and care for until the dog is adopted to his or her fur-ever home. There are other features like donating to other rescue group organizations and searching for adoptable dogs in your own area!
 
-##### What We Do
+Technologies used: React.js, Node.js, Express.js, MongoDB, JavaScript, HTML, CSS
 
-##### What to Expect after Donating
+Deployed website link : https://houseofpaws.netlify.app/
 
-##### Other Ways to Help
-
-## Vote to Rescue & Foster
-
-##### About that:
-
-## Dog I am Fostering Now
-
-##### About that:
-
-## Other Ways To Help
-
-##### A) Link to rescue groups already doing amazing work around the country and donate.
-
-##### B) Search rescue groups in your area
-
-##### C) Ready to adopt? Use the Petfinder API to search pets nearest to you.
-
-## Meet the Team
-
-##### Valerie Lee, Carlos Valle, & Dionel Panuncia
-
-##### We came together for this project because...
+Contributors to project: Valerie Lee, Carlos Cesar Valle, Dionel Panuncia
