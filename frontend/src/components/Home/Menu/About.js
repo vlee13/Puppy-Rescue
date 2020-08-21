@@ -172,7 +172,7 @@ class About extends Component {
         <div className="container">
           <img className="backgroundForGame" />
           <div className="whiteBGright">
-            <h1>Bonus Track: Play Zoey in the Space</h1>
+            <h1>Bonus Track: Help Zooey survive in space</h1>
             <p>
               We are dev! One of our first projects at Ironhack was a game
               developed in Canvas. TAKE ZOOEY THROUGH SPACE, KILL ALIENS, AND
@@ -181,7 +181,9 @@ class About extends Component {
               SCORE TO WIN, and GAME OVER WHEN ALIENS REACH YOU.
             </p>
             <div className="game">
-            <button><a href='https://vlee13.github.io/SPACE-ZOOEY/'>Play!</a></button>
+              <button>
+                <a href="https://vlee13.github.io/SPACE-ZOOEY/">Play!</a>
+              </button>
             </div>
           </div>
         </div>

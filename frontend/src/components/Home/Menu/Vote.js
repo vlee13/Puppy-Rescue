@@ -82,7 +82,7 @@ class Vote extends Component {
         }
       })
       .catch((err) => console.error(err));
-    console.log(eachDog);
+    // console.log(eachDog);
   };
 
   render() {
