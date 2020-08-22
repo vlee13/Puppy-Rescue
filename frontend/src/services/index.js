@@ -1,10 +1,10 @@
 import axios from "axios";
 let baseURL;
-
+console.log("koala");
 process.env.NODE_ENV === "production"
-  ? (baseURL = "https://houseofpaws.herokuapp.com")
+  ? (baseURL = "https://houseofpaws.herokuapp.com/api")
   : // (baseURL = "window.location.origin")
-    (baseURL = "http://localhost:5000");
+    (baseURL = "http://localhost:5000/api");
 console.log(process.env);
 const service = axios.create({ withCredentials: true, baseURL });
 

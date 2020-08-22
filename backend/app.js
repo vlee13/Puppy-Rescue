@@ -57,10 +57,16 @@ app.use(logger("dev"));
 
 const index = require("./routes/index");
 const auth = require("./routes/auth");
-app.use("/", index);
-app.use("/", auth);
+app.use("/api", index);
+app.use("/api", auth);
 
 // Uncomment this line for production
-let client = path.join(__dirname + "../public/index.html");
-
+app.get("*", (req, res, next) => {
+  if (req.headers.host.includes("heroku")) {
+    res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+  } else {
+    next();
+  }
+});
+console.log("puppy");
 module.exports = app;
