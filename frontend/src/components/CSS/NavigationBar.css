@@ -4,6 +4,7 @@ body {
   overflow-x: hidden;
 } */
 
+
 .Navbar {
   overflow: hidden;
   width: 100vw;
@@ -23,8 +24,9 @@ body {
 }
 
 .NavBarElement {
+  
   padding: 2vw;
-  margin: 2vw;
+  /* margin: 2vw; */
   text-decoration: none;
   color: gray;
   font-size: 1.5vw;
@@ -56,15 +58,6 @@ body {
   border: 0;
 }
 
-/* .background { */
-/* width: 100vw; */
-/* background-image: url("../../images/charles-deluvio-lJJlaUWYrPE-unsplash3.jpg"); */
-/* background-color: #cccccc;
-  height: 90vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 .background1 {
   margin-top: 8vh;

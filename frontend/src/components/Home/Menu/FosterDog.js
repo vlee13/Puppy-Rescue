@@ -47,7 +47,7 @@ class FosterDog extends Component {
         <img className="imageForFosterDog" />
         <div className="textForHeroImage">
           <h1>This cutie is our winner!</h1>
-          <p>Because you voted and we listened.</p>
+          <p style={{ margin: "20px" }}>Because you voted and we listened.</p>
         </div>
       </div>
     );
@@ -62,19 +62,9 @@ class FosterDog extends Component {
           <div>
             <div className="electionTextContainer">
               <p className="electionText">
-                After a dificult election we have a winner. Thank you so much
+                After a difficult election we have a winner. Thank you so much
                 for participating and being awesome. We wouldnt be able to run
-                House of Paws without your support. After a dificult election we
-                have a winner. Thank you so much for participating and being
-                awesome. We wouldnt be able to run House of Paws without your
-                support. After a dificult election we have a winner. Thank you
-                so much for participating and being awesome. We wouldnt be able
-                to run House of Paws without your support. After a dificult
-                election we have a winner. Thank you so much for participating
-                and being awesome. We wouldnt be able to run House of Paws
-                without your support. After a dificult election we have a
-                winner. Thank you so much for participating and being awesome.
-                We wouldnt be able to run House of Paws without your support.
+                House of Paws without your support.
               </p>
             </div>
             <h1 className="fosterDogName">Meet {eachDog.name}!</h1>
@@ -85,21 +75,10 @@ class FosterDog extends Component {
                   {eachDog.descr} After a dificult election we have a winner.
                   Thank you so much for participating and being awesome. We
                   wouldnt be able to run House of Paws without your support.
-                  After a dificult election we have a winner. Thank you so much
-                  for participating and being awesome. We wouldnt be able to run
-                  House of Paws without your support. After a dificult election
-                  we have a winner. Thank you so much for participating and
-                  being awesome. We wouldnt be able to run House of Paws without
-                  your support. After a dificult election we have a winner.
-                  Thank you so much for participating and being awesome. We
-                  wouldnt be able to run House of Paws without your support.
-                  After a dificult election we have a winner. Thank you so much
-                  for participating and being awesome. We wouldnt be able to run
-                  House of Paws without your support. Thank you so much for
-                  participating and being awesome. We wouldnt be able to run
-                  House of Paws without your support.
-                  <br /> <br /> Please donate to our patron account by clicking
-                  on the button below.
+                </p>
+                <p style={{ marginTop: "30px" }}>
+                  Please donate to our patron account by clicking on the button
+                  below.
                 </p>
                 <div className="donateButtonContainer">
                   <button className="donateButton">
@@ -113,13 +92,6 @@ class FosterDog extends Component {
                 </div>
               </div>
             </div>
-
-            {/* <div key={`dog-key-${eachDog.name}`}> */}
-            {/* <img src={eachDog.image} alt="fosterdogpic" /> */}
-            {/* <br />
-              <h1>{eachDog.name}</h1>
-              <br />
-              <p>{eachDog.descr}</p> */}
           </div>
           // </div>
         );

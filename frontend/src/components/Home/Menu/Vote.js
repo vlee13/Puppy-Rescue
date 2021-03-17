@@ -24,9 +24,20 @@ class Vote extends Component {
     return (
       <div className="container">
         <img className="imageForVote" />
-        <div className="textForHeroImage">
+        <div
+          className="textForHeroImage"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+          }}
+        >
           <h1>Vote.</h1>
-          <p>Help us elect our next fostered dog.</p>
+
+          <p style={{ padding: "20px" }}>
+            Help us elect our next fostered dog.
+          </p>
         </div>
       </div>
     );
@@ -38,28 +49,31 @@ class Vote extends Component {
       .map((eachDog, i) => {
         return (
           <div className="eachDog">
-            <div className="voteImg">
-              <img src={eachDog.image} alt="dogpic" />
-              <br />
-            </div>
+            <img src={eachDog.image} alt="dogpic" />
+            <div className="voteContainer">
+              <p
+                style={{
+                  fontSize: "30px",
+                  fontWeight: "500",
+                  padding: "20px",
+                }}
+              >
+                {eachDog.name}
+              </p>
 
-            <div className="voteInfo">
-              <h1>{eachDog.name}</h1>
-              <button onClick={() => this.vote(eachDog, i)}>
-                {eachDog.votes.length}
+              <button
+                style={{ padding: "10px" }}
+                onClick={() => this.vote(eachDog, i)}
+              >
+                Vote Here: {eachDog.votes.length}
               </button>
-              <br />
-              {`ShelterID: #${eachDog.shelterID}`}
-              <br />
-
-              {`Location: ${eachDog.location}`}
-              <br />
-              {`Age: ${eachDog.age}`}
-              <br />
-              {`Weight: ${eachDog.weight}`}
-              <br />
-              {`"${eachDog.descr}"`}
-              <br />
+            </div>
+            <div className="voteInfo">
+              <li>{`ShelterID: #${eachDog.shelterID}`}</li>
+              <li>{`Location: ${eachDog.location}`}</li>
+              <li>{`Age: ${eachDog.age}`}</li>
+              <li>{`Weight: ${eachDog.weight}`}</li>
+              <li>{`Description: "${eachDog.descr}"`}</li>
             </div>
           </div>
         );
@@ -95,24 +109,12 @@ class Vote extends Component {
         ></NavBar>
         {this.displayHeader()}
         <div className="voteExplanaitionContainer">
-          <p className="voteExplanaitionText">
-            We can only take one dog to be fostered in this house. Help us
-            choose! You have three votes. We can only take one dog to be
-            fostered in this house. Help us choose! You have three votes. We can
-            only take one dog to be fostered in this house. Help us choose! You
-            have three votes. We can only take one dog to be fostered in this
-            house. Help us choose! You have three votes. We can only take one
-            dog to be fostered in this house. Help us choose! You have three
-            votes. We can only take one dog to be fostered in this house. Help
-            us choose! You have three votes. We can only take one dog to be
-            fostered in this house. Help us choose! You have three votes. We can
-            only take one dog to be fostered in this house. Help us choose! You
-            have three votes. We can only take one dog to be fostered in this
-            house. Help us choose! You have three votes. We can only take one
-            dog to be fostered in this house.
+          <p style={{ fontSize: "20px", padding: "20px", marginTop: "30px" }}>
+            You have three votes and you can't vote for the same one twice. Help
+            us decide who the lucky winner is!
           </p>
         </div>
-        {this.displayDogsToVote()}
+        <div>{this.displayDogsToVote()}</div>
         {/* <VoteBar data={this.state.dogs} /> */}
         <div className="voteGraphs">
           <PieGraph data={this.state.dogs} />

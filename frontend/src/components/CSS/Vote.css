@@ -9,20 +9,36 @@
   background-size: cover;
 }
 
+
 .eachDog {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  margin: 10vh auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 5vw;
+  padding: 30px;
+  width: 75vw;
+  height: 40vh
 }
 
-.voteImg {
-  width: 20vw;
+.voteContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  margin-bottom: 25px;
+
 }
 
 .voteInfo {
-  text-align: left;
-  margin-left: 20vw;
+  width: 25vw;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
 }
 
 .voteGraphs {

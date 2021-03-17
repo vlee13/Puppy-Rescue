@@ -79,8 +79,15 @@ class NavBar extends Component {
 
             {this.props.user?.email ? (
               <React.Fragment>
-                Welcome, {this.props.user.name}
-                <button onClick={this.props.logOut}>Logout</button>
+                <span style={{ fontSize: "15px" }}>
+                  Welcome, {this.props.user.name}
+                </span>
+                <button
+                  style={{ marginLeft: "10px", padding: "5px" }}
+                  onClick={this.props.logOut}
+                >
+                  Logout
+                </button>
               </React.Fragment>
             ) : (
               <React.Fragment>
