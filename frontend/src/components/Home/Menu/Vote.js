@@ -110,8 +110,8 @@ class Vote extends Component {
         {this.displayHeader()}
         <div className="voteExplanaitionContainer">
           <p style={{ fontSize: "20px", padding: "20px", marginTop: "30px" }}>
-            You have three votes and you can't vote for the same one twice. Help
-            us decide who the lucky winner is!
+            First step, please sign up! Then, you have three votes and you can't
+            vote for the same one twice. Help us decide who the lucky winner is!
           </p>
         </div>
         <div>{this.displayDogsToVote()}</div>
