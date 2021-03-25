@@ -10,12 +10,12 @@ class Footer extends Component {
 
         <div className="footerContainer">
           <div className="floatElement">
-            <img class="footerLogoMark" />
+            <img className="footerLogoMark" />
             <h4 className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
             </h4>
-            <h4 classNAme="phoneNumber"> 0-800-WeLoveDogs</h4>
+            <h4 className="phoneNumber"> 0-800-WeLoveDogs</h4>
 
             <span>
               <img id="socialMediaIcon" />
