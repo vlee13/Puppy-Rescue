@@ -88,11 +88,23 @@ class Adopted extends Component {
       .map((eachDog) => {
         return (
           <div className="alumni" key={`dog-key-${eachDog.name}`}>
-            <img src={eachDog.image} alt="adoptionpic" />
+            <img
+              src={eachDog.image}
+              alt="adoptionpic"
+              style={{ width: "35vw" }}
+            />
 
-            <h1>{eachDog.name}</h1>
-
-            <h2 className="alumDescr">{eachDog.descr}</h2>
+            <div
+              className="alumDescr"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <h1>{eachDog.name}</h1>
+              {eachDog.descr}
+            </div>
           </div>
         );
       });
@@ -129,20 +141,10 @@ class Adopted extends Component {
         {this.displayHeader()}
         <div className="adoptedExplanaitionContainer">
           <p className="adoptedExplanaitionText">
-            We can only take one dog to be fostered in this house. Help us
-            choose! You have three votes. We can only take one dog to be
-            fostered in this house. Help us choose! You have three votes. We can
-            only take one dog to be fostered in this house. Help us choose! You
-            have three votes. We can only take one dog to be fostered in this
-            house. Help us choose! You have three votes. We can only take one
-            dog to be fostered in this house. Help us choose! You have three
-            votes. We can only take one dog to be fostered in this house. Help
-            us choose! You have three votes. We can only take one dog to be
-            fostered in this house. Help us choose! You have three votes. We can
-            only take one dog to be fostered in this house. Help us choose! You
-            have three votes. We can only take one dog to be fostered in this
-            house. Help us choose! You have three votes. We can only take one
-            dog to be fostered in this house.
+            Because of you these alumni are homed with a loving family, a warm
+            bed, and all the kisses and treats!
+            <br />
+            Thank you for partnering with us and making this happen.
           </p>
         </div>
         <div className="alumni">{this.displayAdopted()}</div>
@@ -160,65 +162,97 @@ class Adopted extends Component {
             <form onSubmit={this.handleSubmit}>
               <div className="formText">
                 <label for="location">Location:</label>
+
                 <input
                   onChange={this.handleChange}
                   name="location"
                   type="text"
                 />
-                <br />
+
                 <label for="distance">Distance/Miles:</label>
                 <input
                   onChange={this.handleChange}
                   name="distance"
                   type="number"
                 />
-                <br />
 
                 <label for="breed">Breed:</label>
                 <input onChange={this.handleChange} name="breed" type="text" />
-                <br />
               </div>
 
               <div className="formRadio">
-                <p className="radioGender">Dog Gender:</p>
-                <input type="radio" id="male" name="gender" value="male" />
-                <label for="male">Male</label>
-                <br />
-                <input type="radio" id="female" name="gender" value="female" />
-                <label for="female">Female</label>
-                <br />
-                <p className="radioAge">Dog Age:</p>
-                <input type="radio" id="baby" name="age" value="baby" />
-                <label for="baby">Baby</label>
-                <br />
-                <input type="radio" id="young" name="age" value="young" />
-                <label for="young">Young</label>
-                <br />
-                <input type="radio" id="adult" name="age" value="adult" />
-                <label for="adult">Adult</label>
-                <br />
-                <input type="radio" id="senior" name="age" value="senior" />
-                <label for="senior">Senior</label>
-                <br />
-                <p className="radioSize">Dog Size:</p>
-                <input type="radio" id="small" name="size" value="small" />
-                <label for="small">Small</label>
-                <br />
-                <input type="radio" id="medium" name="size" value="medium" />
-                <label for="medium">Medium</label>
-                <br />
-                <input type="radio" id="large" name="size" value="large" />
-                <label for="large">Large</label>
-                <br />
-                <input type="radio" id="xlarge" name="size" value="xlarge" />
-                <label for="xlarge">XLarge</label>
-                <br />
+                <div id="radioflex">
+                  <p style={{ fontWeight: "bold" }}>Dog Gender:</p>
+                  <div>
+                    <input type="radio" id="male" name="gender" value="male" />
+
+                    <label for="male">Male</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="female"
+                    />
+                    <label for="female">Female</label>
+                  </div>
+                </div>
+                <div id="radioflex">
+                  <p style={{ fontWeight: "bold" }}>Dog Age:</p>
+                  <div>
+                    <input type="radio" id="baby" name="age" value="baby" />
+                    <label for="baby">Baby</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="young" name="age" value="young" />
+                    <label for="young">Young</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="adult" name="age" value="adult" />
+                    <label for="adult">Adult</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="senior" name="age" value="senior" />
+                    <label for="senior">Senior</label>
+                  </div>
+                </div>
+                <div id="radioflex">
+                  <p style={{ fontWeight: "bold" }}>Dog Size:</p>
+                  <div>
+                    <input type="radio" id="small" name="size" value="small" />
+                    <label for="small">Small</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="medium"
+                      name="size"
+                      value="medium"
+                    />
+                    <label for="medium">Medium</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="large" name="size" value="large" />
+                    <label for="large">Large</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="xlarge"
+                      name="size"
+                      value="xlarge"
+                    />
+                    <label for="xlarge">XLarge</label>
+                  </div>
+                </div>
+                <button className="formsubmit" type="submit">
+                  Submit
+                </button>
               </div>
-              <button className="formsubmit" type="submit">
-                Submit
-              </button>
             </form>
           </div>
+
           <div className="displayPetfinder">{this.showPetfinderSearch()}</div>
         </div>
         <Footer
