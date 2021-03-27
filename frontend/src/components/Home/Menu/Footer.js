@@ -10,7 +10,7 @@ class Footer extends Component {
 
         <div className="footerContainer">
           <div className="floatElement">
-            <img className="footerLogoMark" />
+            <img className="footerLogoMark" alt="footer logo mark" />
             <h4 className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
@@ -18,16 +18,16 @@ class Footer extends Component {
             <h4 className="phoneNumber"> 0-800-WeLoveDogs</h4>
 
             <span>
-              <img id="socialMediaIcon" />
+              <img id="socialMediaIcon" alt="social media icon" />
             </span>
             <span>
-              <img id="socialMediaIcon" />
+              <img id="socialMediaIcon" alt="social media icon" />
             </span>
             <span>
-              <img id="socialMediaIcon" />
+              <img id="socialMediaIcon" alt="social media icon" />
             </span>
             <span>
-              <img id="socialMediaIcon" />
+              <img id="socialMediaIcon" alt="social media icon" />
             </span>
           </div>
 
@@ -44,6 +44,7 @@ class Footer extends Component {
                 className="teamMemberLink1"
                 href="https://github.com/carloscesarvalle"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -54,6 +55,7 @@ class Footer extends Component {
                 className="teamMemberLink2"
                 href="https://www.linkedin.com/in/carloscesarvalle/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
@@ -64,6 +66,7 @@ class Footer extends Component {
                 className="teamMemberLink2"
                 href="https://www.behance.net/carloscesarvalle"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Behance
               </a>
@@ -78,6 +81,7 @@ class Footer extends Component {
                 className="teamMemberLink1"
                 href="https://github.com/vlee13"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -88,6 +92,7 @@ class Footer extends Component {
                 className="teamMemberLink2"
                 href="https://www.linkedin.com/in/vlee13/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
@@ -100,6 +105,7 @@ class Footer extends Component {
                 className="teamMemberLink1"
                 href="https://github.com/dpanuncia/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -110,6 +116,7 @@ class Footer extends Component {
                 className="teamMemberLink2"
                 href="https://www.linkedin.com/in/dpanuncia/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>

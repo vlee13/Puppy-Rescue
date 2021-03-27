@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import actions from "../../../services/index.js";
 import "../../CSS/FosterDog.css";
 import "../../CSS/NavigationBar.css";
-import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
-import { GoogleLogout } from "react-google-login";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 
@@ -44,7 +41,7 @@ class FosterDog extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="imageForFosterDog" />
+        <img className="imageForFosterDog" alt="foster dog img" />
         <div className="textForHeroImage">
           <h1>This cutie is our winner!</h1>
           <p style={{ margin: "20px" }}>Because you voted and we listened.</p>

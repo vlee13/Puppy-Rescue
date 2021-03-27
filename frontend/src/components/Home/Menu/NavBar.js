@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import "../../CSS/NavigationBar.css";
 import GoogleAuthLogin from "../../auth/GoogleAuthLogin";
 import GoogleAuth from "../../auth/GoogleAuth";
-import { GoogleLogout } from "react-google-login";
 
 class NavBar extends Component {
   render() {
@@ -13,7 +12,7 @@ class NavBar extends Component {
         <div className="NavbarContainer">
           <Link to="/" className="link">
             <div className="NavBarElement">
-              <img id="LogoMark" />
+              <img id="LogoMark" alt="logo mark" />
               {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
               <span className="NavBarElementText">House of Paws</span>
               {/* Remove till here */}

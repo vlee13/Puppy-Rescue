@@ -1,18 +1,8 @@
-import React, { Component, Fragment } from "react";
-import Home from "./components/Home";
-import NotFound from "./components/404/NotFound.js";
-import SignUp from "./components/auth/SignUp";
-import LogIn from "./components/auth/LogIn";
+import React, { Component } from "react";
 import actions from "./services/index";
-import GoogleAuth from "./components/auth/GoogleAuth";
-import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
-import Contact from "./components/ContactUs/ContactUs";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { Switch, BrowserRouter, Route, NavLink } from "react-router-dom";
+import { Switch, BrowserRouter, Route } from "react-router-dom";
 import UserLogIn from "./components/Home/LogIn/UserLogIn";
 import UserSignUp from "./components/Home/LogIn/UserSignUp";
-import UserDonate from "./components/userdonate/UserDonate";
-import MenuMainPage from "./components/Home/Menu/MenuMainPage";
 import About from "./components/Home/Menu/About";
 import Vote from "./components/Home/Menu/Vote";
 import FosterDog from "./components/Home/Menu/FosterDog";
@@ -21,9 +11,6 @@ import Game from "./components/Home/Menu/Game";
 import ContactUs from "./components/Home/Menu/ContactUs";
 import AdminPage from "./components/Admin/AdminPage";
 import Slider from "./components/Home/Slider";
-// import NavBar from "./components/Home/Menu/NavBar";
-import Footer from "./components/Home/Menu/Footer";
-// import { useHistory } from "react-router-dom";
 
 class App extends Component {
   state = {};
@@ -35,7 +22,8 @@ class App extends Component {
   setUser = (user) => this.setState(user);
   logOut = async () => {
     console.log("logout");
-    let res = await actions.logOut();
+    // let res = await actions.logOut();
+    await actions.logOut();
     this.setUser({
       email: null,
       createdAt: null,
@@ -45,27 +33,15 @@ class App extends Component {
     }); //FIX
   };
   test = async () => {
-    let res = await actions.sendMail();
+    // let res = await actions.sendMail();
+    await actions.sendMail();
   };
   render() {
     // const history = useHistory();
     // console.log(history);
     return (
       <BrowserRouter>
-        {/* <button onClick={this.test}>submit</button> */}
-        {/* {this.props.location && ( */}
-        {/* <NavBar
-          setUser={this.setUser}
-          user={this.state}
-          logOut={this.logOut}
-        ></NavBar> */}
-        {/* )} */}
         <Switch>
-          {/* <Route
-            exact
-            path="/home"
-            render={(props) => <Home {...props} setUser={this.setUser} />}
-          /> */}
           <Route exact path="/" render={() => <Slider />} />
           <Route
             exact
@@ -81,8 +57,7 @@ class App extends Component {
               <UserSignUp setUser={this.setUser} user={this.state} />
             )}
           />
-          {/* <Route exact path="/userdonate" render={() => <UserDonate />} /> */}
-          {/* <Route exact path="/menu" render={() => <MenuMainPage />} /> */}
+
           <Route
             exact
             path="/about"

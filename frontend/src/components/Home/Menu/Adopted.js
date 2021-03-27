@@ -10,26 +10,6 @@ const client = new Client({
   secret: "kxra4gyDNa0nq9zxra4Bc6nIH5DjZTDGABfYcEVH",
 });
 
-// const settings = {
-//   dots: false,
-//   infinte: true,
-//   speed: 10,
-//   arrows: true,
-//   slidesToScroll: 5,
-//   slidesToShow: 5,
-//   className: "slides",
-// responsive: [
-//   {
-//     breakpoint: 420,
-//     settings: {
-//       dots: false,
-//       slidesToShow: 2,
-//       slidesToScroll: 1,
-//     },
-//   },
-// ],
-// };
-
 class Adopted extends Component {
   state = {
     testimonialBox: false,
@@ -41,7 +21,7 @@ class Adopted extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="adoptedHeroImage" />
+        <img className="adoptedHeroImage" alt="hero img" />
         <div className="textForHeroImage">
           <h1>Our Alumni!</h1>
           <p>

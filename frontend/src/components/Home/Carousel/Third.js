@@ -7,9 +7,9 @@ class Third extends Component {
   displayPage = () => {
     return (
       <div className="CarrouselContainer">
-        <img className="CarrouselImage3" />
+        <img className="CarrouselImage3" alt="third carousel img" />
         <div className="CarrouselText">
-          <img id="LogoMark" />
+          <img id="LogoMark" alt="logo mark" />
           <span className="CompanyName">There is a winner</span>
           <h1 className="Tagline">
             Meet our current foster, the adorable Astro!
@@ -27,7 +27,7 @@ class Third extends Component {
             </button>
           </Link>
         </div>
-        <img id="SealLogo" />
+        <img id="SealLogo" alt="seal logo" />
       </div>
     );
   };

@@ -23,7 +23,7 @@ class Vote extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="imageForVote" />
+        <img className="imageForVote" alt="img for vote" />
         <div
           className="textForHeroImage"
           style={{

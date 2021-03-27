@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import actions from "../../../services/index";
 import "../../CSS/NavigationBar.css";
 import "../../CSS/ContactUs.css";
@@ -26,7 +25,7 @@ class ContactUs extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="imageForContactUs" />
+        <img className="imageForContactUs" alt="contact us img" />
         <div className="textForHeroImage">
           <h1 id="contactUsTagline">
             Our love for dogs is always ready to answer any of your questions.
