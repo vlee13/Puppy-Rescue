@@ -10,7 +10,7 @@ class Footer extends Component {
 
         <div className="footerContainer">
           <div className="floatElement">
-            <img className="footerLogoMark" alt="footer logo mark" />
+            <img className="footerLogoMark" />
             <h4 className="address">
               House of Valerie Apt. 911, <br />
               Kimchi 00911 USA
@@ -18,16 +18,16 @@ class Footer extends Component {
             <h4 className="phoneNumber"> 0-800-WeLoveDogs</h4>
 
             <span>
-              <img id="socialMediaIcon" alt="social media icon" />
+              <img id="socialMediaIcon" />
             </span>
             <span>
-              <img id="socialMediaIcon" alt="social media icon" />
+              <img id="socialMediaIcon" />
             </span>
             <span>
-              <img id="socialMediaIcon" alt="social media icon" />
+              <img id="socialMediaIcon" />
             </span>
             <span>
-              <img id="socialMediaIcon" alt="social media icon" />
+              <img id="socialMediaIcon" />
             </span>
           </div>
 

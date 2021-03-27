@@ -12,7 +12,7 @@ class NavBar extends Component {
         <div className="NavbarContainer">
           <Link to="/" className="link">
             <div className="NavBarElement">
-              <img id="LogoMark" alt="logo mark" />
+              <img id="LogoMark" />
               {/* This span is just a placeholder. It would be remove after finishing horizontal logo */}
               <span className="NavBarElementText">House of Paws</span>
               {/* Remove till here */}

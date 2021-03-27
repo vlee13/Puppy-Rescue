@@ -21,7 +21,7 @@ class Adopted extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="adoptedHeroImage" alt="hero img" />
+        <img className="adoptedHeroImage" />
         <div className="textForHeroImage">
           <h1>Our Alumni!</h1>
           <p>

@@ -7,9 +7,9 @@ const Second = () => {
   let displayPage = () => {
     return (
       <div className="CarrouselContainer">
-        <img className="CarrouselImage2" alt="second carousel img" />
+        <img className="CarrouselImage2" />
         <div className="CarrouselText">
-          <img id="LogoMark" alt="logo mark" />
+          <img id="LogoMark" />
           <span className="CompanyName">It's time to vote</span>
           <h1 className="Tagline">
             Help us to choose the next dog we will foster.
@@ -25,7 +25,7 @@ const Second = () => {
             <button className="CarrouselButton">MEET THE CANDIDATES</button>
           </Link>
         </div>
-        <img id="SealLogo" alt="seal logo" />
+        <img id="SealLogo" />
       </div>
     );
   };

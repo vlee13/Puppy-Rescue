@@ -7,9 +7,9 @@ const Fourth = () => {
   let displayPage = () => {
     return (
       <div className="CarrouselContainer">
-        <img className="CarrouselImage4" alt="fourth carousel img" />
+        <img className="CarrouselImage4" />
         <div className="CarrouselText">
-          <img id="LogoMark" alt="logo mark" />
+          <img id="LogoMark" />
           <span className="CompanyName">Alumni</span>
           <h1 className="Tagline">
             See all our dogs that have been adopted & their stories.
@@ -22,7 +22,7 @@ const Fourth = () => {
             <button className="CarrouselButton">TESTIMONIALS</button>
           </Link>
         </div>
-        <img id="SealLogo" alt="seal logo" />
+        <img id="SealLogo" />
       </div>
     );
   };

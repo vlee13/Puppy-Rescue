@@ -41,7 +41,7 @@ class FosterDog extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="imageForFosterDog" alt="foster dog img" />
+        <img className="imageForFosterDog" />
         <div className="textForHeroImage">
           <h1>This cutie is our winner!</h1>
           <p style={{ margin: "20px" }}>Because you voted and we listened.</p>

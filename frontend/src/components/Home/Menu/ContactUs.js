@@ -25,7 +25,7 @@ class ContactUs extends Component {
   displayHeader = () => {
     return (
       <div className="container">
-        <img className="imageForContactUs" alt="contact us img" />
+        <img className="imageForContactUs" />
         <div className="textForHeroImage">
           <h1 id="contactUsTagline">
             Our love for dogs is always ready to answer any of your questions.

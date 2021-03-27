@@ -7,9 +7,9 @@ const First = () => {
   let displayPage = () => {
     return (
       <div className="CarrouselContainer">
-        <img className="CarrouselImage" alt="first carousel img" />
+        <img className="CarrouselImage" />
         <div className="CarrouselText">
-          <img id="LogoMark" alt="logo mark" />
+          <img id="LogoMark" />
           <span className="CompanyName">House of Paws</span>
           <h1 className="Tagline">Because every dog deserves a warm bed.</h1>
           <p className="Text">
@@ -23,7 +23,7 @@ const First = () => {
             <button className="CarrouselButton">GET TO KNOW US BETTER</button>
           </Link>
         </div>
-        <img id="SealLogo" alt="seal logo" />
+        <img id="SealLogo" />
       </div>
     );
   };

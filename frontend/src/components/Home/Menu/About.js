@@ -12,7 +12,7 @@ class About extends Component {
         {/* Header */}
 
         <div className="container">
-          <img className="background1" alt="bg1" />
+          <img className="background1" />
           <div className="textForHeroImage">
             <h1>
               Everyone loves dogs. Not everyone can foster or adopt. We are here
@@ -29,7 +29,7 @@ class About extends Component {
 
         <div>
           <div className="container">
-            <img className="background2" alt="bg2" />
+            <img className="background2" />
             <div className="textForBG">
               <h1 className="header">Our history</h1>
               <p className="text">
@@ -51,7 +51,7 @@ class About extends Component {
 
         <div>
           <div className="container">
-            <img className="background3" alt="bg3" />
+            <img className="background3" />
             <div className="textForBG2">
               <h1 className="header">What we do</h1>
               <p className="text">
@@ -84,7 +84,7 @@ class About extends Component {
         {/* What to expect from donations */}
 
         <div className="container">
-          <img className="background4" alt="bg4" />
+          <img className="background4" />
           <div className="textForBG">
             <h1 className="header">What to expect from donations</h1>
             <p className="text">
@@ -105,7 +105,7 @@ class About extends Component {
         {/* Help other organizations */}
 
         <div className="container">
-          <img className="background5" alt="bg5" />
+          <img className="background5" />
           <div className="whiteBGleft">
             <h1 className="header">Help other organizations</h1>
             <p className="text">
@@ -170,7 +170,7 @@ class About extends Component {
         {/* Zoey Game Section */}
 
         <div className="container">
-          <img className="backgroundForGame" alt="bg6" />
+          <img className="backgroundForGame" />
           <div className="whiteBGright">
             <h1>Bonus Track: Help Zooey survive in space</h1>
             <p>
