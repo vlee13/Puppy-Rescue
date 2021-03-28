@@ -4,6 +4,10 @@ This app helps you search and gives resources for rescuing and adopting shelter 
 
 Technologies used: React.js, Node.js, Express.js, MongoDB, JavaScript, HTML, CSS
 
+Currently viewable on desktop fullscreen only - Responsive design coming soon!
+
+External API: Petfinder
+
 Deployed website link : https://houseofpaws.herokuapp.com/
 
 Contributors to project: Valerie Lee, Carlos Cesar Valle, Dionel Panuncia
