@@ -6,8 +6,6 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        {/* Main Container for 3 floats: Dev Team, Navigation and Other links */}
-
         <div className="footerContainer">
           <div className="floatElement">
             <img className="footerLogoMark" />
@@ -17,18 +15,12 @@ class Footer extends Component {
             </h4>
             <h4 className="phoneNumber"> 0-800-WeLoveDogs</h4>
 
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
-            <span>
-              <img id="socialMediaIcon" />
-            </span>
+            <p className="footerAcknowledgement">
+              House of Paws was created with a lot of love during Ironhack
+              fulltime web development bootcamp. <br /> All rights reserved.{" "}
+              <br /> We also want to show our appreciation to the photographers.
+              Most of their work can be found on pexels.com and unsplash.com.
+            </p>
           </div>
 
           <div className="floatElement">
@@ -156,12 +148,6 @@ class Footer extends Component {
               Do you want to receive our monthly newsletter?
             </h4>
             <p className="text">Create an account!</p>
-            <p className="footerAcknowledgement">
-              House of Paws was created with a lot of love during Ironhack
-              fulltime web development bootcamp. <br /> All rights reserved.{" "}
-              <br /> We also want to show our appreciation to the photograpers.
-              Most of their work can be found on pexels.com and unsplash.com.
-            </p>
           </div>
         </div>
       </div>
